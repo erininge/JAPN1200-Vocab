@@ -1096,46 +1096,62 @@ function wireUI() {
     const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
     const inInput = tag === "input" || tag === "textarea" || e.target?.isContentEditable;
     const key = e.key;
+    const isTypingMode = QUIZ.active && !$("#answerType").classList.contains("hidden");
+    const isMCMode = QUIZ.active && !$("#answerMC").classList.contains("hidden");
 
-    if (!isDesktopInput) return;
+    if (key === "=") {
+      if (QUIZ.active) {
+        e.preventDefault();
+        if (QUIZ.current) playItemAudio(QUIZ.current.item);
+      }
+      return;
+    }
+    if (key === "`") {
+      if (QUIZ.active) {
+        e.preventDefault();
+        if (QUIZ.current) {
+          const on = toggleStar(QUIZ.current.item.id);
+          $("#btnToggleStar").textContent = on ? "⭐" : "☆";
+        }
+      }
+      return;
+    }
+
+    if (isMCMode && ["1","2","3","4"].includes(key)) {
+      e.preventDefault();
+      const idx = Number(key) - 1;
+      const btn = $$("#answerMC .choice")[idx];
+      if (btn) btn.click();
+      return;
+    }
+
     if (inInput) return;
+    if (!isDesktopInput) return;
 
     if (key === "/" && QUIZ.active) {
       e.preventDefault();
-      if (!$("#answerType").classList.contains("hidden")) $("#answerInput").focus();
+      if (isTypingMode) $("#answerInput").focus();
       return;
     }
 
     if (!QUIZ.active) return;
 
-    if (key === "=") {
-      e.preventDefault();
-      if (QUIZ.current) playItemAudio(QUIZ.current.item);
-      return;
-    }
-    if (key === "`") {
-      e.preventDefault();
-      if (QUIZ.current) {
-        const on = toggleStar(QUIZ.current.item.id);
-        $("#btnToggleStar").textContent = on ? "⭐" : "☆";
-      }
-      return;
-    }
-
-    if (!$("#answerMC").classList.contains("hidden")) {
-      if (isDesktopInput && ["1","2","3","4"].includes(key)) {
-        e.preventDefault();
-        const idx = Number(key) - 1;
-        const btn = $$("#answerMC .choice")[idx];
-        if (btn) btn.click();
-        return;
-      }
-    }
-
-    if (!$("#answerType").classList.contains("hidden")) {
+    if (isTypingMode) {
       if (key === "Enter") {
         e.preventDefault();
         handleEnterAction();
+        return;
+      }
+      if (!e.metaKey && !e.ctrlKey && !e.altKey && key.length === 1) {
+        const input = $("#answerInput");
+        e.preventDefault();
+        input.focus();
+        const start = input.selectionStart ?? input.value.length;
+        const end = input.selectionEnd ?? input.value.length;
+        input.value = input.value.slice(0, start) + key + input.value.slice(end);
+        const nextPos = start + key.length;
+        input.setSelectionRange(nextPos, nextPos);
+        return;
       }
     }
 
