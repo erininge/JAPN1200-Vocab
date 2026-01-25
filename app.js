@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (v2.4.5) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.0) */
 
-const APP_VERSION = "2.4.6";
+const APP_VERSION = "V3.0";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -254,6 +254,8 @@ function toggleStar(id, force) {
   if (on) STARRED.add(id); else STARRED.delete(id);
   saveStars();
   refreshHeaderCounts();
+  updateQuestionCountUI();
+  updateCurrentAudioListIfOpen();
   return on;
 }
 
@@ -280,6 +282,22 @@ function currentPool() {
 
 function currentPoolSignature(pool) {
   return pool.map((item) => item.id).join("|");
+}
+
+function updateCurrentAudioListIfOpen() {
+  if (!$("#currentAudioList").classList.contains("hidden")) {
+    buildCurrentAudioList({ force: true });
+  }
+}
+
+function updateQuestionCountUI() {
+  const auto = $("#qAuto").checked;
+  const input = $("#qCount");
+  input.disabled = auto;
+  if (auto) {
+    const pool = currentPool();
+    input.value = String(pool.length || 0);
+  }
 }
 
 function renderCurrentAudioList(entries) {
@@ -406,8 +424,11 @@ function buildLessonUI() {
     refreshHeaderCounts();
     updateLessonHint();
     buildVocabUI();
+    updateQuestionCountUI();
+    updateCurrentAudioListIfOpen();
   });
   updateLessonHint();
+  updateQuestionCountUI();
 
   const sel = $("#vLessonFilter");
   sel.innerHTML = `<option value="__all__">All lessons</option>` + LESSONS.map(l => `<option value="${l.code}">${l.name}</option>`).join("");
@@ -462,7 +483,7 @@ function updateAudioUI() {
   const replay = $("#btnReplay");
   if (replay) {
     replay.disabled = !on;
-    replay.title = on ? "Replay (= / Space)" : "Audio is off in Settings";
+    replay.title = on ? "Replay (=)" : "Audio is off in Settings";
   }
 }
 
@@ -544,7 +565,7 @@ function promptTextForQuestion(q, dmode) {
   const it = q.item;
   if (q.qmode === "en2jp") return it.en;
   if (q.qmode === "jp2en") return jpDisplay(it, dmode);
-  if (q.qmode.startsWith("listen")) return "🎧 Listening… (press Space / =)";
+  if (q.qmode.startsWith("listen")) return "🎧 Listening… (press =)";
   return it.en;
 }
 
@@ -618,7 +639,6 @@ function setQuizVisibility(active) {
 }
 
 function startQuiz(forceStarredOnly=false) {
-  const qCount = Math.max(1, Math.min(500, Number($("#qCount").value || 20)));
   const pool0 = currentPool();
   let pool = pool0;
 
@@ -627,6 +647,10 @@ function startQuiz(forceStarredOnly=false) {
     toast("No items in your selected set.");
     return;
   }
+  const useAuto = $("#qAuto").checked;
+  const qCount = useAuto
+    ? pool.length
+    : Math.max(1, Math.min(500, Number($("#qCount").value || 20)));
   const maxCount = Math.min(qCount, pool.length);
   if (qCount > pool.length) {
     toast(`Only ${pool.length} items available — quiz set to ${pool.length}.`);
@@ -643,7 +667,8 @@ function startQuiz(forceStarredOnly=false) {
     idx: 0,
     current: null,
     awaitingNext: false,
-    correctCount: 0
+    correctCount: 0,
+    starFiltered: forceStarredOnly || $("#filterStarredOnly").checked
   };
 
   setQuizVisibility(true);
@@ -757,10 +782,7 @@ function submitTyping() {
   if (QUIZ.awaitingNext) return;
   const q = QUIZ.current;
   const user = $("#answerInput").value;
-  if (!user.trim()) {
-    toast("Type an answer first.");
-    return;
-  }
+  if (!user.trim()) return;
   const ok = gradeTyping(q, user, getDMode());
   QUIZ.awaitingNext = true;
   $("#btnNext").disabled = false;
@@ -892,22 +914,26 @@ function renderStats() {
 
 function wireUI() {
   const hasFinePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
-  const isDesktopInput = hasFinePointer && !("ontouchstart" in window);
+  const isNarrowView = window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
+  const isDesktopInput = hasFinePointer && !isNarrowView && !("ontouchstart" in window);
 
   $$(".navBtn").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
 
   $("#btnSelectAll").addEventListener("click", () => {
     $$("#lessonList input[type=checkbox]").forEach(x => x.checked = true);
-    refreshHeaderCounts(); updateLessonHint(); buildVocabUI();
+    refreshHeaderCounts(); updateLessonHint(); buildVocabUI(); updateQuestionCountUI();
+    updateCurrentAudioListIfOpen();
   });
   $("#btnClearAll").addEventListener("click", () => {
     $$("#lessonList input[type=checkbox]").forEach(x => x.checked = false);
-    refreshHeaderCounts(); updateLessonHint(); buildVocabUI();
+    refreshHeaderCounts(); updateLessonHint(); buildVocabUI(); updateQuestionCountUI();
+    updateCurrentAudioListIfOpen();
   });
   $("#btnStarredOnly").addEventListener("click", () => {
     $$("#lessonList input[type=checkbox]").forEach(x => x.checked = true);
     $("#filterStarredOnly").checked = true;
-    refreshHeaderCounts(); updateLessonHint(); buildVocabUI();
+    refreshHeaderCounts(); updateLessonHint(); buildVocabUI(); updateQuestionCountUI();
+    updateCurrentAudioListIfOpen();
   });
 
   $("#btnStart").addEventListener("click", () => startQuiz(false));
@@ -930,10 +956,7 @@ function wireUI() {
       return;
     }
     if (!$("#answerType").classList.contains("hidden")) {
-      if (!$("#answerInput").value.trim()) {
-        toast("Type an answer first.");
-        return;
-      }
+      if (!$("#answerInput").value.trim()) return;
       submitTyping();
       return;
     }
@@ -945,6 +968,7 @@ function wireUI() {
   $("#btnSubmit").addEventListener("click", submitTyping);
   $("#answerInput").addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
+      if (!$("#answerInput").value.trim()) return;
       e.preventDefault();
       e.stopPropagation();
       handleEnterAction();
@@ -975,6 +999,18 @@ function wireUI() {
     $("#vStarOnly").checked = false;
     $("#vDisplay").value = "kana";
     buildVocabUI();
+  });
+
+  $("#filterStarredOnly").addEventListener("change", () => {
+    refreshHeaderCounts();
+    updateLessonHint();
+    buildVocabUI();
+    updateQuestionCountUI();
+    updateCurrentAudioListIfOpen();
+  });
+
+  $("#qAuto").addEventListener("change", () => {
+    updateQuestionCountUI();
   });
 
   $("#setAudioOn").addEventListener("change", () => {
@@ -1039,7 +1075,13 @@ function wireUI() {
     localStorage.removeItem(STORAGE.seeded);
     buildVocabUI();
     refreshHeaderCounts();
+    updateLessonHint();
+    updateQuestionCountUI();
+    updateCurrentAudioListIfOpen();
     if (QUIZ.current) setStarButton(QUIZ.current.item);
+    if (QUIZ.active && QUIZ.starFiltered) {
+      endQuiz();
+    }
     toast("Stars reset.");
   });
   $("#btnResetStats").addEventListener("click", () => {
@@ -1051,8 +1093,11 @@ function wireUI() {
 
   window.addEventListener("keydown", (e) => {
     const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
-    const inInput = tag === "input" || tag === "textarea";
+    const inInput = tag === "input" || tag === "textarea" || e.target?.isContentEditable;
     const key = e.key;
+
+    if (!isDesktopInput) return;
+    if (inInput) return;
 
     if (key === "/" && QUIZ.active) {
       e.preventDefault();
@@ -1087,7 +1132,7 @@ function wireUI() {
     }
 
     if (!$("#answerType").classList.contains("hidden")) {
-      if (key === "Enter" && !inInput) {
+      if (key === "Enter") {
         e.preventDefault();
         handleEnterAction();
       }
@@ -1109,8 +1154,10 @@ function wireUI() {
 
 (async function init() {
   $("#settingsHint").textContent = "Stars and stats are saved only on this device/browser (personal).";
+  $("#versionLabel").textContent = APP_VERSION;
   SETTINGS = getSettings();
   applySettingsToUI(SETTINGS);
   wireUI();
   await loadData();
+  updateQuestionCountUI();
 })();
