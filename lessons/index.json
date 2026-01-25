@@ -1,0 +1,36 @@
+{
+  "course": "JPLN1200",
+  "version": "2.0",
+  "lessons": [
+    {
+      "code": "l1",
+      "name": "Lesson 1",
+      "file": "lessons/l1.json",
+      "count": 17
+    },
+    {
+      "code": "l2",
+      "name": "Lesson 2",
+      "file": "lessons/l2.json",
+      "count": 3
+    },
+    {
+      "code": "l3",
+      "name": "Lesson 3",
+      "file": "lessons/l3.json",
+      "count": 4
+    },
+    {
+      "code": "l3_5",
+      "name": "Lesson 3.5",
+      "file": "lessons/l3_5.json",
+      "count": 54
+    },
+    {
+      "code": "pre",
+      "name": "pre course words",
+      "file": "lessons/pre.json",
+      "count": 57
+    }
+  ]
+}

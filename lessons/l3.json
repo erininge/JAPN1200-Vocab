@@ -1,0 +1,34 @@
+[
+  {
+    "jp_kana": "カフェ",
+    "jp_kanji": "",
+    "en": "cafe",
+    "lesson": "Lesson 3",
+    "default_starred": false,
+    "id": "jpln1200_l3_001"
+  },
+  {
+    "jp_kana": "こうこう",
+    "jp_kanji": "高校",
+    "en": "high school",
+    "lesson": "Lesson 3",
+    "default_starred": false,
+    "id": "jpln1200_l3_002"
+  },
+  {
+    "jp_kana": "コンビニ",
+    "jp_kanji": "",
+    "en": "convenience store",
+    "lesson": "Lesson 3",
+    "default_starred": false,
+    "id": "jpln1200_l3_003"
+  },
+  {
+    "jp_kana": "ゆうびんきょく",
+    "jp_kanji": "郵便局",
+    "en": "post office",
+    "lesson": "Lesson 3",
+    "default_starred": true,
+    "id": "jpln1200_l3_004"
+  }
+]

@@ -1,0 +1,1116 @@
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (v2.4.5) */
+
+const APP_VERSION = "2.4.6";
+const STORAGE = {
+  stars: "jpln1200_stars_v1",
+  settings: "jpln1200_settings_v1",
+  stats: "jpln1200_stats_v1",
+  seeded: "jpln1200_seeded_v1"
+};
+
+const DEFAULT_SETTINGS = {
+  audioOn: true,
+  volume: 0.9,
+  autoplay: false,
+  smartGrade: true
+};
+
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+function toast(msg) {
+  const el = $("#toast");
+  el.textContent = msg;
+  el.classList.remove("hidden");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => el.classList.add("hidden"), 1800);
+}
+
+function loadJSON(key, fallback) {
+  try {
+    const v = localStorage.getItem(key);
+    return v ? JSON.parse(v) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+function saveJSON(key, val) {
+  localStorage.setItem(key, JSON.stringify(val));
+}
+
+function uniq(arr) {
+  return [...new Set(arr)];
+}
+
+function normEnglish(s) {
+  return (s || "")
+    .toLowerCase()
+    .replace(/[’']/g, "'")
+    .replace(/\(.*?\)/g, " ")
+    .replace(/[^a-z0-9\s\-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function englishAliases(en) {
+  const base = (en || "").trim();
+  const parts = [];
+  parts.push(base);
+  parts.push(base.split(",")[0].trim());
+  parts.push(base.split("(")[0].trim());
+  return uniq(parts.filter(Boolean));
+}
+
+function normJP(s) {
+  return (s || "")
+    .normalize("NFKC")
+    .replace(/\s+/g, "")
+    .replace(/[。．\.\、,，'’"“”！？!?:：;；・]/g, "")
+    .trim();
+}
+
+const AUDIO_EXTENSIONS = ["wav", "mp3", "m4a", "ogg"];
+const AUDIO_SRC_CACHE = new Map();
+let AUDIO_FALLBACK_MAP = null;
+let AUDIO_FALLBACK_LOADING = null;
+let CURRENT_AUDIO_ENTRIES = [];
+let CURRENT_AUDIO_SIGNATURE = "";
+
+async function audioUrlExists(url) {
+  try {
+    const head = await fetch(url, { method: "HEAD", cache: "no-store" });
+    if (head.ok) return true;
+    if ([403, 405].includes(head.status)) {
+      const getRes = await fetch(url, { method: "GET", cache: "no-store" });
+      return getRes.ok;
+    }
+    return false;
+  } catch {
+    return false;
+  }
+}
+
+function audioIdVariants(id) {
+  const variants = [id];
+  if (id?.startsWith("jpln1200_")) {
+    variants.push(id.replace(/^jpln1200_/, "japn1200_"));
+  }
+  return variants;
+}
+
+async function loadAudioFallbackMap() {
+  if (AUDIO_FALLBACK_MAP) return AUDIO_FALLBACK_MAP;
+  if (AUDIO_FALLBACK_LOADING) return AUDIO_FALLBACK_LOADING;
+  AUDIO_FALLBACK_LOADING = (async () => {
+    try {
+      const res = await fetch("./audio/audio_rename_report.json", { cache: "no-store" });
+      if (!res.ok) {
+        AUDIO_FALLBACK_MAP = new Map();
+        return AUDIO_FALLBACK_MAP;
+      }
+      const data = await res.json();
+      const map = new Map();
+      (data.renamed || []).forEach((entry) => {
+        if (entry.itemId && entry.from) {
+          map.set(entry.itemId, entry.from);
+        }
+      });
+      AUDIO_FALLBACK_MAP = map;
+      return map;
+    } catch {
+      AUDIO_FALLBACK_MAP = new Map();
+      return AUDIO_FALLBACK_MAP;
+    }
+  })();
+  return AUDIO_FALLBACK_LOADING;
+}
+
+async function resolveAudioUrl(id) {
+  if (AUDIO_SRC_CACHE.has(id)) return AUDIO_SRC_CACHE.get(id);
+  const variants = audioIdVariants(id);
+  for (const variant of variants) {
+    for (const ext of AUDIO_EXTENSIONS) {
+      const url = `./audio/${variant}.${ext}`;
+      if (await audioUrlExists(url)) {
+        AUDIO_SRC_CACHE.set(id, url);
+        return url;
+      }
+    }
+  }
+  const fallbackMap = await loadAudioFallbackMap();
+  const fallbackPath = fallbackMap.get(id);
+  if (fallbackPath) {
+    const url = fallbackPath.startsWith("audio/") ? `./${fallbackPath}` : fallbackPath;
+    if (await audioUrlExists(url)) {
+      AUDIO_SRC_CACHE.set(id, url);
+      return url;
+    }
+  }
+  AUDIO_SRC_CACHE.set(id, null);
+  return null;
+}
+
+function clearAudioCache() {
+  AUDIO_SRC_CACHE.clear();
+  AUDIO_FALLBACK_MAP = null;
+  AUDIO_FALLBACK_LOADING = null;
+}
+
+async function hasAudioFile(id) {
+  return !!(await resolveAudioUrl(id));
+}
+
+function expectedAudioFilename(id) {
+  const ext = AUDIO_EXTENSIONS[0] || "wav";
+  return `audio/${id}.${ext}`;
+}
+
+function displayAudioFilename(url) {
+  if (!url) return "";
+  return url.replace(/^\.\//, "");
+}
+function jpDisplay(item, mode) {
+  const kana = item.jp_kana || "";
+  const kanji = item.jp_kanji || "";
+  if (mode === "kana") return kana;
+  if (mode === "kanji") return kanji || kana;
+  if (kanji && kanji !== kana) return `${kana}（${kanji}）`;
+  return kana;
+}
+
+function jpAcceptableAnswers(item, dmode) {
+  const kana = item.jp_kana || "";
+  const kanji = item.jp_kanji || "";
+  if (dmode === "kana") return [kana];
+  if (dmode === "kanji") return [kanji || kana];
+  return uniq([kana, kanji].filter(Boolean));
+}
+
+function getSettings() {
+  return { ...DEFAULT_SETTINGS, ...loadJSON(STORAGE.settings, {}) };
+}
+function setSettings(patch) {
+  const s = getSettings();
+  const next = { ...s, ...patch };
+  saveJSON(STORAGE.settings, next);
+  applySettingsToUI(next);
+  return next;
+}
+
+function applySettingsToUI(s) {
+  $("#setAudioOn").checked = !!s.audioOn;
+  $("#setVolume").value = String(s.volume ?? 0.9);
+  $("#setAutoplay").checked = !!s.autoplay;
+  $("#setSmartGrade").checked = !!s.smartGrade;
+  updateListeningAvailability();
+}
+
+let LESSONS = [];
+let ITEMS = [];
+let ITEMS_BY_ID = new Map();
+
+let STARRED = new Set();
+let SETTINGS = getSettings();
+
+function getStats() {
+  return loadJSON(STORAGE.stats, { attempts: 0, correct: 0, perItem: {} });
+}
+function recordAttempt(id, ok) {
+  const s = getStats();
+  s.attempts += 1;
+  if (ok) s.correct += 1;
+  s.perItem[id] = s.perItem[id] || { a: 0, c: 0 };
+  s.perItem[id].a += 1;
+  if (ok) s.perItem[id].c += 1;
+  saveJSON(STORAGE.stats, s);
+}
+
+function seedStarsIfNeeded() {
+  const seeded = localStorage.getItem(STORAGE.seeded);
+  if (seeded) return;
+  STARRED = new Set();
+  saveJSON(STORAGE.stars, Array.from(STARRED));
+  localStorage.setItem(STORAGE.seeded, "1");
+}
+
+function loadStars() {
+  const saved = loadJSON(STORAGE.stars, null);
+  if (Array.isArray(saved)) {
+    STARRED = new Set(saved);
+  } else {
+    STARRED = new Set();
+  }
+}
+
+function saveStars() {
+  saveJSON(STORAGE.stars, Array.from(STARRED));
+}
+
+function isStarred(id) {
+  return STARRED.has(id);
+}
+function toggleStar(id, force) {
+  const on = force !== undefined ? force : !STARRED.has(id);
+  if (on) STARRED.add(id); else STARRED.delete(id);
+  saveStars();
+  refreshHeaderCounts();
+  return on;
+}
+
+function lesson_code(lessonName) {
+  const lower = (lessonName || "").toLowerCase();
+  if (lower.includes("pre")) return "pre";
+  const m = lower.match(/lesson\s*([0-9]+(?:\.[0-9]+)?)/);
+  if (m) return "l" + m[1].replace(".", "_");
+  return "misc";
+}
+
+function selectedLessonCodes() {
+  return $$("#lessonList input[type=checkbox]:checked").map(x => x.value);
+}
+
+function currentPool() {
+  const codes = selectedLessonCodes();
+  let pool = ITEMS.filter(it => codes.includes(lesson_code(it.lesson)));
+  if ($("#filterStarredOnly").checked) {
+    pool = pool.filter(it => isStarred(it.id));
+  }
+  return pool;
+}
+
+function currentPoolSignature(pool) {
+  return pool.map((item) => item.id).join("|");
+}
+
+function renderCurrentAudioList(entries) {
+  const rowsHost = $("#currentAudioRows");
+  const summary = $("#currentAudioSummary");
+  const meta = $("#currentAudioMeta");
+  const missingOnly = $("#currentAudioMissingOnly").checked;
+  const filtered = missingOnly ? entries.filter(({ url }) => !url) : entries;
+  const found = entries.filter(({ url }) => url).length;
+
+  rowsHost.innerHTML = "";
+  if (!filtered.length) {
+    rowsHost.innerHTML = `<div class="hint">${missingOnly ? "No missing audio in the current selection." : "No words in the current selection."}</div>`;
+  } else {
+    filtered.forEach(({ item, url }) => {
+      const row = document.createElement("div");
+      row.className = "audioRow";
+      const filename = url ? displayAudioFilename(url) : expectedAudioFilename(item.id);
+      row.innerHTML = `
+        <div>
+          <div class="audioRowTitle">${jpDisplay(item, "both")}</div>
+          <div class="hint">${item.en || ""}</div>
+        </div>
+        <div class="audioRowMeta">
+          <div class="audioStatus ${url ? "" : "missing"}">${url ? "Audio found" : "Missing audio"}</div>
+          <div class="audioFile">${filename}</div>
+        </div>
+      `;
+      const metaCol = row.querySelector(".audioRowMeta");
+      const btn = document.createElement("button");
+      btn.className = "btn subtle audioPlayBtn";
+      btn.type = "button";
+      btn.textContent = url ? "Play" : "No audio";
+      btn.disabled = !url;
+      if (url) {
+        btn.addEventListener("click", () => playItemAudio(item));
+      }
+      metaCol.appendChild(btn);
+      rowsHost.appendChild(row);
+    });
+  }
+
+  if (missingOnly) {
+    summary.textContent = `Showing ${filtered.length} missing audio words.`;
+  } else {
+    summary.textContent = `Showing ${filtered.length} words.`;
+  }
+  meta.textContent = `Audio found: ${found}/${entries.length}.`;
+}
+
+async function buildCurrentAudioList({ force = false } = {}) {
+  const list = $("#currentAudioList");
+  const rowsHost = $("#currentAudioRows");
+  const summary = $("#currentAudioSummary");
+  const meta = $("#currentAudioMeta");
+
+  list.classList.remove("hidden");
+  rowsHost.innerHTML = `<div class="hint">Loading current words…</div>`;
+  const pool = currentPool();
+  if (!pool.length) {
+    rowsHost.innerHTML = `<div class="hint">No words in the current selection.</div>`;
+    summary.textContent = "No words selected.";
+    meta.textContent = "Nothing to show.";
+    CURRENT_AUDIO_ENTRIES = [];
+    CURRENT_AUDIO_SIGNATURE = "";
+    return;
+  }
+
+  const signature = currentPoolSignature(pool);
+  if (!force && CURRENT_AUDIO_SIGNATURE === signature && CURRENT_AUDIO_ENTRIES.length) {
+    renderCurrentAudioList(CURRENT_AUDIO_ENTRIES);
+    return;
+  }
+
+  clearAudioCache();
+  const entries = await Promise.all(pool.map(async (item) => {
+    const url = await resolveAudioUrl(item.id);
+    return { item, url };
+  }));
+  CURRENT_AUDIO_ENTRIES = entries;
+  CURRENT_AUDIO_SIGNATURE = signature;
+  renderCurrentAudioList(entries);
+}
+
+async function loadData() {
+  const idx = await fetch("./lessons/index.json").then(r => r.json());
+  LESSONS = idx.lessons || [];
+  const all = [];
+  for (const l of LESSONS) {
+    const arr = await fetch(l.file).then(r => r.json());
+    for (const it of arr) all.push(it);
+  }
+  ITEMS = all;
+  ITEMS_BY_ID = new Map(ITEMS.map(it => [it.id, it]));
+  $("#countTotal").textContent = String(ITEMS.length);
+
+  loadStars();
+  seedStarsIfNeeded();
+  const saved = loadJSON(STORAGE.stars, null);
+  if (Array.isArray(saved)) STARRED = new Set(saved);
+
+  buildLessonUI();
+  buildVocabUI();
+  refreshHeaderCounts();
+  renderStats();
+}
+
+function buildLessonUI() {
+  const host = $("#lessonList");
+  host.innerHTML = "";
+  for (const l of LESSONS) {
+    const row = document.createElement("label");
+    row.className = "lessonRow";
+    row.innerHTML = `
+      <span>
+        <input type="checkbox" value="${l.code}" checked />
+        <strong style="margin-left:6px;">${l.name}</strong>
+      </span>
+      <span class="meta">${l.count} items</span>
+    `;
+    host.appendChild(row);
+  }
+  host.addEventListener("change", () => {
+    refreshHeaderCounts();
+    updateLessonHint();
+    buildVocabUI();
+  });
+  updateLessonHint();
+
+  const sel = $("#vLessonFilter");
+  sel.innerHTML = `<option value="__all__">All lessons</option>` + LESSONS.map(l => `<option value="${l.code}">${l.name}</option>`).join("");
+}
+
+function updateLessonHint() {
+  const pool = currentPool();
+  $("#lessonHint").textContent = `Selected set: ${pool.length} item(s).`;
+}
+
+function refreshHeaderCounts() {
+  const codes = selectedLessonCodes();
+  let inSet = ITEMS.filter(it => codes.includes(lesson_code(it.lesson)));
+  $("#countInSet").textContent = String(inSet.length);
+  $("#countStarred").textContent = String(Array.from(STARRED).length);
+}
+
+function updateListeningAvailability() {
+  const on = SETTINGS.audioOn;
+  const listenEn = $("#qListenEN");
+  const listenJp = $("#qListenJP");
+  listenEn.disabled = !on;
+  listenJp.disabled = !on;
+  if (!on) {
+    const select = $("#qModeSelect");
+    if (select.value.startsWith("listen")) {
+      select.value = "mixed";
+    }
+  }
+  updateAudioUI();
+}
+
+function getQMode() {
+  return $("#qModeSelect")?.value || "en2jp";
+}
+function getAType() {
+  return $("#aTypeSelect")?.value || "mc";
+}
+function getDMode() {
+  return $("#dModeSelect")?.value || "kana";
+}
+
+function canUseAudio() {
+  return SETTINGS.audioOn;
+}
+
+let AUDIO = null;
+let audioSeqToken = 0;
+
+function updateAudioUI() {
+  const on = SETTINGS.audioOn;
+  const replay = $("#btnReplay");
+  if (replay) {
+    replay.disabled = !on;
+    replay.title = on ? "Replay (= / Space)" : "Audio is off in Settings";
+  }
+}
+
+async function playItemAudio(item) {
+  if (!item) return;
+  if (!canUseAudio()) {
+    toast("Audio is off in Settings.");
+    return;
+  }
+  try {
+    audioSeqToken++;
+    const myToken = audioSeqToken;
+    const src = await resolveAudioUrl(item.id);
+    if (!src) {
+      toast(`Missing audio for ${item.id}.`);
+      return;
+    }
+    if (AUDIO) {
+      AUDIO.pause();
+      AUDIO.currentTime = 0;
+      AUDIO.src = src;
+    } else {
+      AUDIO = new Audio(src);
+      AUDIO.preload = "auto";
+    }
+    AUDIO.volume = Math.max(0, Math.min(1, Number(SETTINGS.volume ?? 0.9)));
+    AUDIO.load();
+    await AUDIO.play();
+    if (myToken !== audioSeqToken) {
+      AUDIO.pause();
+      AUDIO.currentTime = 0;
+    }
+  } catch (e) {
+    if (e?.name === "NotAllowedError") {
+      toast("Audio blocked by browser. Tap a button, then try again.");
+      return;
+    }
+    if (e?.name === "AbortError") {
+      return;
+    }
+    console.warn(`Audio failed for ${item.id}.`, e);
+    toast(`Audio failed for ${item.id}.`);
+  }
+}
+
+function showView(view) {
+  for (const v of ["study","vocab","stats","settings"]) {
+    const sec = document.getElementById(`view-${v}`);
+    sec.classList.toggle("hidden", v !== view);
+    document.querySelector(`.navBtn[data-view='${v}']`).classList.toggle("active", v === view);
+  }
+}
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i=a.length-1;i>0;i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function sample(arr, n) {
+  return shuffle(arr).slice(0, n);
+}
+
+function makeQuestion(item, qmode, atype) {
+  let qm = qmode;
+  if (qm === "mixed") {
+    const allowed = ["en2jp","jp2en"];
+    if (SETTINGS.audioOn) allowed.push("listen2en","listen2jp");
+    qm = allowed[Math.floor(Math.random()*allowed.length)];
+  }
+  let am = atype;
+  if (am === "mixed") am = Math.random() < 0.5 ? "mc" : "type";
+  return { item, qmode: qm, atype: am };
+}
+
+function promptTextForQuestion(q, dmode) {
+  const it = q.item;
+  if (q.qmode === "en2jp") return it.en;
+  if (q.qmode === "jp2en") return jpDisplay(it, dmode);
+  if (q.qmode.startsWith("listen")) return "🎧 Listening… (press Space / =)";
+  return it.en;
+}
+
+function correctAnswerText(q, dmode) {
+  const it = q.item;
+  if (q.qmode === "en2jp" || q.qmode === "listen2jp") return jpDisplay(it, dmode);
+  return it.en;
+}
+
+function buildMCOptions(q, pool, dmode) {
+  const it = q.item;
+  const isJPAnswer = (q.qmode === "en2jp" || q.qmode === "listen2jp");
+  const correct = isJPAnswer ? jpDisplay(it, dmode) : it.en;
+
+  const others = pool.filter(x => x.id !== it.id);
+  const picks = sample(others, 12);
+  const mapped = picks.map(x => isJPAnswer ? jpDisplay(x, dmode) : x.en);
+  const uniqs = uniq(mapped.filter(Boolean).filter(x => x !== correct));
+  const distractors = sample(uniqs, 3);
+  const options = shuffle([correct, ...distractors]);
+  return { correct, options };
+}
+
+function gradeTyping(q, user, dmode) {
+  const it = q.item;
+  if (!SETTINGS.smartGrade) {
+    const u = (user || "").trim();
+    const exp = correctAnswerText(q, dmode).trim();
+    return u === exp;
+  }
+
+  if (q.qmode === "jp2en" || q.qmode === "listen2en") {
+    const u = normEnglish(user);
+    const aliases = englishAliases(it.en).map(normEnglish).filter(Boolean);
+    if (!u) return false;
+    return aliases.some(a => a && (u === a || u.includes(a) || a.includes(u)));
+  }
+
+  const u = normJP(user);
+  if (!u) return false;
+  const acceptable = jpAcceptableAnswers(it, dmode).map(normJP).filter(Boolean);
+  return acceptable.some(a => a === u);
+}
+
+let QUIZ = {
+  active: false,
+  pool: [],
+  questions: [],
+  idx: 0,
+  current: null,
+  awaitingNext: false,
+  correctCount: 0
+};
+
+function resetQuizUI() {
+  $("#quizArea").classList.add("hidden");
+  $("#studySetup").classList.remove("hidden");
+  $("#answerMC").classList.add("hidden");
+  $("#answerType").classList.add("hidden");
+  $("#feedback").classList.add("hidden");
+  $("#feedback").textContent = "";
+  $("#prompt").textContent = "—";
+  $("#quizCourse").textContent = "JAPN1200 • —";
+  $("#quizProgress").textContent = "—";
+  $("#btnNext").disabled = true;
+}
+
+function setQuizVisibility(active) {
+  $("#quizArea").classList.toggle("hidden", !active);
+  $("#studySetup").classList.toggle("hidden", active);
+}
+
+function startQuiz(forceStarredOnly=false) {
+  const qCount = Math.max(1, Math.min(500, Number($("#qCount").value || 20)));
+  const pool0 = currentPool();
+  let pool = pool0;
+
+  if (forceStarredOnly) pool = pool.filter(it => isStarred(it.id));
+  if (pool.length === 0) {
+    toast("No items in your selected set.");
+    return;
+  }
+  const maxCount = Math.min(qCount, pool.length);
+  if (qCount > pool.length) {
+    toast(`Only ${pool.length} items available — quiz set to ${pool.length}.`);
+  }
+  const qmode = getQMode();
+  const atype = getAType();
+
+  const questions = shuffle(pool).slice(0, maxCount).map(it => makeQuestion(it, qmode, atype));
+
+  QUIZ = {
+    active: true,
+    pool,
+    questions,
+    idx: 0,
+    current: null,
+    awaitingNext: false,
+    correctCount: 0
+  };
+
+  setQuizVisibility(true);
+  nextQuestion();
+}
+
+function setStarButton(item) {
+  const on = isStarred(item.id);
+  $("#btnToggleStar").textContent = on ? "⭐" : "☆";
+}
+
+function maybeAutoplay(q) {
+  if (!SETTINGS.autoplay) return;
+  if (q.qmode.startsWith("listen")) playItemAudio(q.item);
+}
+
+function nextQuestion() {
+  QUIZ.awaitingNext = false;
+  $("#feedback").classList.add("hidden");
+  $("#feedback").textContent = "";
+  $("#answerInput").value = "";
+  $("#btnNext").disabled = true;
+
+  if (QUIZ.idx >= QUIZ.questions.length) {
+    endQuiz();
+    return;
+  }
+
+  const q = QUIZ.questions[QUIZ.idx];
+  QUIZ.current = q;
+  const dmode = getDMode();
+
+  $("#quizCourse").textContent = `JAPN1200 • ${q.item.lesson}`;
+  $("#quizProgress").textContent = `Question ${QUIZ.idx+1}/${QUIZ.questions.length}`;
+  $("#quizSub").textContent = `Correct: ${QUIZ.correctCount} • Pool: ${QUIZ.pool.length}`;
+  $("#prompt").textContent = promptTextForQuestion(q, dmode);
+
+  setStarButton(q.item);
+
+  const isTyping = q.atype === "type";
+  $("#answerType").classList.toggle("hidden", !isTyping);
+  $("#answerMC").classList.toggle("hidden", isTyping);
+
+  if (isTyping) {
+    $("#answerInput").placeholder = (q.qmode === "jp2en" || q.qmode === "listen2en") ? "Type English…" : "Type Japanese…";
+    setTimeout(() => $("#answerInput").focus(), 0);
+  } else {
+    renderMC(q);
+  }
+
+  if (q.qmode.startsWith("listen")) maybeAutoplay(q);
+}
+
+function renderMC(q) {
+  const dmode = getDMode();
+  const { correct, options } = buildMCOptions(q, QUIZ.pool, dmode);
+  const host = $("#answerMC");
+  host.innerHTML = "";
+  options.forEach((opt, i) => {
+    const b = document.createElement("button");
+    b.className = "choice";
+    b.dataset.index = String(i);
+    b.dataset.value = opt;
+    const index = document.createElement("span");
+    index.className = "choiceIndex";
+    index.textContent = String(i + 1);
+    const label = document.createElement("span");
+    label.className = "choiceText";
+    label.textContent = opt;
+    b.append(index, label);
+    b.addEventListener("click", () => submitMC(opt, correct));
+    host.appendChild(b);
+  });
+}
+
+function lockMC(correct, picked) {
+  const buttons = $$("#answerMC .choice");
+  buttons.forEach(b => {
+    b.disabled = true;
+    const value = b.dataset.value || b.textContent;
+    if (value === correct) b.classList.add("correct");
+    if (value === picked && picked !== correct) b.classList.add("wrong");
+  });
+}
+
+function showFeedback(ok, detail) {
+  const fb = $("#feedback");
+  fb.classList.remove("hidden");
+  fb.classList.toggle("good", ok);
+  fb.classList.toggle("bad", !ok);
+  fb.textContent = detail;
+}
+
+function submitMC(picked, correct) {
+  if (QUIZ.awaitingNext) return;
+  const q = QUIZ.current;
+  const ok = picked === correct;
+  QUIZ.awaitingNext = true;
+  lockMC(correct, picked);
+  $("#btnNext").disabled = false;
+
+  recordAttempt(q.item.id, ok);
+  if (ok) QUIZ.correctCount += 1;
+
+  const exp = correctAnswerText(q, getDMode());
+  const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
+  showFeedback(ok, detail);
+}
+
+function submitTyping() {
+  if (QUIZ.awaitingNext) return;
+  const q = QUIZ.current;
+  const user = $("#answerInput").value;
+  if (!user.trim()) {
+    toast("Type an answer first.");
+    return;
+  }
+  const ok = gradeTyping(q, user, getDMode());
+  QUIZ.awaitingNext = true;
+  $("#btnNext").disabled = false;
+
+  recordAttempt(q.item.id, ok);
+  if (ok) QUIZ.correctCount += 1;
+
+  const exp = correctAnswerText(q, getDMode());
+  const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
+  showFeedback(ok, detail);
+}
+
+function endQuiz() {
+  QUIZ.active = false;
+  const total = QUIZ.questions.length;
+  const correct = QUIZ.correctCount;
+  toast(`Finished: ${correct}/${total}`);
+  renderStats();
+  resetQuizUI();
+}
+
+function buildVocabUI() {
+  const starOnly = $("#vStarOnly").checked;
+  const lessonFilter = $("#vLessonFilter").value;
+  const display = $("#vDisplay").value;
+  const q = ($("#vSearch").value || "").trim();
+
+  let rows = ITEMS.slice();
+  if (lessonFilter && lessonFilter !== "__all__") {
+    rows = rows.filter(it => lesson_code(it.lesson) === lessonFilter);
+  }
+  if (starOnly) rows = rows.filter(it => isStarred(it.id));
+  if (q) {
+    const qn = q.toLowerCase();
+    rows = rows.filter(it =>
+      (it.en || "").toLowerCase().includes(qn) ||
+      (it.jp_kana || "").includes(q) ||
+      (it.jp_kanji || "").includes(q)
+    );
+  }
+
+  const host = $("#vTable");
+  host.innerHTML = "";
+  rows.forEach(it => {
+    const tr = document.createElement("tr");
+    const starOn = isStarred(it.id);
+    tr.innerHTML = `
+      <td><button class="starBtn ${starOn ? "on" : ""}" data-id="${it.id}">${starOn ? "⭐" : "☆"}</button></td>
+      <td><div style="font-weight:800;">${jpDisplay(it, display)}</div><div class="hint">${it.id}</div></td>
+      <td>${it.en}</td>
+      <td><span class="hint">${it.lesson}</span></td>
+      <td><button class="audioBtn" data-a="${it.id}">🔊</button></td>
+    `;
+    host.appendChild(tr);
+  });
+
+  host.querySelectorAll(".starBtn").forEach(b => {
+    b.addEventListener("click", () => {
+      const id = b.getAttribute("data-id");
+      const on = toggleStar(id);
+      b.textContent = on ? "⭐" : "☆";
+      b.classList.toggle("on", on);
+    });
+  });
+
+  host.querySelectorAll(".audioBtn").forEach(b => {
+    const isOn = SETTINGS.audioOn;
+    b.disabled = !isOn;
+    b.title = isOn ? "Play audio (=)" : "Audio is off in Settings";
+    b.addEventListener("click", async () => {
+      const id = b.getAttribute("data-a");
+      const it = ITEMS_BY_ID.get(id);
+      await playItemAudio(it);
+    });
+  });
+
+  $("#vCountHint").textContent = `Showing ${rows.length} of ${ITEMS.length} total.`;
+}
+
+function renderStats() {
+  const s = getStats();
+  $("#statTotalAttempts").textContent = String(s.attempts || 0);
+  const acc = (s.attempts ? Math.round((s.correct/s.attempts)*100) : 0);
+  $("#statAccuracy").textContent = `${acc}%`;
+
+  const arr = Object.entries(s.perItem || {})
+    .map(([id, v]) => ({ id, a: v.a || 0, c: v.c || 0, miss: (v.a||0)-(v.c||0) }))
+    .filter(x => x.a >= 3 && x.miss > 0)
+    .sort((a,b) => b.miss - a.miss)
+    .slice(0, 10);
+
+  const host = $("#missList");
+  if (!arr.length) {
+    host.textContent = "No misses yet (or not enough attempts).";
+    return;
+  }
+  host.innerHTML = "";
+  arr.forEach(x => {
+    const it = ITEMS_BY_ID.get(x.id);
+    const row = document.createElement("div");
+    row.className = "missRow";
+    row.innerHTML = `
+      <div>
+        <div style="font-weight:900;">${it ? jpDisplay(it, "both") : x.id}</div>
+        <div class="hint">${it ? it.en : ""} • Misses: ${x.miss}/${x.a}</div>
+      </div>
+      <div class="row gap">
+        <button class="btn subtle" data-play="${x.id}">🔊</button>
+        <button class="btn subtle" data-star="${x.id}">${isStarred(x.id) ? "⭐" : "☆"}</button>
+      </div>
+    `;
+    host.appendChild(row);
+  });
+
+  host.querySelectorAll("[data-play]").forEach(b => {
+    b.addEventListener("click", () => {
+      const it = ITEMS_BY_ID.get(b.getAttribute("data-play"));
+      playItemAudio(it);
+    });
+  });
+  host.querySelectorAll("[data-star]").forEach(b => {
+    b.addEventListener("click", () => {
+      const id = b.getAttribute("data-star");
+      const on = toggleStar(id);
+      b.textContent = on ? "⭐" : "☆";
+    });
+  });
+}
+
+function wireUI() {
+  const hasFinePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+  const isDesktopInput = hasFinePointer && !("ontouchstart" in window);
+
+  $$(".navBtn").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
+
+  $("#btnSelectAll").addEventListener("click", () => {
+    $$("#lessonList input[type=checkbox]").forEach(x => x.checked = true);
+    refreshHeaderCounts(); updateLessonHint(); buildVocabUI();
+  });
+  $("#btnClearAll").addEventListener("click", () => {
+    $$("#lessonList input[type=checkbox]").forEach(x => x.checked = false);
+    refreshHeaderCounts(); updateLessonHint(); buildVocabUI();
+  });
+  $("#btnStarredOnly").addEventListener("click", () => {
+    $$("#lessonList input[type=checkbox]").forEach(x => x.checked = true);
+    $("#filterStarredOnly").checked = true;
+    refreshHeaderCounts(); updateLessonHint(); buildVocabUI();
+  });
+
+  $("#btnStart").addEventListener("click", () => startQuiz(false));
+  $("#btnPracticeStarred").addEventListener("click", () => startQuiz(true));
+
+  $("#btnReplay").addEventListener("click", () => {
+    if (!QUIZ.current) return;
+    playItemAudio(QUIZ.current.item);
+  });
+  $("#btnToggleStar").addEventListener("click", () => {
+    if (!QUIZ.current) return;
+    const on = toggleStar(QUIZ.current.item.id);
+    $("#btnToggleStar").textContent = on ? "⭐" : "☆";
+  });
+
+  const handleEnterAction = () => {
+    if (!QUIZ.active) return;
+    if (QUIZ.awaitingNext) {
+      advanceToNext();
+      return;
+    }
+    if (!$("#answerType").classList.contains("hidden")) {
+      if (!$("#answerInput").value.trim()) {
+        toast("Type an answer first.");
+        return;
+      }
+      submitTyping();
+      return;
+    }
+    if (!$("#answerMC").classList.contains("hidden")) {
+      toast("Pick an answer first.");
+    }
+  };
+
+  $("#btnSubmit").addEventListener("click", submitTyping);
+  $("#answerInput").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      e.stopPropagation();
+      handleEnterAction();
+    }
+  });
+
+  function advanceToNext() {
+    if (!QUIZ.active) return;
+    if (!QUIZ.awaitingNext) {
+      toast("Submit an answer first.");
+      return;
+    }
+    QUIZ.idx += 1;
+    nextQuestion();
+  }
+
+  $("#btnNext").addEventListener("click", advanceToNext);
+
+  $("#btnEnd").addEventListener("click", () => endQuiz());
+
+  $("#vSearch").addEventListener("input", buildVocabUI);
+  $("#vLessonFilter").addEventListener("change", buildVocabUI);
+  $("#vStarOnly").addEventListener("change", buildVocabUI);
+  $("#vDisplay").addEventListener("change", buildVocabUI);
+  $("#vReset").addEventListener("click", () => {
+    $("#vSearch").value = "";
+    $("#vLessonFilter").value = "__all__";
+    $("#vStarOnly").checked = false;
+    $("#vDisplay").value = "kana";
+    buildVocabUI();
+  });
+
+  $("#setAudioOn").addEventListener("change", () => {
+    SETTINGS = setSettings({ audioOn: $("#setAudioOn").checked });
+    buildVocabUI();
+  });
+  $("#setVolume").addEventListener("input", () => {
+    SETTINGS = setSettings({ volume: Number($("#setVolume").value) });
+  });
+  $("#setAutoplay").addEventListener("change", () => {
+    SETTINGS = setSettings({ autoplay: $("#setAutoplay").checked });
+  });
+  $("#setSmartGrade").addEventListener("change", () => {
+    SETTINGS = setSettings({ smartGrade: $("#setSmartGrade").checked });
+  });
+  $("#btnAudioCheck").addEventListener("click", async () => {
+    const summary = $("#audioCheckSummary");
+    summary.textContent = "Checking audio files…";
+    clearAudioCache();
+    const ids = ITEMS.map((item) => item.id);
+    let found = 0;
+    const missing = [];
+    for (const id of ids) {
+      if (await hasAudioFile(id)) {
+        found += 1;
+      } else {
+        missing.push(id);
+      }
+    }
+    summary.textContent = `Found ${found}/${ids.length} audio files.`;
+    if (missing.length) {
+      console.warn("Missing audio files (first 10):", missing.slice(0, 10));
+    }
+  });
+
+  $("#btnCurrentAudioList").addEventListener("click", async () => {
+    await buildCurrentAudioList({ force: true });
+  });
+
+  $("#btnCloseCurrentAudio").addEventListener("click", () => {
+    $("#currentAudioList").classList.add("hidden");
+  });
+
+  $("#currentAudioMissingOnly").addEventListener("change", () => {
+    if ($("#currentAudioList").classList.contains("hidden")) return;
+    if (!CURRENT_AUDIO_ENTRIES.length) {
+      buildCurrentAudioList({ force: true });
+      return;
+    }
+    renderCurrentAudioList(CURRENT_AUDIO_ENTRIES);
+  });
+
+  $("#btnReloadData").addEventListener("click", async () => {
+    toast("Reloading lessons…");
+    await loadData();
+    toast("Reloaded.");
+  });
+  $("#btnResetStars").addEventListener("click", () => {
+    if (!confirm("Reset all stars on this device?")) return;
+    STARRED = new Set();
+    saveStars();
+    localStorage.removeItem(STORAGE.seeded);
+    buildVocabUI();
+    refreshHeaderCounts();
+    if (QUIZ.current) setStarButton(QUIZ.current.item);
+    toast("Stars reset.");
+  });
+  $("#btnResetStats").addEventListener("click", () => {
+    if (!confirm("Reset stats on this device?")) return;
+    saveJSON(STORAGE.stats, { attempts: 0, correct: 0, perItem: {} });
+    renderStats();
+    toast("Stats reset.");
+  });
+
+  window.addEventListener("keydown", (e) => {
+    const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
+    const inInput = tag === "input" || tag === "textarea";
+    const key = e.key;
+
+    if (key === "/" && QUIZ.active) {
+      e.preventDefault();
+      if (!$("#answerType").classList.contains("hidden")) $("#answerInput").focus();
+      return;
+    }
+
+    if (!QUIZ.active) return;
+
+    if (key === "=") {
+      e.preventDefault();
+      if (QUIZ.current) playItemAudio(QUIZ.current.item);
+      return;
+    }
+    if (key === "`") {
+      e.preventDefault();
+      if (QUIZ.current) {
+        const on = toggleStar(QUIZ.current.item.id);
+        $("#btnToggleStar").textContent = on ? "⭐" : "☆";
+      }
+      return;
+    }
+
+    if (!$("#answerMC").classList.contains("hidden")) {
+      if (isDesktopInput && ["1","2","3","4"].includes(key)) {
+        e.preventDefault();
+        const idx = Number(key) - 1;
+        const btn = $$("#answerMC .choice")[idx];
+        if (btn) btn.click();
+        return;
+      }
+    }
+
+    if (!$("#answerType").classList.contains("hidden")) {
+      if (key === "Enter" && !inInput) {
+        e.preventDefault();
+        handleEnterAction();
+      }
+    }
+
+    if (key === "Enter") {
+      e.preventDefault();
+      handleEnterAction();
+    }
+  });
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  }
+
+  showView("study");
+  applySettingsToUI(SETTINGS);
+}
+
+(async function init() {
+  $("#settingsHint").textContent = "Stars and stats are saved only on this device/browser (personal).";
+  SETTINGS = getSettings();
+  applySettingsToUI(SETTINGS);
+  wireUI();
+  await loadData();
+})();

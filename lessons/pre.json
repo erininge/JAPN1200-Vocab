@@ -1,0 +1,458 @@
+[
+  {
+    "jp_kana": "～ぐらい",
+    "jp_kanji": "",
+    "en": "about / approximately",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_001"
+  },
+  {
+    "jp_kana": "～じかん",
+    "jp_kanji": "～時間",
+    "en": "… hours",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_002"
+  },
+  {
+    "jp_kana": "～と",
+    "jp_kanji": "",
+    "en": "together with / and",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_003"
+  },
+  {
+    "jp_kana": "あいだ",
+    "jp_kanji": "間",
+    "en": "between (A と B の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_004"
+  },
+  {
+    "jp_kana": "あう",
+    "jp_kanji": "会う",
+    "en": "to meet, to see (a person), (person に)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_005"
+  },
+  {
+    "jp_kana": "あなた",
+    "jp_kanji": "",
+    "en": "you",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_006"
+  },
+  {
+    "jp_kana": "ある",
+    "jp_kanji": "",
+    "en": "there is ..., (place に thing が)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_007"
+  },
+  {
+    "jp_kana": "アルバイト",
+    "jp_kanji": "",
+    "en": "part-time job, (more colloquially) バイト",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_008"
+  },
+  {
+    "jp_kana": "イス",
+    "jp_kanji": "",
+    "en": "chair",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_009"
+  },
+  {
+    "jp_kana": "いちじかん",
+    "jp_kanji": "一時間",
+    "en": "one hour",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_010"
+  },
+  {
+    "jp_kana": "いぬ",
+    "jp_kanji": "犬",
+    "en": "dog",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_011"
+  },
+  {
+    "jp_kana": "いる",
+    "jp_kanji": "",
+    "en": "(a person) is in ...; stays at ..., (place に person が)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_012"
+  },
+  {
+    "jp_kana": "うえ",
+    "jp_kanji": "上",
+    "en": "up, above, on, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_013"
+  },
+  {
+    "jp_kana": "うしろ",
+    "jp_kanji": "後ろ",
+    "en": "back, behind, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_014"
+  },
+  {
+    "jp_kana": "おてら",
+    "jp_kanji": "お寺",
+    "en": "temple",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_015"
+  },
+  {
+    "jp_kana": "かいもの",
+    "jp_kanji": "買い物",
+    "en": "shopping",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_016"
+  },
+  {
+    "jp_kana": "かう",
+    "jp_kanji": "買う",
+    "en": "to buy, (～を)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_017"
+  },
+  {
+    "jp_kana": "かく",
+    "jp_kanji": "書く",
+    "en": "to write, (person に thing を)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_018"
+  },
+  {
+    "jp_kana": "きのう",
+    "jp_kanji": "昨日",
+    "en": "yesterday",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_019"
+  },
+  {
+    "jp_kana": "クラス",
+    "jp_kanji": "",
+    "en": "class",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_020"
+  },
+  {
+    "jp_kana": "ゲーム",
+    "jp_kanji": "",
+    "en": "game",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_021"
+  },
+  {
+    "jp_kana": "こうえん",
+    "jp_kanji": "公園",
+    "en": "park",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_022"
+  },
+  {
+    "jp_kana": "こども",
+    "jp_kanji": "子供",
+    "en": "child",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_023"
+  },
+  {
+    "jp_kana": "ごはん",
+    "jp_kanji": "ご飯",
+    "en": "rice, meal",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_024"
+  },
+  {
+    "jp_kana": "ごめんなさい",
+    "jp_kanji": "",
+    "en": "I'm sorry.",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_025"
+  },
+  {
+    "jp_kana": "した",
+    "jp_kanji": "下",
+    "en": "down, below, under, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_026"
+  },
+  {
+    "jp_kana": "しゃしん",
+    "jp_kanji": "写真",
+    "en": "picture, photograph",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_027"
+  },
+  {
+    "jp_kana": "スーパー",
+    "jp_kanji": "",
+    "en": "supermarket",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_028"
+  },
+  {
+    "jp_kana": "せんしゅう",
+    "jp_kanji": "先週",
+    "en": "last week",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_029"
+  },
+  {
+    "jp_kana": "それから",
+    "jp_kanji": "",
+    "en": "and then",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_030"
+  },
+  {
+    "jp_kana": "だから",
+    "jp_kanji": "",
+    "en": "so, therefore",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_031"
+  },
+  {
+    "jp_kana": "たくさん",
+    "jp_kanji": "",
+    "en": "many, a lot",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_032"
+  },
+  {
+    "jp_kana": "ちかく",
+    "jp_kanji": "近く",
+    "en": "near, nearby, near to, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_033"
+  },
+  {
+    "jp_kana": "つくえ",
+    "jp_kanji": "机",
+    "en": "desk",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_034"
+  },
+  {
+    "jp_kana": "どうして",
+    "jp_kanji": "",
+    "en": "why",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_035"
+  },
+  {
+    "jp_kana": "とき",
+    "jp_kanji": "時",
+    "en": "when ..., at the time of ... (～の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_036"
+  },
+  {
+    "jp_kana": "となり",
+    "jp_kanji": "隣",
+    "en": "next, next to, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_037"
+  },
+  {
+    "jp_kana": "とる",
+    "jp_kanji": "撮る",
+    "en": "to take (a picture), (～を)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_038"
+  },
+  {
+    "jp_kana": "なか",
+    "jp_kanji": "中",
+    "en": "inside, in, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_039"
+  },
+  {
+    "jp_kana": "ねこ",
+    "jp_kanji": "猫",
+    "en": "cat",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_040"
+  },
+  {
+    "jp_kana": "バスてい",
+    "jp_kanji": "バス停",
+    "en": "bus stop",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_041"
+  },
+  {
+    "jp_kana": "はな",
+    "jp_kanji": "花",
+    "en": "flower",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_042"
+  },
+  {
+    "jp_kana": "パン",
+    "jp_kanji": "",
+    "en": "bread",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_043"
+  },
+  {
+    "jp_kana": "ひだり",
+    "jp_kanji": "左",
+    "en": "left, to the left of, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_044"
+  },
+  {
+    "jp_kana": "ひとりで",
+    "jp_kanji": "一人で",
+    "en": "alone",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_045"
+  },
+  {
+    "jp_kana": "ひと",
+    "jp_kanji": "人",
+    "en": "person",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_046"
+  },
+  {
+    "jp_kana": "びょういん",
+    "jp_kanji": "病院",
+    "en": "hospital",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_047"
+  },
+  {
+    "jp_kana": "ホテル",
+    "jp_kanji": "",
+    "en": "hotel",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_048"
+  },
+  {
+    "jp_kana": "ほんや",
+    "jp_kanji": "本屋",
+    "en": "bookstore",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_049"
+  },
+  {
+    "jp_kana": "まえ",
+    "jp_kanji": "前",
+    "en": "front, in front of, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_050"
+  },
+  {
+    "jp_kana": "まち",
+    "jp_kanji": "町",
+    "en": "town, city",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_051"
+  },
+  {
+    "jp_kana": "まつ",
+    "jp_kanji": "待つ",
+    "en": "to wait, (～を)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_052"
+  },
+  {
+    "jp_kana": "みぎ",
+    "jp_kanji": "右",
+    "en": "right, to the right of, (~の)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_053"
+  },
+  {
+    "jp_kana": "もしもし",
+    "jp_kanji": "",
+    "en": "Hello?, (used on the phone)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_054"
+  },
+  {
+    "jp_kana": "レストラン",
+    "jp_kanji": "",
+    "en": "restaurant",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_055"
+  },
+  {
+    "jp_kana": "レポート",
+    "jp_kanji": "",
+    "en": "(term) paper, report",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_056"
+  },
+  {
+    "jp_kana": "わかる",
+    "jp_kanji": "",
+    "en": "to understand, (～が)",
+    "lesson": "pre course words",
+    "default_starred": false,
+    "id": "jpln1200_pre_057"
+  }
+]

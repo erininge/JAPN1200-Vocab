@@ -1,0 +1,26 @@
+[
+  {
+    "jp_kana": "サークル",
+    "jp_kanji": "",
+    "en": "club activity",
+    "lesson": "Lesson 2",
+    "default_starred": true,
+    "id": "jpln1200_l2_001"
+  },
+  {
+    "jp_kana": "テスト",
+    "jp_kanji": "",
+    "en": "test",
+    "lesson": "Lesson 2",
+    "default_starred": true,
+    "id": "jpln1200_l2_002"
+  },
+  {
+    "jp_kana": "パーティー",
+    "jp_kanji": "",
+    "en": "party",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_003"
+  }
+]
