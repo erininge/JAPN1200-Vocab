@@ -682,7 +682,8 @@ function setStarButton(item) {
 
 function maybeAutoplay(q) {
   if (!SETTINGS.autoplay) return;
-  if (q.qmode.startsWith("listen")) playItemAudio(q.item);
+  const isJapaneseQuestion = q.qmode === "jp2en" || q.qmode.startsWith("listen");
+  if (isJapaneseQuestion) playItemAudio(q.item);
 }
 
 function nextQuestion() {
@@ -719,7 +720,7 @@ function nextQuestion() {
     renderMC(q);
   }
 
-  if (q.qmode.startsWith("listen")) maybeAutoplay(q);
+  maybeAutoplay(q);
 }
 
 function renderMC(q) {
