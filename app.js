@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.2) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.3) */
 
-const APP_VERSION = "V3.2";
+const APP_VERSION = "V3.3";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -450,11 +450,13 @@ function updateListeningAvailability() {
   const on = SETTINGS.audioOn;
   const listenEn = $("#qListenEN");
   const listenJp = $("#qListenJP");
+  const listenMixed = $("#qListenMixed");
   listenEn.disabled = !on;
   listenJp.disabled = !on;
+  if (listenMixed) listenMixed.disabled = !on;
   if (!on) {
     const select = $("#qModeSelect");
-    if (select.value.startsWith("listen")) {
+    if (select.value.startsWith("listen") || select.value === "mixedlisten") {
       select.value = "mixed";
     }
   }
@@ -553,7 +555,10 @@ function makeQuestion(item, qmode, atype) {
   let qm = qmode;
   if (qm === "mixed") {
     const allowed = ["en2jp","jp2en"];
-    if (SETTINGS.audioOn) allowed.push("listen2en","listen2jp");
+    qm = allowed[Math.floor(Math.random()*allowed.length)];
+  }
+  if (qm === "mixedlisten") {
+    const allowed = SETTINGS.audioOn ? ["listen2en","listen2jp"] : ["en2jp","jp2en"];
     qm = allowed[Math.floor(Math.random()*allowed.length)];
   }
   let am = atype;
@@ -1122,6 +1127,12 @@ function wireUI() {
       const idx = Number(key) - 1;
       const btn = $$("#answerMC .choice")[idx];
       if (btn) btn.click();
+      return;
+    }
+
+    if (key === "Enter" && QUIZ.active && !inInput) {
+      e.preventDefault();
+      handleEnterAction();
       return;
     }
 
