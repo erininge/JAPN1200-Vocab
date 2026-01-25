@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.0) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.1) */
 
-const APP_VERSION = "V3.0";
+const APP_VERSION = "V3.1";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -682,7 +682,8 @@ function setStarButton(item) {
 
 function maybeAutoplay(q) {
   if (!SETTINGS.autoplay) return;
-  if (q.qmode.startsWith("listen")) playItemAudio(q.item);
+  const isJapaneseQuestion = q.qmode === "jp2en" || q.qmode.startsWith("listen");
+  if (isJapaneseQuestion) playItemAudio(q.item);
 }
 
 function nextQuestion() {
@@ -719,7 +720,7 @@ function nextQuestion() {
     renderMC(q);
   }
 
-  if (q.qmode.startsWith("listen")) maybeAutoplay(q);
+  maybeAutoplay(q);
 }
 
 function renderMC(q) {
