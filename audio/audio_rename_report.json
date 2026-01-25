@@ -1,0 +1,808 @@
+{
+  "renamed": [
+    {
+      "from": "audio/raw/001_東北きりたん（ノーマル）_いつ.wav",
+      "to": "audio/jpln1200_l1_001.wav",
+      "itemId": "jpln1200_l1_001",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/002_東北きりたん（ノーマル）_家.wav",
+      "to": "audio/jpln1200_l1_002.wav",
+      "itemId": "jpln1200_l1_002",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/003_東北きりたん（ノーマル）_鉛筆.wav",
+      "to": "audio/jpln1200_l1_003.wav",
+      "itemId": "jpln1200_l1_003",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/004_東北きりたん（ノーマル）_学校.wav",
+      "to": "audio/jpln1200_l1_004.wav",
+      "itemId": "jpln1200_l1_004",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/005_東北きりたん（ノーマル）_教室.wav",
+      "to": "audio/jpln1200_l1_005.wav",
+      "itemId": "jpln1200_l1_005",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/006_東北きりたん（ノーマル）_銀行.wav",
+      "to": "audio/jpln1200_l1_006.wav",
+      "itemId": "jpln1200_l1_006",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/007_東北きりたん（ノーマル）_車.wav",
+      "to": "audio/jpln1200_l1_007.wav",
+      "itemId": "jpln1200_l1_007",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/008_東北きりたん（ノーマル）_じゃありません.wav",
+      "to": "audio/jpln1200_l1_008.wav",
+      "itemId": "jpln1200_l1_008",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/009_東北きりたん（ノーマル）_じゃありませんでした.wav",
+      "to": "audio/jpln1200_l1_009.wav",
+      "itemId": "jpln1200_l1_009",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/010_東北きりたん（ノーマル）_大学.wav",
+      "to": "audio/jpln1200_l1_010.wav",
+      "itemId": "jpln1200_l1_010",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/011_東北きりたん（ノーマル）_でした.wav",
+      "to": "audio/jpln1200_l1_011.wav",
+      "itemId": "jpln1200_l1_011",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/012_東北きりたん（ノーマル）_どこ.wav",
+      "to": "audio/jpln1200_l1_012.wav",
+      "itemId": "jpln1200_l1_012",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/013_東北きりたん（ノーマル）_図書館.wav",
+      "to": "audio/jpln1200_l1_013.wav",
+      "itemId": "jpln1200_l1_013",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/014_東北きりたん（ノーマル）_何時.wav",
+      "to": "audio/jpln1200_l1_014.wav",
+      "itemId": "jpln1200_l1_014",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/015_東北きりたん（ノーマル）_部屋.wav",
+      "to": "audio/jpln1200_l1_015.wav",
+      "itemId": "jpln1200_l1_015",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/016_東北きりたん（ノーマル）_本.wav",
+      "to": "audio/jpln1200_l1_016.wav",
+      "itemId": "jpln1200_l1_016",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/017_東北きりたん（ノーマル）_向かい.wav",
+      "to": "audio/jpln1200_l1_017.wav",
+      "itemId": "jpln1200_l1_017",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/018_東北きりたん（ノーマル）_サークル.wav",
+      "to": "audio/jpln1200_l2_001.wav",
+      "itemId": "jpln1200_l2_001",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/019_東北きりたん（ノーマル）_テスト.wav",
+      "to": "audio/jpln1200_l2_002.wav",
+      "itemId": "jpln1200_l2_002",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/020_東北きりたん（ノーマル）_パーティー.wav",
+      "to": "audio/jpln1200_l2_003.wav",
+      "itemId": "jpln1200_l2_003",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/021_東北きりたん（ノーマル）_カフェ.wav",
+      "to": "audio/jpln1200_l3_001.wav",
+      "itemId": "jpln1200_l3_001",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/022_東北きりたん（ノーマル）_高校.wav",
+      "to": "audio/jpln1200_l3_002.wav",
+      "itemId": "jpln1200_l3_002",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/023_東北きりたん（ノーマル）_コンビニ.wav",
+      "to": "audio/jpln1200_l3_003.wav",
+      "itemId": "jpln1200_l3_003",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/024_東北きりたん（ノーマル）_郵便局.wav",
+      "to": "audio/jpln1200_l3_004.wav",
+      "itemId": "jpln1200_l3_004",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/025_東北きりたん（ノーマル）_一月.wav",
+      "to": "audio/jpln1200_l3_5_001.wav",
+      "itemId": "jpln1200_l3_5_001",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/026_東北きりたん（ノーマル）_いつか.wav",
+      "to": "audio/jpln1200_l3_5_002.wav",
+      "itemId": "jpln1200_l3_5_002",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/027_東北きりたん（ノーマル）_火曜日.wav",
+      "to": "audio/jpln1200_l3_5_003.wav",
+      "itemId": "jpln1200_l3_5_003",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/028_東北きりたん（ノーマル）_金曜日.wav",
+      "to": "audio/jpln1200_l3_5_004.wav",
+      "itemId": "jpln1200_l3_5_004",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/029_東北きりたん（ノーマル）_九月.wav",
+      "to": "audio/jpln1200_l3_5_005.wav",
+      "itemId": "jpln1200_l3_5_005",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/030_東北きりたん（ノーマル）_月曜日.wav",
+      "to": "audio/jpln1200_l3_5_006.wav",
+      "itemId": "jpln1200_l3_5_006",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/031_東北きりたん（ノーマル）_五月.wav",
+      "to": "audio/jpln1200_l3_5_007.wav",
+      "itemId": "jpln1200_l3_5_007",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/032_東北きりたん（ノーマル）_ここのか.wav",
+      "to": "audio/jpln1200_l3_5_008.wav",
+      "itemId": "jpln1200_l3_5_008",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/033_東北きりたん（ノーマル）_三月.wav",
+      "to": "audio/jpln1200_l3_5_009.wav",
+      "itemId": "jpln1200_l3_5_009",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/034_東北きりたん（ノーマル）_三十一日.wav",
+      "to": "audio/jpln1200_l3_5_010.wav",
+      "itemId": "jpln1200_l3_5_010",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/035_東北きりたん（ノーマル）_三十日.wav",
+      "to": "audio/jpln1200_l3_5_011.wav",
+      "itemId": "jpln1200_l3_5_011",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/036_東北きりたん（ノーマル）_七月.wav",
+      "to": "audio/jpln1200_l3_5_012.wav",
+      "itemId": "jpln1200_l3_5_012",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/037_東北きりたん（ノーマル）_十一月.wav",
+      "to": "audio/jpln1200_l3_5_013.wav",
+      "itemId": "jpln1200_l3_5_013",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/038_東北きりたん（ノーマル）_十一日.wav",
+      "to": "audio/jpln1200_l3_5_014.wav",
+      "itemId": "jpln1200_l3_5_014",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/039_東北きりたん（ノーマル）_十月.wav",
+      "to": "audio/jpln1200_l3_5_015.wav",
+      "itemId": "jpln1200_l3_5_015",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/040_東北きりたん（ノーマル）_十九日.wav",
+      "to": "audio/jpln1200_l3_5_016.wav",
+      "itemId": "jpln1200_l3_5_016",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/041_東北きりたん（ノーマル）_十五日.wav",
+      "to": "audio/jpln1200_l3_5_017.wav",
+      "itemId": "jpln1200_l3_5_017",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/042_東北きりたん（ノーマル）_十三日.wav",
+      "to": "audio/jpln1200_l3_5_018.wav",
+      "itemId": "jpln1200_l3_5_018",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/043_東北きりたん（ノーマル）_十七日.wav",
+      "to": "audio/jpln1200_l3_5_019.wav",
+      "itemId": "jpln1200_l3_5_019",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/044_東北きりたん（ノーマル）_十二月.wav",
+      "to": "audio/jpln1200_l3_5_020.wav",
+      "itemId": "jpln1200_l3_5_020",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/045_東北きりたん（ノーマル）_十二日.wav",
+      "to": "audio/jpln1200_l3_5_021.wav",
+      "itemId": "jpln1200_l3_5_021",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/046_東北きりたん（ノーマル）_十八日.wav",
+      "to": "audio/jpln1200_l3_5_022.wav",
+      "itemId": "jpln1200_l3_5_022",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/047_東北きりたん（ノーマル）_じゅうよっか.wav",
+      "to": "audio/jpln1200_l3_5_023.wav",
+      "itemId": "jpln1200_l3_5_023",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/048_東北きりたん（ノーマル）_十六日.wav",
+      "to": "audio/jpln1200_l3_5_024.wav",
+      "itemId": "jpln1200_l3_5_024",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/049_東北きりたん（ノーマル）_週.wav",
+      "to": "audio/jpln1200_l3_5_025.wav",
+      "itemId": "jpln1200_l3_5_025",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/050_東北きりたん（ノーマル）_水曜日.wav",
+      "to": "audio/jpln1200_l3_5_026.wav",
+      "itemId": "jpln1200_l3_5_026",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/051_東北きりたん（ノーマル）_ついたち.wav",
+      "to": "audio/jpln1200_l3_5_027.wav",
+      "itemId": "jpln1200_l3_5_027",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/052_東北きりたん（ノーマル）_月.wav",
+      "to": "audio/jpln1200_l3_5_028.wav",
+      "itemId": "jpln1200_l3_5_028",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/053_東北きりたん（ノーマル）_とおか.wav",
+      "to": "audio/jpln1200_l3_5_029.wav",
+      "itemId": "jpln1200_l3_5_029",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/054_東北きりたん（ノーマル）_年.wav",
+      "to": "audio/jpln1200_l3_5_030.wav",
+      "itemId": "jpln1200_l3_5_030",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/055_東北きりたん（ノーマル）_土曜日.wav",
+      "to": "audio/jpln1200_l3_5_031.wav",
+      "itemId": "jpln1200_l3_5_031",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/056_東北きりたん（ノーマル）_なのか.wav",
+      "to": "audio/jpln1200_l3_5_032.wav",
+      "itemId": "jpln1200_l3_5_032",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/057_東北きりたん（ノーマル）_二月.wav",
+      "to": "audio/jpln1200_l3_5_033.wav",
+      "itemId": "jpln1200_l3_5_033",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/058_東北きりたん（ノーマル）_二十一日.wav",
+      "to": "audio/jpln1200_l3_5_034.wav",
+      "itemId": "jpln1200_l3_5_034",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/059_東北きりたん（ノーマル）_二十九日.wav",
+      "to": "audio/jpln1200_l3_5_035.wav",
+      "itemId": "jpln1200_l3_5_035",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/060_東北きりたん（ノーマル）_二十五日.wav",
+      "to": "audio/jpln1200_l3_5_036.wav",
+      "itemId": "jpln1200_l3_5_036",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/061_東北きりたん（ノーマル）_二十三日.wav",
+      "to": "audio/jpln1200_l3_5_037.wav",
+      "itemId": "jpln1200_l3_5_037",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/062_東北きりたん（ノーマル）_二十七日.wav",
+      "to": "audio/jpln1200_l3_5_038.wav",
+      "itemId": "jpln1200_l3_5_038",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/063_東北きりたん（ノーマル）_二十二日.wav",
+      "to": "audio/jpln1200_l3_5_039.wav",
+      "itemId": "jpln1200_l3_5_039",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/064_東北きりたん（ノーマル）_二十八日.wav",
+      "to": "audio/jpln1200_l3_5_040.wav",
+      "itemId": "jpln1200_l3_5_040",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/065_東北きりたん（ノーマル）_二十四日.wav",
+      "to": "audio/jpln1200_l3_5_041.wav",
+      "itemId": "jpln1200_l3_5_041",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/066_東北きりたん（ノーマル）_二十六日.wav",
+      "to": "audio/jpln1200_l3_5_042.wav",
+      "itemId": "jpln1200_l3_5_042",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/067_東北きりたん（ノーマル）_日曜日.wav",
+      "to": "audio/jpln1200_l3_5_043.wav",
+      "itemId": "jpln1200_l3_5_043",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/068_東北きりたん（ノーマル）_八月.wav",
+      "to": "audio/jpln1200_l3_5_044.wav",
+      "itemId": "jpln1200_l3_5_044",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/069_東北きりたん（ノーマル）_はつか.wav",
+      "to": "audio/jpln1200_l3_5_045.wav",
+      "itemId": "jpln1200_l3_5_045",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/070_東北きりたん（ノーマル）_日.wav",
+      "to": "audio/jpln1200_l3_5_046.wav",
+      "itemId": "jpln1200_l3_5_046",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/071_東北きりたん（ノーマル）_ふつか.wav",
+      "to": "audio/jpln1200_l3_5_047.wav",
+      "itemId": "jpln1200_l3_5_047",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/072_東北きりたん（ノーマル）_みっか.wav",
+      "to": "audio/jpln1200_l3_5_048.wav",
+      "itemId": "jpln1200_l3_5_048",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/073_東北きりたん（ノーマル）_むいか.wav",
+      "to": "audio/jpln1200_l3_5_049.wav",
+      "itemId": "jpln1200_l3_5_049",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/074_東北きりたん（ノーマル）_木曜日.wav",
+      "to": "audio/jpln1200_l3_5_050.wav",
+      "itemId": "jpln1200_l3_5_050",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/075_東北きりたん（ノーマル）_ようか.wav",
+      "to": "audio/jpln1200_l3_5_051.wav",
+      "itemId": "jpln1200_l3_5_051",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/076_東北きりたん（ノーマル）_よっか.wav",
+      "to": "audio/jpln1200_l3_5_052.wav",
+      "itemId": "jpln1200_l3_5_052",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/077_東北きりたん（ノーマル）_四月.wav",
+      "to": "audio/jpln1200_l3_5_053.wav",
+      "itemId": "jpln1200_l3_5_053",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/078_東北きりたん（ノーマル）_六月.wav",
+      "to": "audio/jpln1200_l3_5_054.wav",
+      "itemId": "jpln1200_l3_5_054",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/082_東北きりたん（ノーマル）_間.wav",
+      "to": "audio/jpln1200_pre_004.wav",
+      "itemId": "jpln1200_pre_004",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/083_東北きりたん（ノーマル）_会う.wav",
+      "to": "audio/jpln1200_pre_005.wav",
+      "itemId": "jpln1200_pre_005",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/084_東北きりたん（ノーマル）_あなた.wav",
+      "to": "audio/jpln1200_pre_006.wav",
+      "itemId": "jpln1200_pre_006",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/085_東北きりたん（ノーマル）_ある.wav",
+      "to": "audio/jpln1200_pre_007.wav",
+      "itemId": "jpln1200_pre_007",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/086_東北きりたん（ノーマル）_アルバイト.wav",
+      "to": "audio/jpln1200_pre_008.wav",
+      "itemId": "jpln1200_pre_008",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/087_東北きりたん（ノーマル）_イス.wav",
+      "to": "audio/jpln1200_pre_009.wav",
+      "itemId": "jpln1200_pre_009",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/088_東北きりたん（ノーマル）_一時間.wav",
+      "to": "audio/jpln1200_pre_010.wav",
+      "itemId": "jpln1200_pre_010",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/089_東北きりたん（ノーマル）_犬.wav",
+      "to": "audio/jpln1200_pre_011.wav",
+      "itemId": "jpln1200_pre_011",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/090_東北きりたん（ノーマル）_いる.wav",
+      "to": "audio/jpln1200_pre_012.wav",
+      "itemId": "jpln1200_pre_012",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/091_東北きりたん（ノーマル）_上.wav",
+      "to": "audio/jpln1200_pre_013.wav",
+      "itemId": "jpln1200_pre_013",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/092_東北きりたん（ノーマル）_後ろ.wav",
+      "to": "audio/jpln1200_pre_014.wav",
+      "itemId": "jpln1200_pre_014",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/093_東北きりたん（ノーマル）_お寺.wav",
+      "to": "audio/jpln1200_pre_015.wav",
+      "itemId": "jpln1200_pre_015",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/094_東北きりたん（ノーマル）_買い物.wav",
+      "to": "audio/jpln1200_pre_016.wav",
+      "itemId": "jpln1200_pre_016",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/095_東北きりたん（ノーマル）_買う.wav",
+      "to": "audio/jpln1200_pre_017.wav",
+      "itemId": "jpln1200_pre_017",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/096_東北きりたん（ノーマル）_書く.wav",
+      "to": "audio/jpln1200_pre_018.wav",
+      "itemId": "jpln1200_pre_018",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/097_東北きりたん（ノーマル）_昨日.wav",
+      "to": "audio/jpln1200_pre_019.wav",
+      "itemId": "jpln1200_pre_019",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/098_東北きりたん（ノーマル）_クラス.wav",
+      "to": "audio/jpln1200_pre_020.wav",
+      "itemId": "jpln1200_pre_020",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/099_東北きりたん（ノーマル）_ゲーム.wav",
+      "to": "audio/jpln1200_pre_021.wav",
+      "itemId": "jpln1200_pre_021",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/100_東北きりたん（ノーマル）_公園.wav",
+      "to": "audio/jpln1200_pre_022.wav",
+      "itemId": "jpln1200_pre_022",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/101_東北きりたん（ノーマル）_子供.wav",
+      "to": "audio/jpln1200_pre_023.wav",
+      "itemId": "jpln1200_pre_023",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/102_東北きりたん（ノーマル）_ご飯.wav",
+      "to": "audio/jpln1200_pre_024.wav",
+      "itemId": "jpln1200_pre_024",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/103_東北きりたん（ノーマル）_ごめんなさい.wav",
+      "to": "audio/jpln1200_pre_025.wav",
+      "itemId": "jpln1200_pre_025",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/104_東北きりたん（ノーマル）_下.wav",
+      "to": "audio/jpln1200_pre_026.wav",
+      "itemId": "jpln1200_pre_026",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/105_東北きりたん（ノーマル）_写真.wav",
+      "to": "audio/jpln1200_pre_027.wav",
+      "itemId": "jpln1200_pre_027",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/106_東北きりたん（ノーマル）_スーパー.wav",
+      "to": "audio/jpln1200_pre_028.wav",
+      "itemId": "jpln1200_pre_028",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/107_東北きりたん（ノーマル）_先週.wav",
+      "to": "audio/jpln1200_pre_029.wav",
+      "itemId": "jpln1200_pre_029",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/108_東北きりたん（ノーマル）_それから.wav",
+      "to": "audio/jpln1200_pre_030.wav",
+      "itemId": "jpln1200_pre_030",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/109_東北きりたん（ノーマル）_だから.wav",
+      "to": "audio/jpln1200_pre_031.wav",
+      "itemId": "jpln1200_pre_031",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/110_東北きりたん（ノーマル）_たくさん.wav",
+      "to": "audio/jpln1200_pre_032.wav",
+      "itemId": "jpln1200_pre_032",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/111_東北きりたん（ノーマル）_近く.wav",
+      "to": "audio/jpln1200_pre_033.wav",
+      "itemId": "jpln1200_pre_033",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/112_東北きりたん（ノーマル）_机.wav",
+      "to": "audio/jpln1200_pre_034.wav",
+      "itemId": "jpln1200_pre_034",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/113_東北きりたん（ノーマル）_どうして.wav",
+      "to": "audio/jpln1200_pre_035.wav",
+      "itemId": "jpln1200_pre_035",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/114_東北きりたん（ノーマル）_時.wav",
+      "to": "audio/jpln1200_pre_036.wav",
+      "itemId": "jpln1200_pre_036",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/115_東北きりたん（ノーマル）_隣.wav",
+      "to": "audio/jpln1200_pre_037.wav",
+      "itemId": "jpln1200_pre_037",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/116_東北きりたん（ノーマル）_撮る.wav",
+      "to": "audio/jpln1200_pre_038.wav",
+      "itemId": "jpln1200_pre_038",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/117_東北きりたん（ノーマル）_中.wav",
+      "to": "audio/jpln1200_pre_039.wav",
+      "itemId": "jpln1200_pre_039",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/118_東北きりたん（ノーマル）_猫.wav",
+      "to": "audio/jpln1200_pre_040.wav",
+      "itemId": "jpln1200_pre_040",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/119_東北きりたん（ノーマル）_バス停.wav",
+      "to": "audio/jpln1200_pre_041.wav",
+      "itemId": "jpln1200_pre_041",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/120_東北きりたん（ノーマル）_花.wav",
+      "to": "audio/jpln1200_pre_042.wav",
+      "itemId": "jpln1200_pre_042",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/121_東北きりたん（ノーマル）_パン.wav",
+      "to": "audio/jpln1200_pre_043.wav",
+      "itemId": "jpln1200_pre_043",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/122_東北きりたん（ノーマル）_左.wav",
+      "to": "audio/jpln1200_pre_044.wav",
+      "itemId": "jpln1200_pre_044",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/123_東北きりたん（ノーマル）_一人で.wav",
+      "to": "audio/jpln1200_pre_045.wav",
+      "itemId": "jpln1200_pre_045",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/124_東北きりたん（ノーマル）_人.wav",
+      "to": "audio/jpln1200_pre_046.wav",
+      "itemId": "jpln1200_pre_046",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/125_東北きりたん（ノーマル）_病院.wav",
+      "to": "audio/jpln1200_pre_047.wav",
+      "itemId": "jpln1200_pre_047",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/126_東北きりたん（ノーマル）_ホテル.wav",
+      "to": "audio/jpln1200_pre_048.wav",
+      "itemId": "jpln1200_pre_048",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/127_東北きりたん（ノーマル）_本屋.wav",
+      "to": "audio/jpln1200_pre_049.wav",
+      "itemId": "jpln1200_pre_049",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/128_東北きりたん（ノーマル）_前.wav",
+      "to": "audio/jpln1200_pre_050.wav",
+      "itemId": "jpln1200_pre_050",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/129_東北きりたん（ノーマル）_町.wav",
+      "to": "audio/jpln1200_pre_051.wav",
+      "itemId": "jpln1200_pre_051",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/130_東北きりたん（ノーマル）_待つ.wav",
+      "to": "audio/jpln1200_pre_052.wav",
+      "itemId": "jpln1200_pre_052",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/131_東北きりたん（ノーマル）_右.wav",
+      "to": "audio/jpln1200_pre_053.wav",
+      "itemId": "jpln1200_pre_053",
+      "matchedBy": "jp_kanji"
+    },
+    {
+      "from": "audio/raw/132_東北きりたん（ノーマル）_もしもし.wav",
+      "to": "audio/jpln1200_pre_054.wav",
+      "itemId": "jpln1200_pre_054",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/133_東北きりたん（ノーマル）_レストラン.wav",
+      "to": "audio/jpln1200_pre_055.wav",
+      "itemId": "jpln1200_pre_055",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/134_東北きりたん（ノーマル）_レポート.wav",
+      "to": "audio/jpln1200_pre_056.wav",
+      "itemId": "jpln1200_pre_056",
+      "matchedBy": "jp_kana"
+    },
+    {
+      "from": "audio/raw/135_東北きりたん（ノーマル）_わかる.wav",
+      "to": "audio/jpln1200_pre_057.wav",
+      "itemId": "jpln1200_pre_057",
+      "matchedBy": "jp_kana"
+    }
+  ],
+  "unmatched_files": [
+    "079_東北きりたん（ノーマル）_ぐらい.wav",
+    "080_東北きりたん（ノーマル）_時間.wav",
+    "081_東北きりたん（ノーマル）_と.wav"
+  ],
+  "missing_audio_for_itemIds": [
+    "jpln1200_pre_001",
+    "jpln1200_pre_002",
+    "jpln1200_pre_003"
+  ],
+  "ambiguous": [],
+  "duplicates": []
+}
