@@ -477,6 +477,10 @@ function canUseAudio() {
   return SETTINGS.audioOn;
 }
 
+function isMobileViewport() {
+  return window.matchMedia?.("(max-width: 560px)")?.matches ?? false;
+}
+
 let AUDIO = null;
 let audioSeqToken = 0;
 
@@ -510,8 +514,11 @@ async function playItemAudio(item) {
     } else {
       AUDIO = new Audio(src);
       AUDIO.preload = "auto";
+      AUDIO.setAttribute("playsinline", "");
+      AUDIO.setAttribute("webkit-playsinline", "");
     }
-    AUDIO.volume = Math.max(0, Math.min(1, Number(SETTINGS.volume ?? 0.9)));
+    const baseVolume = Math.max(0, Math.min(1, Number(SETTINGS.volume ?? 0.9)));
+    AUDIO.volume = baseVolume;
     AUDIO.load();
     await AUDIO.play();
     if (myToken !== audioSeqToken) {
