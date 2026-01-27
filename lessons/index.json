@@ -1,6 +1,6 @@
 {
   "course": "JPLN1200",
-  "version": "2.0",
+  "version": "2.1",
   "lessons": [
     {
       "code": "l1",
@@ -30,7 +30,13 @@
       "code": "pre",
       "name": "pre course words",
       "file": "lessons/pre.json",
-      "count": 57
+      "count": 48
+    },
+    {
+      "code": "l5",
+      "name": "Lesson 5",
+      "file": "lessons/l5.json",
+      "count": 11
     }
   ]
 }

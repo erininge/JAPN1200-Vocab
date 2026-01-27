@@ -354,6 +354,31 @@ kbd {
   margin-bottom: 12px;
 }
 @media (max-width: 560px) { .answers { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .lessonRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .lessonRow .meta {
+    text-align: left;
+    width: 100%;
+  }
+  .nav,
+  .counts,
+  .row,
+  .quizMetaLine {
+    gap: 6px;
+  }
+  .chip,
+  .pill,
+  .navBtn {
+    max-width: 100%;
+  }
+  .quizTop {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .choice {
   display: flex;
   align-items: center;

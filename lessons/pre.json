@@ -16,28 +16,12 @@
     "id": "jpln1200_pre_002"
   },
   {
-    "jp_kana": "～と",
-    "jp_kanji": "",
-    "en": "together with / and",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_003"
-  },
-  {
     "jp_kana": "あいだ",
     "jp_kanji": "間",
     "en": "between (A と B の)",
     "lesson": "pre course words",
     "default_starred": false,
     "id": "jpln1200_pre_004"
-  },
-  {
-    "jp_kana": "あう",
-    "jp_kanji": "会う",
-    "en": "to meet, to see (a person), (person に)",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_005"
   },
   {
     "jp_kana": "あなた",
@@ -112,36 +96,12 @@
     "id": "jpln1200_pre_014"
   },
   {
-    "jp_kana": "おてら",
-    "jp_kanji": "お寺",
-    "en": "temple",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_015"
-  },
-  {
-    "jp_kana": "かいもの",
-    "jp_kanji": "買い物",
-    "en": "shopping",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_016"
-  },
-  {
     "jp_kana": "かう",
     "jp_kanji": "買う",
     "en": "to buy, (～を)",
     "lesson": "pre course words",
     "default_starred": false,
     "id": "jpln1200_pre_017"
-  },
-  {
-    "jp_kana": "かく",
-    "jp_kanji": "書く",
-    "en": "to write, (person に thing を)",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_018"
   },
   {
     "jp_kana": "きのう",
@@ -222,14 +182,6 @@
     "lesson": "pre course words",
     "default_starred": false,
     "id": "jpln1200_pre_028"
-  },
-  {
-    "jp_kana": "せんしゅう",
-    "jp_kanji": "先週",
-    "en": "last week",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_029"
   },
   {
     "jp_kana": "それから",
@@ -408,14 +360,6 @@
     "id": "jpln1200_pre_051"
   },
   {
-    "jp_kana": "まつ",
-    "jp_kanji": "待つ",
-    "en": "to wait, (～を)",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_052"
-  },
-  {
     "jp_kana": "みぎ",
     "jp_kanji": "右",
     "en": "right, to the right of, (~の)",
@@ -438,21 +382,5 @@
     "lesson": "pre course words",
     "default_starred": false,
     "id": "jpln1200_pre_055"
-  },
-  {
-    "jp_kana": "レポート",
-    "jp_kanji": "",
-    "en": "(term) paper, report",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_056"
-  },
-  {
-    "jp_kana": "わかる",
-    "jp_kanji": "",
-    "en": "to understand, (～が)",
-    "lesson": "pre course words",
-    "default_starred": false,
-    "id": "jpln1200_pre_057"
   }
 ]
