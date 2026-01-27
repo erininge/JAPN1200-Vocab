@@ -518,8 +518,7 @@ async function playItemAudio(item) {
       AUDIO.setAttribute("webkit-playsinline", "");
     }
     const baseVolume = Math.max(0, Math.min(1, Number(SETTINGS.volume ?? 0.9)));
-    const volume = isMobileViewport() ? baseVolume * 0.6 : baseVolume;
-    AUDIO.volume = Math.max(0, Math.min(1, volume));
+    AUDIO.volume = baseVolume;
     AUDIO.load();
     await AUDIO.play();
     if (myToken !== audioSeqToken) {
