@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.6) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.7) */
 
-const APP_VERSION = "V3.6";
+const APP_VERSION = "V3.7";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -481,6 +481,23 @@ function isMobileViewport() {
   return window.matchMedia?.("(max-width: 560px)")?.matches ?? false;
 }
 
+function isIphoneDevice() {
+  return /iPhone/i.test(navigator.userAgent || "");
+}
+
+function setIphoneAudioSessionMixing() {
+  if (!isIphoneDevice()) return;
+  const session = navigator.audioSession;
+  if (!session) return;
+  if (session.type && session.type !== "ambient") {
+    try {
+      session.type = "ambient";
+    } catch (e) {
+      console.warn("Unable to set iPhone audio session type.", e);
+    }
+  }
+}
+
 let AUDIO = null;
 let audioSeqToken = 0;
 
@@ -500,6 +517,7 @@ async function playItemAudio(item) {
     return;
   }
   try {
+    setIphoneAudioSessionMixing();
     audioSeqToken++;
     const myToken = audioSeqToken;
     const src = await resolveAudioUrl(item.id);
@@ -1192,6 +1210,7 @@ function wireUI() {
   $("#versionLabel").textContent = APP_VERSION;
   SETTINGS = getSettings();
   applySettingsToUI(SETTINGS);
+  setIphoneAudioSessionMixing();
   wireUI();
   await loadData();
   updateQuestionCountUI();
