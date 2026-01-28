@@ -1,14 +1,14 @@
 /* 
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
-  - V4.1: update version + cache
+  - V4.2: update version + cache
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v4.1";
+const CACHE_NAME = "japn1200-class-vocab-cache-v4.2";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v4.1",
-  "./styles.css?f=v4.1",
-  "./app.js?f=v4.1",
+  "./index.html?f=v4.2",
+  "./styles.css?f=v4.2",
+  "./app.js?f=v4.2",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
