@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V4) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V4.1) */
 
-const APP_VERSION = "V4";
+const APP_VERSION = "V4.1";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -500,6 +500,11 @@ function getDMode() {
   return $("#dModeSelect")?.value || "kana";
 }
 
+function displayModeForItem(item, dmode) {
+  if (!item) return dmode;
+  return isKanjiOverride(item.id) ? "kanji" : dmode;
+}
+
 function canUseAudio() {
   return SETTINGS.audioOn;
 }
@@ -621,25 +626,27 @@ function makeQuestion(item, qmode, atype) {
 function promptTextForQuestion(q, dmode) {
   const it = q.item;
   if (q.qmode === "en2jp") return it.en;
-  if (q.qmode === "jp2en") return jpDisplay(it, dmode);
+  if (q.qmode === "jp2en") return jpDisplay(it, displayModeForItem(it, dmode));
   if (q.qmode.startsWith("listen")) return "🎧 Listening… (press =)";
   return it.en;
 }
 
 function correctAnswerText(q, dmode) {
   const it = q.item;
-  if (q.qmode === "en2jp" || q.qmode === "listen2jp") return jpDisplay(it, dmode);
+  if (q.qmode === "en2jp" || q.qmode === "listen2jp") {
+    return jpDisplay(it, displayModeForItem(it, dmode));
+  }
   return it.en;
 }
 
 function buildMCOptions(q, pool, dmode) {
   const it = q.item;
   const isJPAnswer = (q.qmode === "en2jp" || q.qmode === "listen2jp");
-  const correct = isJPAnswer ? jpDisplay(it, dmode) : it.en;
+  const correct = isJPAnswer ? jpDisplay(it, displayModeForItem(it, dmode)) : it.en;
 
   const others = pool.filter(x => x.id !== it.id);
   const picks = sample(others, 12);
-  const mapped = picks.map(x => isJPAnswer ? jpDisplay(x, dmode) : x.en);
+  const mapped = picks.map(x => isJPAnswer ? jpDisplay(x, displayModeForItem(x, dmode)) : x.en);
   const uniqs = uniq(mapped.filter(Boolean).filter(x => x !== correct));
   const distractors = sample(uniqs, 3);
   const options = shuffle([correct, ...distractors]);
