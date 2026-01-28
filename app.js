@@ -1,10 +1,11 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.7) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V4) */
 
-const APP_VERSION = "V3.7";
+const APP_VERSION = "V4";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
   stats: "jpln1200_stats_v1",
+  kanjiOverrides: "jpln1200_kanji_overrides_v1",
   seeded: "jpln1200_seeded_v1"
 };
 
@@ -210,6 +211,7 @@ let ITEMS = [];
 let ITEMS_BY_ID = new Map();
 
 let STARRED = new Set();
+let KANJI_OVERRIDES = new Set();
 let SETTINGS = getSettings();
 
 function getStats() {
@@ -256,6 +258,30 @@ function toggleStar(id, force) {
   refreshHeaderCounts();
   updateQuestionCountUI();
   updateCurrentAudioListIfOpen();
+  return on;
+}
+
+function loadKanjiOverrides() {
+  const saved = loadJSON(STORAGE.kanjiOverrides, null);
+  if (Array.isArray(saved)) {
+    KANJI_OVERRIDES = new Set(saved);
+  } else {
+    KANJI_OVERRIDES = new Set();
+  }
+}
+
+function saveKanjiOverrides() {
+  saveJSON(STORAGE.kanjiOverrides, Array.from(KANJI_OVERRIDES));
+}
+
+function isKanjiOverride(id) {
+  return KANJI_OVERRIDES.has(id);
+}
+
+function toggleKanjiOverride(id, force) {
+  const on = force !== undefined ? force : !KANJI_OVERRIDES.has(id);
+  if (on) KANJI_OVERRIDES.add(id); else KANJI_OVERRIDES.delete(id);
+  saveKanjiOverrides();
   return on;
 }
 
@@ -398,6 +424,7 @@ async function loadData() {
   seedStarsIfNeeded();
   const saved = loadJSON(STORAGE.stars, null);
   if (Array.isArray(saved)) STARRED = new Set(saved);
+  loadKanjiOverrides();
 
   buildLessonUI();
   buildVocabUI();
@@ -622,6 +649,11 @@ function buildMCOptions(q, pool, dmode) {
 function gradeTyping(q, user, dmode) {
   const it = q.item;
   if (!SETTINGS.smartGrade) {
+    if (q.qmode === "en2jp" || q.qmode === "listen2jp") {
+      const u = (user || "").trim();
+      const acceptable = jpAcceptableAnswers(it, "both").map(x => (x || "").trim());
+      return acceptable.some(a => a && a === u);
+    }
     const u = (user || "").trim();
     const exp = correctAnswerText(q, dmode).trim();
     return u === exp;
@@ -636,7 +668,7 @@ function gradeTyping(q, user, dmode) {
 
   const u = normJP(user);
   if (!u) return false;
-  const acceptable = jpAcceptableAnswers(it, dmode).map(normJP).filter(Boolean);
+  const acceptable = jpAcceptableAnswers(it, "both").map(normJP).filter(Boolean);
   return acceptable.some(a => a === u);
 }
 
@@ -860,9 +892,12 @@ function buildVocabUI() {
   rows.forEach(it => {
     const tr = document.createElement("tr");
     const starOn = isStarred(it.id);
+    const kanjiOn = isKanjiOverride(it.id);
+    const rowDisplay = kanjiOn ? "kanji" : display;
     tr.innerHTML = `
       <td><button class="starBtn ${starOn ? "on" : ""}" data-id="${it.id}">${starOn ? "⭐" : "☆"}</button></td>
-      <td><div style="font-weight:800;">${jpDisplay(it, display)}</div><div class="hint">${it.id}</div></td>
+      <td><button class="kanjiBtn ${kanjiOn ? "on" : ""}" data-id="${it.id}" title="Toggle kanji-only for this word">${kanjiOn ? "漢" : "かな"}</button></td>
+      <td><div style="font-weight:800;">${jpDisplay(it, rowDisplay)}</div><div class="hint">${it.id}</div></td>
       <td>${it.en}</td>
       <td><span class="hint">${it.lesson}</span></td>
       <td><button class="audioBtn" data-a="${it.id}">🔊</button></td>
@@ -887,6 +922,21 @@ function buildVocabUI() {
       const id = b.getAttribute("data-a");
       const it = ITEMS_BY_ID.get(id);
       await playItemAudio(it);
+    });
+  });
+
+  host.querySelectorAll(".kanjiBtn").forEach(b => {
+    b.addEventListener("click", () => {
+      const id = b.getAttribute("data-id");
+      const on = toggleKanjiOverride(id);
+      b.textContent = on ? "漢" : "かな";
+      b.classList.toggle("on", on);
+      const cell = b.closest("tr")?.querySelector("td:nth-child(3) div");
+      if (cell) {
+        const item = ITEMS_BY_ID.get(id);
+        const mode = on ? "kanji" : display;
+        cell.textContent = jpDisplay(item, mode);
+      }
     });
   });
 
