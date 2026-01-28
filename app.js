@@ -1,10 +1,11 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V3.5) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V4.2) */
 
-const APP_VERSION = "V3.5";
+const APP_VERSION = "V4.2";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
   stats: "jpln1200_stats_v1",
+  kanjiOverrides: "jpln1200_kanji_overrides_v1",
   seeded: "jpln1200_seeded_v1"
 };
 
@@ -210,6 +211,7 @@ let ITEMS = [];
 let ITEMS_BY_ID = new Map();
 
 let STARRED = new Set();
+let KANJI_OVERRIDES = new Set();
 let SETTINGS = getSettings();
 
 function getStats() {
@@ -256,6 +258,30 @@ function toggleStar(id, force) {
   refreshHeaderCounts();
   updateQuestionCountUI();
   updateCurrentAudioListIfOpen();
+  return on;
+}
+
+function loadKanjiOverrides() {
+  const saved = loadJSON(STORAGE.kanjiOverrides, null);
+  if (Array.isArray(saved)) {
+    KANJI_OVERRIDES = new Set(saved);
+  } else {
+    KANJI_OVERRIDES = new Set();
+  }
+}
+
+function saveKanjiOverrides() {
+  saveJSON(STORAGE.kanjiOverrides, Array.from(KANJI_OVERRIDES));
+}
+
+function isKanjiOverride(id) {
+  return KANJI_OVERRIDES.has(id);
+}
+
+function toggleKanjiOverride(id, force) {
+  const on = force !== undefined ? force : !KANJI_OVERRIDES.has(id);
+  if (on) KANJI_OVERRIDES.add(id); else KANJI_OVERRIDES.delete(id);
+  saveKanjiOverrides();
   return on;
 }
 
@@ -398,6 +424,7 @@ async function loadData() {
   seedStarsIfNeeded();
   const saved = loadJSON(STORAGE.stars, null);
   if (Array.isArray(saved)) STARRED = new Set(saved);
+  loadKanjiOverrides();
 
   buildLessonUI();
   buildVocabUI();
@@ -473,8 +500,34 @@ function getDMode() {
   return $("#dModeSelect")?.value || "kana";
 }
 
+function displayModeForItem(item, dmode) {
+  if (!item) return dmode;
+  return isKanjiOverride(item.id) ? "kanji" : dmode;
+}
+
 function canUseAudio() {
   return SETTINGS.audioOn;
+}
+
+function isMobileViewport() {
+  return window.matchMedia?.("(max-width: 560px)")?.matches ?? false;
+}
+
+function isIphoneDevice() {
+  return /iPhone/i.test(navigator.userAgent || "");
+}
+
+function setIphoneAudioSessionMixing() {
+  if (!isIphoneDevice()) return;
+  const session = navigator.audioSession;
+  if (!session) return;
+  if (session.type && session.type !== "ambient") {
+    try {
+      session.type = "ambient";
+    } catch (e) {
+      console.warn("Unable to set iPhone audio session type.", e);
+    }
+  }
 }
 
 let AUDIO = null;
@@ -496,6 +549,7 @@ async function playItemAudio(item) {
     return;
   }
   try {
+    setIphoneAudioSessionMixing();
     audioSeqToken++;
     const myToken = audioSeqToken;
     const src = await resolveAudioUrl(item.id);
@@ -510,8 +564,11 @@ async function playItemAudio(item) {
     } else {
       AUDIO = new Audio(src);
       AUDIO.preload = "auto";
+      AUDIO.setAttribute("playsinline", "");
+      AUDIO.setAttribute("webkit-playsinline", "");
     }
-    AUDIO.volume = Math.max(0, Math.min(1, Number(SETTINGS.volume ?? 0.9)));
+    const baseVolume = Math.max(0, Math.min(1, Number(SETTINGS.volume ?? 0.9)));
+    AUDIO.volume = baseVolume;
     AUDIO.load();
     await AUDIO.play();
     if (myToken !== audioSeqToken) {
@@ -569,25 +626,27 @@ function makeQuestion(item, qmode, atype) {
 function promptTextForQuestion(q, dmode) {
   const it = q.item;
   if (q.qmode === "en2jp") return it.en;
-  if (q.qmode === "jp2en") return jpDisplay(it, dmode);
+  if (q.qmode === "jp2en") return jpDisplay(it, displayModeForItem(it, dmode));
   if (q.qmode.startsWith("listen")) return "🎧 Listening… (press =)";
   return it.en;
 }
 
 function correctAnswerText(q, dmode) {
   const it = q.item;
-  if (q.qmode === "en2jp" || q.qmode === "listen2jp") return jpDisplay(it, dmode);
+  if (q.qmode === "en2jp" || q.qmode === "listen2jp") {
+    return jpDisplay(it, displayModeForItem(it, dmode));
+  }
   return it.en;
 }
 
 function buildMCOptions(q, pool, dmode) {
   const it = q.item;
   const isJPAnswer = (q.qmode === "en2jp" || q.qmode === "listen2jp");
-  const correct = isJPAnswer ? jpDisplay(it, dmode) : it.en;
+  const correct = isJPAnswer ? jpDisplay(it, displayModeForItem(it, dmode)) : it.en;
 
   const others = pool.filter(x => x.id !== it.id);
   const picks = sample(others, 12);
-  const mapped = picks.map(x => isJPAnswer ? jpDisplay(x, dmode) : x.en);
+  const mapped = picks.map(x => isJPAnswer ? jpDisplay(x, displayModeForItem(x, dmode)) : x.en);
   const uniqs = uniq(mapped.filter(Boolean).filter(x => x !== correct));
   const distractors = sample(uniqs, 3);
   const options = shuffle([correct, ...distractors]);
@@ -597,6 +656,11 @@ function buildMCOptions(q, pool, dmode) {
 function gradeTyping(q, user, dmode) {
   const it = q.item;
   if (!SETTINGS.smartGrade) {
+    if (q.qmode === "en2jp" || q.qmode === "listen2jp") {
+      const u = (user || "").trim();
+      const acceptable = jpAcceptableAnswers(it, "both").map(x => (x || "").trim());
+      return acceptable.some(a => a && a === u);
+    }
     const u = (user || "").trim();
     const exp = correctAnswerText(q, dmode).trim();
     return u === exp;
@@ -611,7 +675,7 @@ function gradeTyping(q, user, dmode) {
 
   const u = normJP(user);
   if (!u) return false;
-  const acceptable = jpAcceptableAnswers(it, dmode).map(normJP).filter(Boolean);
+  const acceptable = jpAcceptableAnswers(it, "both").map(normJP).filter(Boolean);
   return acceptable.some(a => a === u);
 }
 
@@ -835,9 +899,12 @@ function buildVocabUI() {
   rows.forEach(it => {
     const tr = document.createElement("tr");
     const starOn = isStarred(it.id);
+    const kanjiOn = isKanjiOverride(it.id);
+    const rowDisplay = kanjiOn ? "kanji" : display;
     tr.innerHTML = `
       <td><button class="starBtn ${starOn ? "on" : ""}" data-id="${it.id}">${starOn ? "⭐" : "☆"}</button></td>
-      <td><div style="font-weight:800;">${jpDisplay(it, display)}</div><div class="hint">${it.id}</div></td>
+      <td><button class="kanjiBtn ${kanjiOn ? "on" : ""}" data-id="${it.id}" title="Toggle kanji-only for this word">${kanjiOn ? "漢" : "かな"}</button></td>
+      <td><div style="font-weight:800;">${jpDisplay(it, rowDisplay)}</div><div class="hint">${it.id}</div></td>
       <td>${it.en}</td>
       <td><span class="hint">${it.lesson}</span></td>
       <td><button class="audioBtn" data-a="${it.id}">🔊</button></td>
@@ -862,6 +929,21 @@ function buildVocabUI() {
       const id = b.getAttribute("data-a");
       const it = ITEMS_BY_ID.get(id);
       await playItemAudio(it);
+    });
+  });
+
+  host.querySelectorAll(".kanjiBtn").forEach(b => {
+    b.addEventListener("click", () => {
+      const id = b.getAttribute("data-id");
+      const on = toggleKanjiOverride(id);
+      b.textContent = on ? "漢" : "かな";
+      b.classList.toggle("on", on);
+      const cell = b.closest("tr")?.querySelector("td:nth-child(3) div");
+      if (cell) {
+        const item = ITEMS_BY_ID.get(id);
+        const mode = on ? "kanji" : display;
+        cell.textContent = jpDisplay(item, mode);
+      }
     });
   });
 
@@ -1185,6 +1267,7 @@ function wireUI() {
   $("#versionLabel").textContent = APP_VERSION;
   SETTINGS = getSettings();
   applySettingsToUI(SETTINGS);
+  setIphoneAudioSessionMixing();
   wireUI();
   await loadData();
   updateQuestionCountUI();
