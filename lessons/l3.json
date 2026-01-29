@@ -1,34 +1,58 @@
 [
   {
-    "jp_kana": "カフェ",
+    "jp_kana": "イス",
     "jp_kanji": "",
-    "en": "cafe",
+    "en": "chair",
     "lesson": "Lesson 3",
     "default_starred": false,
     "id": "jpln1200_l3_001"
   },
   {
-    "jp_kana": "こうこう",
-    "jp_kanji": "高校",
-    "en": "high school",
+    "jp_kana": "つくえ",
+    "jp_kanji": "机",
+    "en": "desk",
     "lesson": "Lesson 3",
     "default_starred": false,
     "id": "jpln1200_l3_002"
   },
   {
-    "jp_kana": "コンビニ",
-    "jp_kanji": "",
-    "en": "convenience store",
+    "jp_kana": "はな",
+    "jp_kanji": "花",
+    "en": "flower",
     "lesson": "Lesson 3",
     "default_starred": false,
     "id": "jpln1200_l3_003"
   },
   {
-    "jp_kana": "ゆうびんきょく",
-    "jp_kanji": "郵便局",
-    "en": "post office",
+    "jp_kana": "うえ",
+    "jp_kanji": "上",
+    "en": "up, above, on, (~の)",
     "lesson": "Lesson 3",
-    "default_starred": true,
+    "default_starred": false,
     "id": "jpln1200_l3_004"
+  },
+  {
+    "jp_kana": "した",
+    "jp_kanji": "下",
+    "en": "down, below, under, (~の)",
+    "lesson": "Lesson 3",
+    "default_starred": false,
+    "id": "jpln1200_l3_005"
+  },
+  {
+    "jp_kana": "こども",
+    "jp_kanji": "子供",
+    "en": "child",
+    "lesson": "Lesson 3",
+    "default_starred": false,
+    "id": "jpln1200_l3_006"
+  },
+  {
+    "jp_kana": "きのう",
+    "jp_kanji": "昨日",
+    "en": "yesterday",
+    "lesson": "Lesson 3",
+    "default_starred": false,
+    "id": "jpln1200_l3_007"
   }
 ]

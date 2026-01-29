@@ -1,0 +1,250 @@
+[
+  {
+    "jp_kana": "ついたち",
+    "jp_kanji": "一日",
+    "en": "1st",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_001"
+  },
+  {
+    "jp_kana": "ふつか",
+    "jp_kanji": "二日",
+    "en": "2nd",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_002"
+  },
+  {
+    "jp_kana": "みっか",
+    "jp_kanji": "三日",
+    "en": "3rd",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_003"
+  },
+  {
+    "jp_kana": "よっか",
+    "jp_kanji": "四日",
+    "en": "4th",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_004"
+  },
+  {
+    "jp_kana": "いつか",
+    "jp_kanji": "五日",
+    "en": "5th",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_005"
+  },
+  {
+    "jp_kana": "むいか",
+    "jp_kanji": "六日",
+    "en": "6th",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_006"
+  },
+  {
+    "jp_kana": "なのか",
+    "jp_kanji": "七日",
+    "en": "7th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_007"
+  },
+  {
+    "jp_kana": "ようか",
+    "jp_kanji": "八日",
+    "en": "8th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_008"
+  },
+  {
+    "jp_kana": "ここのか",
+    "jp_kanji": "九日",
+    "en": "9th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_009"
+  },
+  {
+    "jp_kana": "とおか",
+    "jp_kanji": "十日",
+    "en": "10th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_010"
+  },
+  {
+    "jp_kana": "じゅういちにち",
+    "jp_kanji": "十一日",
+    "en": "11th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_011"
+  },
+  {
+    "jp_kana": "じゅうににち",
+    "jp_kanji": "十二日",
+    "en": "12th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_012"
+  },
+  {
+    "jp_kana": "じゅうさんにち",
+    "jp_kanji": "十三日",
+    "en": "13th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_013"
+  },
+  {
+    "jp_kana": "じゅうよっか",
+    "jp_kanji": "十四日",
+    "en": "14th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_014"
+  },
+  {
+    "jp_kana": "じゅうごにち",
+    "jp_kanji": "十五日",
+    "en": "15th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_015"
+  },
+  {
+    "jp_kana": "じゅうろくにち",
+    "jp_kanji": "十六日",
+    "en": "16th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_016"
+  },
+  {
+    "jp_kana": "じゅうしちにち",
+    "jp_kanji": "十七日",
+    "en": "17th",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_017"
+  },
+  {
+    "jp_kana": "じゅうはちにち",
+    "jp_kanji": "十八日",
+    "en": "18th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_018"
+  },
+  {
+    "jp_kana": "じゅうくにち",
+    "jp_kanji": "十九日",
+    "en": "19th",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_019"
+  },
+  {
+    "jp_kana": "はつか",
+    "jp_kanji": "二十日",
+    "en": "20th",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_020"
+  },
+  {
+    "jp_kana": "にじゅういちにち",
+    "jp_kanji": "二十一日",
+    "en": "21st",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_021"
+  },
+  {
+    "jp_kana": "にじゅうににち",
+    "jp_kanji": "二十二日",
+    "en": "22nd",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_022"
+  },
+  {
+    "jp_kana": "にじゅうさんにち",
+    "jp_kanji": "二十三日",
+    "en": "23rd",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_023"
+  },
+  {
+    "jp_kana": "にじゅうよっか",
+    "jp_kanji": "二十四日",
+    "en": "24th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_024"
+  },
+  {
+    "jp_kana": "にじゅうごにち",
+    "jp_kanji": "二十五日",
+    "en": "25th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_025"
+  },
+  {
+    "jp_kana": "にじゅうろくにち",
+    "jp_kanji": "二十六日",
+    "en": "26th",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_026"
+  },
+  {
+    "jp_kana": "にじゅうしちにち",
+    "jp_kanji": "二十七日",
+    "en": "27th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_027"
+  },
+  {
+    "jp_kana": "にじゅうはちにち",
+    "jp_kanji": "二十八日",
+    "en": "28th",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_028"
+  },
+  {
+    "jp_kana": "にじゅうくにち",
+    "jp_kanji": "二十九日",
+    "en": "29th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_029"
+  },
+  {
+    "jp_kana": "さんじゅうにち",
+    "jp_kanji": "三十日",
+    "en": "30th",
+    "lesson": "Lesson 2.5",
+    "default_starred": true,
+    "id": "jpln1200_l2_5_030"
+  },
+  {
+    "jp_kana": "さんじゅういちにち",
+    "jp_kanji": "三十一日",
+    "en": "31st",
+    "lesson": "Lesson 2.5",
+    "default_starred": false,
+    "id": "jpln1200_l2_5_031"
+  }
+]
