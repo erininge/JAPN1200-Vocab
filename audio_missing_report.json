@@ -113,102 +113,11 @@
       "en": "to study"
     },
     {
-      "id": "jpln1200_pre_074",
-      "lesson": "pre course words",
-      "jp_kana": "いく",
-      "jp_kanji": "行く",
-      "en": "to go"
-    },
-    {
       "id": "jpln1200_pre_075",
       "lesson": "pre course words",
       "jp_kana": "かえる",
       "jp_kanji": "帰る",
       "en": "to go back; to return"
-    },
-    {
-      "id": "jpln1200_pre_076",
-      "lesson": "pre course words",
-      "jp_kana": "…さん",
-      "jp_kanji": "",
-      "en": "Mr./Ms…."
-    },
-    {
-      "id": "jpln1200_pre_078",
-      "lesson": "pre course words",
-      "jp_kana": "おはようございます",
-      "jp_kanji": "",
-      "en": "Good morning."
-    },
-    {
-      "id": "jpln1200_pre_080",
-      "lesson": "pre course words",
-      "jp_kana": "こんばんは",
-      "jp_kanji": "",
-      "en": "Good evening."
-    },
-    {
-      "id": "jpln1200_pre_082",
-      "lesson": "pre course words",
-      "jp_kana": "ありがとうございます",
-      "jp_kanji": "",
-      "en": "Thank you."
-    },
-    {
-      "id": "jpln1200_pre_083",
-      "lesson": "pre course words",
-      "jp_kana": "どうぞ",
-      "jp_kanji": "",
-      "en": "Please (offering). / Here you are."
-    },
-    {
-      "id": "jpln1200_pre_084",
-      "lesson": "pre course words",
-      "jp_kana": "じゃあまた",
-      "jp_kanji": "",
-      "en": "Good-bye. / See you again."
-    },
-    {
-      "id": "jpln1200_pre_086",
-      "lesson": "pre course words",
-      "jp_kana": "はじめまして",
-      "jp_kanji": "",
-      "en": "How do you do?"
-    },
-    {
-      "id": "jpln1200_pre_087",
-      "lesson": "pre course words",
-      "jp_kana": "(わたしわ)…です.",
-      "jp_kanji": "",
-      "en": "I am ~."
-    },
-    {
-      "id": "jpln1200_pre_089",
-      "lesson": "pre course words",
-      "jp_kana": "いただきます",
-      "jp_kanji": "",
-      "en": "Thank you for the meal. (before eating)"
-    },
-    {
-      "id": "jpln1200_pre_090",
-      "lesson": "pre course words",
-      "jp_kana": "ごちそうさま",
-      "jp_kanji": "",
-      "en": "Thank you for the meal. (after eating)"
-    },
-    {
-      "id": "jpln1200_pre_093",
-      "lesson": "pre course words",
-      "jp_kana": "ただいま",
-      "jp_kanji": "",
-      "en": "I'm home."
-    },
-    {
-      "id": "jpln1200_pre_097",
-      "lesson": "pre course words",
-      "jp_kana": "さん",
-      "jp_kanji": "",
-      "en": "three"
     },
     {
       "id": "jpln1200_pre_100",
@@ -225,25 +134,11 @@
       "en": "ten"
     },
     {
-      "id": "jpln1200_pre_123",
-      "lesson": "pre course words",
-      "jp_kana": "そうです",
-      "jp_kanji": "",
-      "en": "That's right"
-    },
-    {
       "id": "jpln1200_pre_130",
       "lesson": "pre course words",
       "jp_kana": "いぎりす",
       "jp_kanji": "",
       "en": "England; Great Britain"
-    },
-    {
-      "id": "jpln1200_pre_138",
-      "lesson": "pre course words",
-      "jp_kana": "そうですか",
-      "jp_kanji": "",
-      "en": "I see.; Is that so?"
     },
     {
       "id": "jpln1200_pre_146",
@@ -260,13 +155,6 @@
       "en": "pen"
     },
     {
-      "id": "jpln1200_pre_164",
-      "lesson": "pre course words",
-      "jp_kana": "どれ",
-      "jp_kanji": "",
-      "en": "which one"
-    },
-    {
       "id": "jpln1200_pre_165",
       "lesson": "pre course words",
       "jp_kana": "こんびに",
@@ -274,39 +162,11 @@
       "en": "convenience store"
     },
     {
-      "id": "jpln1200_pre_171",
-      "lesson": "pre course words",
-      "jp_kana": "どの",
-      "jp_kanji": "",
-      "en": "which …"
-    },
-    {
       "id": "jpln1200_pre_173",
       "lesson": "pre course words",
       "jp_kana": "(…お)おねがいします",
       "jp_kanji": "",
       "en": "…, please."
-    },
-    {
-      "id": "jpln1200_pre_174",
-      "lesson": "pre course words",
-      "jp_kana": "(…お)ください",
-      "jp_kanji": "",
-      "en": "Please give me …."
-    },
-    {
-      "id": "jpln1200_pre_175",
-      "lesson": "pre course words",
-      "jp_kana": "じゃあ",
-      "jp_kanji": "",
-      "en": "then…; if that's the case, …"
-    },
-    {
-      "id": "jpln1200_pre_176",
-      "lesson": "pre course words",
-      "jp_kana": "どうも",
-      "jp_kanji": "",
-      "en": "Thank you."
     },
     {
       "id": "jpln1200_pre_180",
@@ -330,46 +190,11 @@
       "en": "menu"
     },
     {
-      "id": "jpln1200_pre_194",
-      "lesson": "pre course words",
-      "jp_kana": "のうん)と(のうん",
-      "jp_kanji": "",
-      "en": "…. and …."
-    },
-    {
       "id": "jpln1200_pre_195",
       "lesson": "pre course words",
       "jp_kana": "にほんごで",
       "jp_kanji": "",
       "en": "in Japanese"
-    },
-    {
-      "id": "jpln1200_pre_198",
-      "lesson": "pre course words",
-      "jp_kana": "スポーツ",
-      "jp_kanji": "",
-      "en": "sports"
-    },
-    {
-      "id": "jpln1200_pre_200",
-      "lesson": "pre course words",
-      "jp_kana": "テレビ",
-      "jp_kanji": "",
-      "en": "TV"
-    },
-    {
-      "id": "jpln1200_pre_201",
-      "lesson": "pre course words",
-      "jp_kana": "ハンバーガー",
-      "jp_kanji": "",
-      "en": "hamburger"
-    },
-    {
-      "id": "jpln1200_pre_207",
-      "lesson": "pre course words",
-      "jp_kana": "デート",
-      "jp_kanji": "",
-      "en": "date (romantic)"
     },
     {
       "id": "jpln1200_pre_212",
@@ -391,41 +216,6 @@
       "jp_kana": "ばんごはん",
       "jp_kanji": "",
       "en": "dinner"
-    },
-    {
-      "id": "jpln1200_pre_221",
-      "lesson": "pre course words",
-      "jp_kana": "ばん",
-      "jp_kanji": "",
-      "en": "evening"
-    },
-    {
-      "id": "jpln1200_pre_235",
-      "lesson": "pre course words",
-      "jp_kana": "そうですね",
-      "jp_kanji": "",
-      "en": "That's right.; Let me see."
-    },
-    {
-      "id": "jpln1200_pre_236",
-      "lesson": "pre course words",
-      "jp_kana": "でも",
-      "jp_kanji": "",
-      "en": "but"
-    },
-    {
-      "id": "jpln1200_pre_237",
-      "lesson": "pre course words",
-      "jp_kana": "どうですか",
-      "jp_kanji": "",
-      "en": "How about …? How is …?"
-    },
-    {
-      "id": "jpln1200_pre_239",
-      "lesson": "pre course words",
-      "jp_kana": "パーティーをする",
-      "jp_kanji": "",
-      "en": "to throw a party"
     }
   ]
 }
