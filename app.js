@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V4.9) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6) */
 
-const APP_VERSION = "V4.9";
+const APP_VERSION = "V6";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -97,6 +97,10 @@ function audioIdVariants(id) {
     variants.push(id.replace(/^jpln1200_/, "japn1200_"));
   }
   return variants;
+}
+
+function audioIdForItem(item) {
+  return item?.audio_id || item?.audioId || item?.id;
 }
 
 async function loadAudioFallbackMap() {
@@ -341,7 +345,8 @@ function renderCurrentAudioList(entries) {
     filtered.forEach(({ item, url }) => {
       const row = document.createElement("div");
       row.className = "audioRow";
-      const filename = url ? displayAudioFilename(url) : expectedAudioFilename(item.id);
+      const audioId = audioIdForItem(item);
+      const filename = url ? displayAudioFilename(url) : expectedAudioFilename(audioId);
       row.innerHTML = `
         <div>
           <div class="audioRowTitle">${jpDisplay(item, "both")}</div>
@@ -400,8 +405,9 @@ async function buildCurrentAudioList({ force = false } = {}) {
 
   clearAudioCache();
   const entries = await Promise.all(pool.map(async (item) => {
-    const url = await resolveAudioUrl(item.id);
-    return { item, url };
+    const audioId = audioIdForItem(item);
+    const url = await resolveAudioUrl(audioId);
+    return { item, url, audioId };
   }));
   CURRENT_AUDIO_ENTRIES = entries;
   CURRENT_AUDIO_SIGNATURE = signature;
@@ -552,9 +558,10 @@ async function playItemAudio(item) {
     setIphoneAudioSessionMixing();
     audioSeqToken++;
     const myToken = audioSeqToken;
-    const src = await resolveAudioUrl(item.id);
+    const audioId = audioIdForItem(item);
+    const src = await resolveAudioUrl(audioId);
     if (!src) {
-      toast(`Missing audio for ${item.id}.`);
+      toast(`Missing audio for ${audioId}.`);
       return;
     }
     if (AUDIO) {
@@ -583,8 +590,9 @@ async function playItemAudio(item) {
     if (e?.name === "AbortError") {
       return;
     }
-    console.warn(`Audio failed for ${item.id}.`, e);
-    toast(`Audio failed for ${item.id}.`);
+    const audioId = audioIdForItem(item);
+    console.warn(`Audio failed for ${audioId}.`, e);
+    toast(`Audio failed for ${audioId}.`);
   }
 }
 
@@ -1118,7 +1126,7 @@ function wireUI() {
     const summary = $("#audioCheckSummary");
     summary.textContent = "Checking audio files…";
     clearAudioCache();
-    const ids = ITEMS.map((item) => item.id);
+    const ids = ITEMS.map((item) => audioIdForItem(item));
     let found = 0;
     const missing = [];
     for (const id of ids) {

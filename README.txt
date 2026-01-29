@@ -1,6 +1,6 @@
 # Kat’s Class Vocab — JPLN1200 (PWA)
 
-Version: V4.9
+Version: V6
 
 ## Audio
 Put audio files in `/audio` named exactly `<id>.<ext>`.
