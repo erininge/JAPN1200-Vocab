@@ -6,43 +6,43 @@
       "code": "l1",
       "name": "Lesson 1",
       "file": "lessons/l1.json",
-      "count": 17
+      "count": 20
     },
     {
       "code": "l2",
       "name": "Lesson 2",
       "file": "lessons/l2.json",
-      "count": 3
+      "count": 15
+    },
+    {
+      "code": "l2_5",
+      "name": "Lesson 2.5",
+      "file": "lessons/l2_5.json",
+      "count": 31
     },
     {
       "code": "l3",
       "name": "Lesson 3",
       "file": "lessons/l3.json",
-      "count": 4
+      "count": 7
     },
     {
-      "code": "l3_5",
-      "name": "Lesson 3.5",
-      "file": "lessons/l3_5.json",
-      "count": 54
-    },
-    {
-      "code": "pre",
-      "name": "pre course words",
-      "file": "lessons/pre.json",
-      "count": 232
+      "code": "l4",
+      "name": "Lesson 4",
+      "file": "lessons/l4.json",
+      "count": 11
     },
     {
       "code": "l5",
       "name": "Lesson 5",
       "file": "lessons/l5.json",
-      "count": 11
+      "count": 9
     },
     {
-      "code": "l6",
-      "name": "Lesson 6",
-      "file": "lessons/l6.json",
-      "count": 8
+      "code": "extras",
+      "name": "Extras",
+      "file": "lessons/extras.json",
+      "count": 236
     }
   ]
 }

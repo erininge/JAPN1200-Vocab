@@ -1,0 +1,90 @@
+[
+  {
+    "jp_kana": "かいもの",
+    "jp_kanji": "買い物",
+    "en": "shopping",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_001"
+  },
+  {
+    "jp_kana": "れぽーと",
+    "jp_kanji": "レポート",
+    "en": "paper / report",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_002"
+  },
+  {
+    "jp_kana": "おてら",
+    "jp_kanji": "お寺",
+    "en": "temple",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_003"
+  },
+  {
+    "jp_kana": "～と",
+    "jp_kanji": "",
+    "en": "together with ~ / and",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_004"
+  },
+  {
+    "jp_kana": "せんしゅう",
+    "jp_kanji": "先週",
+    "en": "last week",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_005"
+  },
+  {
+    "jp_kana": "こんしゅう",
+    "jp_kanji": "今週",
+    "en": "this week",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_006"
+  },
+  {
+    "jp_kana": "らいしゅう",
+    "jp_kanji": "来週",
+    "en": "next week",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_007"
+  },
+  {
+    "jp_kana": "あう",
+    "jp_kanji": "会う",
+    "en": "to meet (a person)",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_008"
+  },
+  {
+    "jp_kana": "かく",
+    "jp_kanji": "書く",
+    "en": "to write",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_009"
+  },
+  {
+    "jp_kana": "まつ",
+    "jp_kanji": "待つ",
+    "en": "to wait",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_010"
+  },
+  {
+    "jp_kana": "わかる",
+    "jp_kanji": "",
+    "en": "to understand",
+    "lesson": "Lesson 4",
+    "default_starred": false,
+    "id": "jpln1200_l4_011"
+  }
+]

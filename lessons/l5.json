@@ -1,90 +1,74 @@
 [
   {
-    "jp_kana": "かいもの",
-    "jp_kanji": "買い物",
-    "en": "shopping",
+    "jp_kana": "しゃしん",
+    "jp_kanji": "写真",
+    "en": "photo / picture",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_001"
   },
   {
-    "jp_kana": "おてら",
-    "jp_kanji": "お寺",
-    "en": "temple",
+    "jp_kana": "とき",
+    "jp_kanji": "時",
+    "en": "when (time)",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_002"
   },
   {
-    "jp_kana": "れぽーと",
-    "jp_kanji": "レポート",
-    "en": "paper / report",
+    "jp_kana": "こどものとき",
+    "jp_kanji": "子供の時",
+    "en": "when I was a kid",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_003"
   },
   {
-    "jp_kana": "～と",
-    "jp_kanji": "",
-    "en": "together with ~ / and",
+    "jp_kana": "こうこうのとき",
+    "jp_kanji": "高校の時",
+    "en": "when I was in high school",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_004"
   },
   {
-    "jp_kana": "あう",
-    "jp_kanji": "会う",
-    "en": "to meet (a person)",
+    "jp_kana": "それから",
+    "jp_kanji": "",
+    "en": "and then / after that",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_005"
   },
   {
-    "jp_kana": "かく",
-    "jp_kanji": "書く",
-    "en": "to write",
+    "jp_kana": "だから",
+    "jp_kanji": "",
+    "en": "so / therefore",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_006"
   },
   {
-    "jp_kana": "まつ",
-    "jp_kanji": "待つ",
-    "en": "to wait",
+    "jp_kana": "かう",
+    "jp_kanji": "買う",
+    "en": "to buy",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_007"
   },
   {
-    "jp_kana": "わかる",
-    "jp_kanji": "",
-    "en": "to understand",
+    "jp_kana": "とる",
+    "jp_kanji": "撮る",
+    "en": "to take (a photo)",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_008"
   },
   {
-    "jp_kana": "せんしゅう",
-    "jp_kanji": "先週",
-    "en": "last week",
+    "jp_kana": "ごご",
+    "jp_kanji": "",
+    "en": "P.M.",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_009"
-  },
-  {
-    "jp_kana": "こんしゅう",
-    "jp_kanji": "今週",
-    "en": "this week",
-    "lesson": "Lesson 5",
-    "default_starred": false,
-    "id": "jpln1200_l5_010"
-  },
-  {
-    "jp_kana": "らいしゅう",
-    "jp_kanji": "来週",
-    "en": "next week",
-    "lesson": "Lesson 5",
-    "default_starred": false,
-    "id": "jpln1200_l5_011"
   }
 ]
