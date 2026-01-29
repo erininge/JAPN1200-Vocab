@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.1) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.4) */
 
-const APP_VERSION = "V5.1";
+const APP_VERSION = "V5.4";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -291,6 +291,7 @@ function toggleKanjiOverride(id, force) {
 
 function lesson_code(lessonName) {
   const lower = (lessonName || "").toLowerCase();
+  if (lower.includes("extra")) return "extras";
   if (lower.includes("pre")) return "pre";
   const m = lower.match(/lesson\s*([0-9]+(?:\.[0-9]+)?)/);
   if (m) return "l" + m[1].replace(".", "_");
@@ -538,6 +539,7 @@ function setIphoneAudioSessionMixing() {
 
 let AUDIO = null;
 let audioSeqToken = 0;
+let vocabAudioToken = 0;
 
 function updateAudioUI() {
   const on = SETTINGS.audioOn;
@@ -904,20 +906,24 @@ function buildVocabUI() {
 
   const host = $("#vTable");
   host.innerHTML = "";
+  const rowEls = [];
   rows.forEach(it => {
     const tr = document.createElement("tr");
+    tr.dataset.id = it.id;
     const starOn = isStarred(it.id);
     const kanjiOn = isKanjiOverride(it.id);
     const rowDisplay = kanjiOn ? "kanji" : display;
+    const audioId = audioIdForItem(it);
     tr.innerHTML = `
       <td><button class="starBtn ${starOn ? "on" : ""}" data-id="${it.id}">${starOn ? "⭐" : "☆"}</button></td>
       <td><button class="kanjiBtn ${kanjiOn ? "on" : ""}" data-id="${it.id}" title="Toggle kanji-only for this word">${kanjiOn ? "漢" : "かな"}</button></td>
-      <td><div style="font-weight:800;">${jpDisplay(it, rowDisplay)}</div><div class="hint">${it.id}</div></td>
+      <td><div style="font-weight:800;">${jpDisplay(it, rowDisplay)}</div><div class="hint audioHint">${audioId}</div></td>
       <td>${it.en}</td>
       <td><span class="hint">${it.lesson}</span></td>
       <td><button class="audioBtn" data-a="${it.id}">🔊</button></td>
     `;
     host.appendChild(tr);
+    rowEls.push(tr);
   });
 
   host.querySelectorAll(".starBtn").forEach(b => {
@@ -955,7 +961,24 @@ function buildVocabUI() {
     });
   });
 
+  updateVocabAudioHints(rowEls);
   $("#vCountHint").textContent = `Showing ${rows.length} of ${ITEMS.length} total.`;
+}
+
+async function updateVocabAudioHints(rows) {
+  const myToken = ++vocabAudioToken;
+  for (const row of rows) {
+    const id = row.dataset.id;
+    const item = ITEMS_BY_ID.get(id);
+    if (!item) continue;
+    const audioId = audioIdForItem(item);
+    const hintEl = row.querySelector(".audioHint");
+    if (!hintEl) continue;
+    const url = await resolveAudioUrl(audioId);
+    if (myToken !== vocabAudioToken) return;
+    const filename = url ? displayAudioFilename(url) : expectedAudioFilename(audioId);
+    hintEl.textContent = audioId !== id ? `ID: ${id} • Audio: ${filename}` : filename;
+  }
 }
 
 function renderStats() {

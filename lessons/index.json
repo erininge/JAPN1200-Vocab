@@ -39,10 +39,16 @@
       "count": 9
     },
     {
+      "code": "pre",
+      "name": "Pre Course Words",
+      "file": "lessons/pre_course_words.json",
+      "count": 163
+    },
+    {
       "code": "extras",
       "name": "Extras",
       "file": "lessons/extras.json",
-      "count": 236
+      "count": 73
     }
   ]
 }
