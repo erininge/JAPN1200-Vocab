@@ -1,138 +1,162 @@
 [
   {
-    "jp_kana": "いつ",
-    "jp_kanji": "",
-    "en": "when",
+    "jp_kana": "ひ",
+    "jp_kanji": "日",
+    "en": "day",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_001"
   },
   {
-    "jp_kana": "うち",
-    "jp_kanji": "家",
-    "en": "home, house",
+    "jp_kana": "ひと",
+    "jp_kanji": "人",
+    "en": "person",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_002"
   },
   {
-    "jp_kana": "えんぴつ",
-    "jp_kanji": "鉛筆",
-    "en": "pencil",
+    "jp_kana": "いぬ",
+    "jp_kanji": "犬",
+    "en": "dog",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_003"
   },
   {
-    "jp_kana": "がっこう",
-    "jp_kanji": "学校",
-    "en": "school",
+    "jp_kana": "ねこ",
+    "jp_kanji": "猫",
+    "en": "cat",
     "lesson": "Lesson 1",
-    "default_starred": true,
+    "default_starred": false,
     "id": "jpln1200_l1_004"
   },
   {
-    "jp_kana": "きょうしつ",
-    "jp_kanji": "教室",
-    "en": "classroom",
+    "jp_kana": "あなた",
+    "jp_kanji": "",
+    "en": "you",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_005"
   },
   {
-    "jp_kana": "ぎんこう",
-    "jp_kanji": "銀行",
-    "en": "bank",
+    "jp_kana": "まち",
+    "jp_kanji": "町",
+    "en": "town, city",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_006"
   },
   {
-    "jp_kana": "くるま",
-    "jp_kanji": "車",
-    "en": "car",
+    "jp_kana": "レストラン",
+    "jp_kanji": "",
+    "en": "restaurant",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_007"
   },
   {
-    "jp_kana": "じゃありません",
-    "jp_kanji": "",
-    "en": "is not, are not",
+    "jp_kana": "ひとりで",
+    "jp_kanji": "一人で",
+    "en": "alone",
     "lesson": "Lesson 1",
-    "default_starred": true,
+    "default_starred": false,
     "id": "jpln1200_l1_008"
   },
   {
-    "jp_kana": "じゃありませんでした",
+    "jp_kana": "ある",
     "jp_kanji": "",
-    "en": "was not, were not",
+    "en": "there is ..., (place に thing が)",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_009"
   },
   {
-    "jp_kana": "だいがく",
-    "jp_kanji": "大学",
-    "en": "university",
+    "jp_kana": "いる",
+    "jp_kanji": "",
+    "en": "(a person) is in ...; stays at ..., (place に person が)",
     "lesson": "Lesson 1",
-    "default_starred": true,
+    "default_starred": false,
     "id": "jpln1200_l1_010"
   },
   {
-    "jp_kana": "でした",
+    "jp_kana": "アルバイト",
     "jp_kanji": "",
-    "en": "was, were",
+    "en": "part-time job, (more colloquially) バイト",
     "lesson": "Lesson 1",
-    "default_starred": true,
+    "default_starred": false,
     "id": "jpln1200_l1_011"
   },
   {
-    "jp_kana": "どこ",
+    "jp_kana": "クラス",
     "jp_kanji": "",
-    "en": "where",
+    "en": "class",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_012"
   },
   {
-    "jp_kana": "としょかん",
-    "jp_kanji": "図書館",
-    "en": "library",
+    "jp_kana": "サークル",
+    "jp_kanji": "",
+    "en": "club activity",
     "lesson": "Lesson 1",
-    "default_starred": false,
+    "default_starred": true,
     "id": "jpln1200_l1_013"
   },
   {
-    "jp_kana": "なんじ",
-    "jp_kanji": "何時",
-    "en": "what time",
+    "jp_kana": "パーティー",
+    "jp_kanji": "",
+    "en": "party",
     "lesson": "Lesson 1",
-    "default_starred": true,
+    "default_starred": false,
     "id": "jpln1200_l1_014"
   },
   {
-    "jp_kana": "へや",
-    "jp_kanji": "部屋",
-    "en": "room",
+    "jp_kana": "テスト",
+    "jp_kanji": "",
+    "en": "test",
     "lesson": "Lesson 1",
-    "default_starred": false,
+    "default_starred": true,
     "id": "jpln1200_l1_015"
   },
   {
-    "jp_kana": "ほん",
-    "jp_kanji": "本",
-    "en": "book",
+    "jp_kana": "げつようび",
+    "jp_kanji": "月曜日",
+    "en": "Monday",
     "lesson": "Lesson 1",
     "default_starred": true,
     "id": "jpln1200_l1_016"
   },
   {
-    "jp_kana": "むかい",
-    "jp_kanji": "向かい",
-    "en": "across from",
+    "jp_kana": "かようび",
+    "jp_kanji": "火曜日",
+    "en": "Tuesday",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_017"
+  },
+  {
+    "jp_kana": "すいようび",
+    "jp_kanji": "水曜日",
+    "en": "Wednesday",
+    "lesson": "Lesson 1",
+    "default_starred": true,
+    "id": "jpln1200_l1_018"
+  },
+  {
+    "jp_kana": "もくようび",
+    "jp_kanji": "木曜日",
+    "en": "Thursday",
+    "lesson": "Lesson 1",
+    "default_starred": true,
+    "id": "jpln1200_l1_019"
+  },
+  {
+    "jp_kana": "きんようび",
+    "jp_kanji": "金曜日",
+    "en": "Friday",
+    "lesson": "Lesson 1",
+    "default_starred": false,
+    "id": "jpln1200_l1_020"
   }
 ]

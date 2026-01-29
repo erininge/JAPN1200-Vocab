@@ -1,26 +1,122 @@
 [
   {
-    "jp_kana": "サークル",
-    "jp_kanji": "",
-    "en": "club activity",
+    "jp_kana": "こうえん",
+    "jp_kanji": "公園",
+    "en": "park",
     "lesson": "Lesson 2",
-    "default_starred": true,
+    "default_starred": false,
     "id": "jpln1200_l2_001"
   },
   {
-    "jp_kana": "テスト",
+    "jp_kana": "スーパー",
     "jp_kanji": "",
-    "en": "test",
+    "en": "supermarket",
     "lesson": "Lesson 2",
-    "default_starred": true,
+    "default_starred": false,
     "id": "jpln1200_l2_002"
   },
   {
-    "jp_kana": "パーティー",
-    "jp_kanji": "",
-    "en": "party",
+    "jp_kana": "バスてい",
+    "jp_kanji": "バス停",
+    "en": "bus stop",
     "lesson": "Lesson 2",
     "default_starred": false,
     "id": "jpln1200_l2_003"
+  },
+  {
+    "jp_kana": "びょういん",
+    "jp_kanji": "病院",
+    "en": "hospital",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_004"
+  },
+  {
+    "jp_kana": "ホテル",
+    "jp_kanji": "",
+    "en": "hotel",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_005"
+  },
+  {
+    "jp_kana": "ほんや",
+    "jp_kanji": "本屋",
+    "en": "bookstore",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_006"
+  },
+  {
+    "jp_kana": "みぎ",
+    "jp_kanji": "右",
+    "en": "right, to the right of, (~の)",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_007"
+  },
+  {
+    "jp_kana": "ひだり",
+    "jp_kanji": "左",
+    "en": "left, to the left of, (~の)",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_008"
+  },
+  {
+    "jp_kana": "まえ",
+    "jp_kanji": "前",
+    "en": "front, in front of, (~の)",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_009"
+  },
+  {
+    "jp_kana": "うしろ",
+    "jp_kanji": "後ろ",
+    "en": "back, behind, (~の)",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_010"
+  },
+  {
+    "jp_kana": "なか",
+    "jp_kanji": "中",
+    "en": "inside, in, (~の)",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_011"
+  },
+  {
+    "jp_kana": "ちかく",
+    "jp_kanji": "近く",
+    "en": "near, nearby, near to, (~の)",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_012"
+  },
+  {
+    "jp_kana": "となり",
+    "jp_kanji": "隣",
+    "en": "next, next to, (~の)",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_013"
+  },
+  {
+    "jp_kana": "あいだ",
+    "jp_kanji": "間",
+    "en": "between (A と B の)",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_014"
+  },
+  {
+    "jp_kana": "むかい",
+    "jp_kanji": "向かい",
+    "en": "across from",
+    "lesson": "Lesson 2",
+    "default_starred": false,
+    "id": "jpln1200_l2_015"
   }
 ]
