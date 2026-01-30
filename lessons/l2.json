@@ -50,7 +50,7 @@
   {
     "jp_kana": "みぎ",
     "jp_kanji": "右",
-    "en": "right, to the right of, (~の)",
+    "en": "right ;to the right of(~の)",
     "lesson": "Lesson 2",
     "default_starred": false,
     "id": "jpln1200_l2_007"
@@ -58,7 +58,7 @@
   {
     "jp_kana": "ひだり",
     "jp_kanji": "左",
-    "en": "left, to the left of, (~の)",
+    "en": "left ;to the left of(~の)",
     "lesson": "Lesson 2",
     "default_starred": false,
     "id": "jpln1200_l2_008"
@@ -66,7 +66,7 @@
   {
     "jp_kana": "まえ",
     "jp_kanji": "前",
-    "en": "front, in front of, (~の)",
+    "en": "front ;in front of (~の)",
     "lesson": "Lesson 2",
     "default_starred": false,
     "id": "jpln1200_l2_009"
@@ -74,7 +74,7 @@
   {
     "jp_kana": "うしろ",
     "jp_kanji": "後ろ",
-    "en": "back, behind, (~の)",
+    "en": "back ;behind (~の)",
     "lesson": "Lesson 2",
     "default_starred": false,
     "id": "jpln1200_l2_010"
@@ -82,7 +82,7 @@
   {
     "jp_kana": "なか",
     "jp_kanji": "中",
-    "en": "inside, in, (~の)",
+    "en": "inside ;in (~の)",
     "lesson": "Lesson 2",
     "default_starred": false,
     "id": "jpln1200_l2_011"
@@ -90,7 +90,7 @@
   {
     "jp_kana": "ちかく",
     "jp_kanji": "近く",
-    "en": "near, nearby, near to, (~の)",
+    "en": "near ;nearby ;near to (~の)",
     "lesson": "Lesson 2",
     "default_starred": false,
     "id": "jpln1200_l2_012"
@@ -98,7 +98,7 @@
   {
     "jp_kana": "となり",
     "jp_kanji": "隣",
-    "en": "next, next to, (~の)",
+    "en": "next ;next to (~の)",
     "lesson": "Lesson 2",
     "default_starred": false,
     "id": "jpln1200_l2_013"

@@ -26,7 +26,7 @@
   {
     "jp_kana": "うえ",
     "jp_kanji": "上",
-    "en": "up, above, on, (~の)",
+    "en": "up ;above ;on (~の)",
     "lesson": "Lesson 3",
     "default_starred": false,
     "id": "jpln1200_l3_004"
@@ -34,7 +34,7 @@
   {
     "jp_kana": "した",
     "jp_kanji": "下",
-    "en": "down, below, under, (~の)",
+    "en": "down ;below ;under (~の)",
     "lesson": "Lesson 3",
     "default_starred": false,
     "id": "jpln1200_l3_005"

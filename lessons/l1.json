@@ -42,7 +42,7 @@
   {
     "jp_kana": "まち",
     "jp_kanji": "町",
-    "en": "town, city",
+    "en": "town ;city",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_006"
@@ -66,7 +66,7 @@
   {
     "jp_kana": "ある",
     "jp_kanji": "",
-    "en": "there is ..., (place に thing が)",
+    "en": "there is ... (place に thing が)",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_009"
@@ -82,7 +82,7 @@
   {
     "jp_kana": "アルバイト",
     "jp_kanji": "",
-    "en": "part-time job, (more colloquially) バイト",
+    "en": "part-time job (more colloquially バイト)",
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_011"
