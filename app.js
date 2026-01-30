@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.4) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.5) */
 
-const APP_VERSION = "V5.4";
+const APP_VERSION = "V5.5";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -56,10 +56,27 @@ function normEnglish(s) {
 function englishAliases(en) {
   const base = (en || "").trim();
   const parts = [];
+  if (!base) return parts;
   parts.push(base);
+  const withoutParens = base.replace(/\(.*?\)/g, " ").replace(/\s+/g, " ").trim();
+  if (withoutParens) parts.push(withoutParens);
   parts.push(base.split(",")[0].trim());
   parts.push(base.split("(")[0].trim());
+  const segments = base.split(/[;,/]/).map((seg) => seg.trim()).filter(Boolean);
+  segments.forEach((seg) => parts.push(seg));
+  const segmentsNoParens = withoutParens
+    .split(/[;,/]/)
+    .map((seg) => seg.trim())
+    .filter(Boolean);
+  segmentsNoParens.forEach((seg) => parts.push(seg));
   return uniq(parts.filter(Boolean));
+}
+
+function englishVariants(s) {
+  const spaced = normEnglish(s);
+  if (!spaced) return [];
+  const tight = spaced.replace(/\s+/g, "");
+  return uniq([spaced, tight].filter(Boolean));
 }
 
 function normJP(s) {
@@ -677,10 +694,10 @@ function gradeTyping(q, user, dmode) {
   }
 
   if (q.qmode === "jp2en" || q.qmode === "listen2en") {
-    const u = normEnglish(user);
-    const aliases = englishAliases(it.en).map(normEnglish).filter(Boolean);
-    if (!u) return false;
-    return aliases.some(a => a && (u === a || u.includes(a) || a.includes(u)));
+    const uVariants = englishVariants(user);
+    const aliases = englishAliases(it.en).flatMap(englishVariants).filter(Boolean);
+    if (uVariants.length === 0) return false;
+    return uVariants.some((u) => aliases.some((a) => a && (u === a || u.includes(a) || a.includes(u))));
   }
 
   const u = normJP(user);

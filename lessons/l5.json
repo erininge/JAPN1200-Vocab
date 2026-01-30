@@ -2,7 +2,7 @@
   {
     "jp_kana": "しゃしん",
     "jp_kanji": "写真",
-    "en": "photo / picture",
+    "en": "photo ;picture",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_001"
@@ -34,7 +34,7 @@
   {
     "jp_kana": "それから",
     "jp_kanji": "",
-    "en": "and then / after that",
+    "en": "and then ;after that",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_005"
@@ -42,7 +42,7 @@
   {
     "jp_kana": "だから",
     "jp_kanji": "",
-    "en": "so / therefore",
+    "en": "so ;therefore",
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_006"

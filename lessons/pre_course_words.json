@@ -2,7 +2,7 @@
   {
     "jp_kana": "…さん",
     "jp_kanji": "",
-    "en": "Mr./Ms….",
+    "en": "Mr./Ms...",
     "lesson": "Pre Course Words",
     "default_starred": false,
     "id": "jpln1200_pre_076",
@@ -59,7 +59,7 @@
   {
     "jp_kana": "どうぞ",
     "jp_kanji": "",
-    "en": "Please (offering). / Here you are.",
+    "en": "Please (offering) ;Here you are",
     "lesson": "Pre Course Words",
     "default_starred": false,
     "id": "jpln1200_pre_083"
@@ -67,7 +67,7 @@
   {
     "jp_kana": "じゃあまた",
     "jp_kanji": "",
-    "en": "Good-bye. / See you again.",
+    "en": "Good-bye ;See you again",
     "lesson": "Pre Course Words",
     "default_starred": false,
     "id": "jpln1200_pre_084"
@@ -75,7 +75,7 @@
   {
     "jp_kana": "しつれいします",
     "jp_kanji": "",
-    "en": "Excuse me. / Good-bye.",
+    "en": "Excuse me ;Good-bye",
     "lesson": "Pre Course Words",
     "default_starred": false,
     "id": "jpln1200_pre_085"
@@ -531,7 +531,7 @@
   {
     "jp_kana": "しごと",
     "jp_kanji": "",
-    "en": "job, work, occupation",
+    "en": "job ;work ;occupation",
     "lesson": "Pre Course Words",
     "default_starred": false,
     "id": "jpln1200_pre_143"

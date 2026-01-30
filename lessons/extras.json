@@ -58,7 +58,7 @@
   {
     "jp_kana": "じゃありません",
     "jp_kanji": "",
-    "en": "is not, are not",
+    "en": "is not ;are not",
     "lesson": "Extras",
     "default_starred": true,
     "id": "jpln1200_LE_008"
@@ -66,7 +66,7 @@
   {
     "jp_kana": "じゃありませんでした",
     "jp_kanji": "",
-    "en": "was not, were not",
+    "en": "was not ;were not",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_LE_009"
@@ -298,7 +298,7 @@
   {
     "jp_kana": "～ぐらい",
     "jp_kanji": "",
-    "en": "about / approximately",
+    "en": "about ;approximately",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_001"
@@ -338,7 +338,7 @@
   {
     "jp_kana": "ごはん",
     "jp_kanji": "ご飯",
-    "en": "rice, meal",
+    "en": "rice ;meal",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_024"
@@ -354,7 +354,7 @@
   {
     "jp_kana": "しゃしん",
     "jp_kanji": "写真",
-    "en": "picture, photograph",
+    "en": "picture ;photograph",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_027"
@@ -362,7 +362,7 @@
   {
     "jp_kana": "それから",
     "jp_kanji": "",
-    "en": "and then",
+    "en": "and then ;after that",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_030"
@@ -370,7 +370,7 @@
   {
     "jp_kana": "だから",
     "jp_kanji": "",
-    "en": "so, therefore",
+    "en": "so ;therefore",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_031"
@@ -378,7 +378,7 @@
   {
     "jp_kana": "たくさん",
     "jp_kanji": "",
-    "en": "many, a lot",
+    "en": "many ;a lot",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_032"
@@ -394,7 +394,7 @@
   {
     "jp_kana": "とき",
     "jp_kanji": "時",
-    "en": "when ..., at the time of ... (～の)",
+    "en": "when ... ;at the time of ... (～の)",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_036"
@@ -402,7 +402,7 @@
   {
     "jp_kana": "とる",
     "jp_kanji": "撮る",
-    "en": "to take (a picture), (～を)",
+    "en": "to take (a picture) (～を)",
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_038"

@@ -10,7 +10,7 @@
   {
     "jp_kana": "れぽーと",
     "jp_kanji": "レポート",
-    "en": "paper / report",
+    "en": "paper ;report",
     "lesson": "Lesson 4",
     "default_starred": false,
     "id": "jpln1200_l4_002"
@@ -26,7 +26,7 @@
   {
     "jp_kana": "～と",
     "jp_kanji": "",
-    "en": "together with ~ / and",
+    "en": "together with ~ ;and",
     "lesson": "Lesson 4",
     "default_starred": false,
     "id": "jpln1200_l4_004"
