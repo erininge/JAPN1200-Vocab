@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.6) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.7) */
 
-const APP_VERSION = "V5.6";
+const APP_VERSION = "V5.7";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -14,7 +14,8 @@ const DEFAULT_SETTINGS = {
   audioOn: true,
   volume: 0.9,
   autoplay: false,
-  smartGrade: true
+  smartGrade: true,
+  backgroundEffects: "off"
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -225,7 +226,47 @@ function applySettingsToUI(s) {
   $("#setVolume").value = String(s.volume ?? 0.9);
   $("#setAutoplay").checked = !!s.autoplay;
   $("#setSmartGrade").checked = !!s.smartGrade;
+  const bgSelect = $("#setBackgroundEffects");
+  const bgHint = $("#backgroundEffectsHint");
+  const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+  if (bgSelect) {
+    bgSelect.value = prefersReduced ? "off" : (s.backgroundEffects || "off");
+    bgSelect.disabled = prefersReduced;
+  }
+  if (bgHint) {
+    bgHint.textContent = prefersReduced
+      ? "Background effects are disabled because your device prefers reduced motion."
+      : "Choose the amount of falling petals shown behind the UI.";
+  }
+  applyBackgroundEffects(prefersReduced ? "off" : (s.backgroundEffects || "off"));
   updateListeningAvailability();
+}
+
+function applyBackgroundEffects(level) {
+  const layer = $("#petalLayer");
+  if (!layer) return;
+  layer.innerHTML = "";
+  if (level === "off") return;
+
+  const baseCount = level === "high" ? 32 : 16;
+  const count = isMobileViewport() ? Math.round(baseCount * 0.7) : baseCount;
+
+  for (let i = 0; i < count; i += 1) {
+    const petal = document.createElement("span");
+    petal.className = "petal";
+    const size = (Math.random() * 6 + 6).toFixed(2);
+    const left = (Math.random() * 100).toFixed(2);
+    const delay = (Math.random() * 10).toFixed(2);
+    const duration = (Math.random() * 12 + 16).toFixed(2);
+    const drift = (Math.random() * 20 - 10).toFixed(2);
+    petal.style.setProperty("--petal-size", `${size}px`);
+    petal.style.setProperty("--petal-left", `${left}%`);
+    petal.style.setProperty("--petal-delay", `${delay}s`);
+    petal.style.setProperty("--petal-duration", `${duration}s`);
+    petal.style.setProperty("--petal-drift", `${drift}px`);
+    petal.style.setProperty("--petal-rotate", `${Math.random() * 360}deg`);
+    layer.appendChild(petal);
+  }
 }
 
 let LESSONS = [];
@@ -1291,6 +1332,16 @@ function wireUI() {
   });
   $("#setSmartGrade").addEventListener("change", () => {
     SETTINGS = setSettings({ smartGrade: $("#setSmartGrade").checked });
+  });
+  $("#setBackgroundEffects").addEventListener("change", () => {
+    const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+    const select = $("#setBackgroundEffects");
+    if (prefersReduced) {
+      select.value = "off";
+      SETTINGS = setSettings({ backgroundEffects: "off" });
+      return;
+    }
+    SETTINGS = setSettings({ backgroundEffects: select.value });
   });
   $("#btnAudioCheck").addEventListener("click", async () => {
     const summary = $("#audioCheckSummary");

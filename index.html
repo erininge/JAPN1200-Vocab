@@ -6,16 +6,17 @@
   <meta name="theme-color" content="#0f1116" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon-192.png" />
-  <link rel="stylesheet" href="styles.css?f=v5.6" />
+  <link rel="stylesheet" href="styles.css?f=v5.7" />
   <title>Kat’s Vocab Garden 🌸 — JAPN1200</title>
 </head>
 <body>
+  <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
   <header class="topbar">
     <div class="brand">
       <div class="logo">🌸</div>
       <div class="brandText">
         <div class="title">Kat’s Vocab Garden 🌸</div>
-        <div class="sub">JAPN1200 • <span id="versionLabel">V5.6</span></div>
+        <div class="sub">JAPN1200 • <span id="versionLabel">V5.7</span></div>
       </div>
     </div>
 
@@ -193,7 +194,15 @@
           <label class="chip">Volume <input type="range" id="setVolume" min="0" max="1" step="0.01" value="0.9"></label>
           <label class="chip"><input type="checkbox" id="setAutoplay"> Autoplay audio</label>
           <label class="chip"><input type="checkbox" id="setSmartGrade" checked> Smart grading</label>
+          <label class="chip">Background effects
+            <select id="setBackgroundEffects" class="select inline">
+              <option value="off" selected>Off</option>
+              <option value="low">Low</option>
+              <option value="high">High</option>
+            </select>
+          </label>
         </div>
+        <div class="hint" id="backgroundEffectsHint">Choose the amount of falling petals shown behind the UI.</div>
 
         <div class="cardTitle" style="margin-top:16px;">Audio folder</div>
         <div class="hint">
@@ -236,6 +245,6 @@
 
   <div id="toast" class="toast hidden"></div>
 
-  <script src="app.js?f=v5.6"></script>
+  <script src="app.js?f=v5.7"></script>
 </body>
 </html>
