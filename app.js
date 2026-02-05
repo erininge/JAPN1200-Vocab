@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.7) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.8) */
 
-const APP_VERSION = "V5.7";
+const APP_VERSION = "V5.8";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -15,7 +15,7 @@ const DEFAULT_SETTINGS = {
   volume: 0.9,
   autoplay: false,
   smartGrade: true,
-  backgroundEffects: "off"
+  backgroundVideo: "off"
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -226,46 +226,71 @@ function applySettingsToUI(s) {
   $("#setVolume").value = String(s.volume ?? 0.9);
   $("#setAutoplay").checked = !!s.autoplay;
   $("#setSmartGrade").checked = !!s.smartGrade;
-  const bgSelect = $("#setBackgroundEffects");
-  const bgHint = $("#backgroundEffectsHint");
+  const bgSelect = $("#setBackgroundVideo");
+  const bgHint = $("#backgroundVideoHint");
   const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
   if (bgSelect) {
-    bgSelect.value = prefersReduced ? "off" : (s.backgroundEffects || "off");
+    bgSelect.value = prefersReduced ? "off" : (s.backgroundVideo || "off");
     bgSelect.disabled = prefersReduced;
   }
   if (bgHint) {
     bgHint.textContent = prefersReduced
-      ? "Background effects are disabled because your device prefers reduced motion."
-      : "Choose the amount of falling petals shown behind the UI.";
+      ? "Background video is disabled because your device prefers reduced motion."
+      : "Enable the Sakura background video behind the UI.";
   }
-  applyBackgroundEffects(prefersReduced ? "off" : (s.backgroundEffects || "off"));
+  applyBackgroundVideo(prefersReduced ? "off" : (s.backgroundVideo || "off"));
   updateListeningAvailability();
 }
 
-function applyBackgroundEffects(level) {
-  const layer = $("#petalLayer");
+let VIDEO_FALLBACK_CLEANUP = null;
+
+function clearVideoFallback() {
+  if (VIDEO_FALLBACK_CLEANUP) {
+    VIDEO_FALLBACK_CLEANUP();
+    VIDEO_FALLBACK_CLEANUP = null;
+  }
+}
+
+function addVideoInteractionFallback(video) {
+  clearVideoFallback();
+  const events = ["pointerdown", "touchstart", "click", "keydown"];
+  const handler = () => {
+    video.play()
+      .then(() => clearVideoFallback())
+      .catch(() => {});
+  };
+  events.forEach((evt) => window.addEventListener(evt, handler, { passive: true }));
+  VIDEO_FALLBACK_CLEANUP = () => {
+    events.forEach((evt) => window.removeEventListener(evt, handler));
+  };
+}
+
+function applyBackgroundVideo(state) {
+  const layer = $("#videoBackground");
   if (!layer) return;
+  clearVideoFallback();
+  layer.classList.remove("is-active");
   layer.innerHTML = "";
-  if (level === "off") return;
+  if (state !== "on") return;
 
-  const baseCount = level === "high" ? 32 : 16;
-  const count = isMobileViewport() ? Math.round(baseCount * 0.7) : baseCount;
+  const video = document.createElement("video");
+  video.src = "./icons/Sakura.mp4";
+  video.autoplay = true;
+  video.loop = true;
+  video.muted = true;
+  video.playsInline = true;
+  video.setAttribute("playsinline", "");
+  video.setAttribute("muted", "");
+  video.setAttribute("aria-hidden", "true");
+  video.preload = "auto";
+  layer.appendChild(video);
+  layer.classList.add("is-active");
 
-  for (let i = 0; i < count; i += 1) {
-    const petal = document.createElement("span");
-    petal.className = "petal";
-    const size = (Math.random() * 6 + 6).toFixed(2);
-    const left = (Math.random() * 100).toFixed(2);
-    const delay = (Math.random() * 10).toFixed(2);
-    const duration = (Math.random() * 12 + 16).toFixed(2);
-    const drift = (Math.random() * 20 - 10).toFixed(2);
-    petal.style.setProperty("--petal-size", `${size}px`);
-    petal.style.setProperty("--petal-left", `${left}%`);
-    petal.style.setProperty("--petal-delay", `${delay}s`);
-    petal.style.setProperty("--petal-duration", `${duration}s`);
-    petal.style.setProperty("--petal-drift", `${drift}px`);
-    petal.style.setProperty("--petal-rotate", `${Math.random() * 360}deg`);
-    layer.appendChild(petal);
+  const playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === "function") {
+    playPromise.catch(() => addVideoInteractionFallback(video));
+  } else {
+    addVideoInteractionFallback(video);
   }
 }
 
@@ -1333,15 +1358,15 @@ function wireUI() {
   $("#setSmartGrade").addEventListener("change", () => {
     SETTINGS = setSettings({ smartGrade: $("#setSmartGrade").checked });
   });
-  $("#setBackgroundEffects").addEventListener("change", () => {
+  $("#setBackgroundVideo").addEventListener("change", () => {
     const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
-    const select = $("#setBackgroundEffects");
+    const select = $("#setBackgroundVideo");
     if (prefersReduced) {
       select.value = "off";
-      SETTINGS = setSettings({ backgroundEffects: "off" });
+      SETTINGS = setSettings({ backgroundVideo: "off" });
       return;
     }
-    SETTINGS = setSettings({ backgroundEffects: select.value });
+    SETTINGS = setSettings({ backgroundVideo: select.value });
   });
   $("#btnAudioCheck").addEventListener("click", async () => {
     const summary = $("#audioCheckSummary");
