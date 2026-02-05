@@ -1,11 +1,12 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.5) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.7) */
 
-const APP_VERSION = "V5.5";
+const APP_VERSION = "V5.7";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
   stats: "jpln1200_stats_v1",
   kanjiOverrides: "jpln1200_kanji_overrides_v1",
+  vocabEdits: "jpln1200_vocab_edits_v1",
   seeded: "jpln1200_seeded_v1"
 };
 
@@ -13,7 +14,8 @@ const DEFAULT_SETTINGS = {
   audioOn: true,
   volume: 0.9,
   autoplay: false,
-  smartGrade: true
+  smartGrade: true,
+  backgroundEffects: "off"
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -224,12 +226,53 @@ function applySettingsToUI(s) {
   $("#setVolume").value = String(s.volume ?? 0.9);
   $("#setAutoplay").checked = !!s.autoplay;
   $("#setSmartGrade").checked = !!s.smartGrade;
+  const bgSelect = $("#setBackgroundEffects");
+  const bgHint = $("#backgroundEffectsHint");
+  const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+  if (bgSelect) {
+    bgSelect.value = prefersReduced ? "off" : (s.backgroundEffects || "off");
+    bgSelect.disabled = prefersReduced;
+  }
+  if (bgHint) {
+    bgHint.textContent = prefersReduced
+      ? "Background effects are disabled because your device prefers reduced motion."
+      : "Choose the amount of falling petals shown behind the UI.";
+  }
+  applyBackgroundEffects(prefersReduced ? "off" : (s.backgroundEffects || "off"));
   updateListeningAvailability();
+}
+
+function applyBackgroundEffects(level) {
+  const layer = $("#petalLayer");
+  if (!layer) return;
+  layer.innerHTML = "";
+  if (level === "off") return;
+
+  const baseCount = level === "high" ? 32 : 16;
+  const count = isMobileViewport() ? Math.round(baseCount * 0.7) : baseCount;
+
+  for (let i = 0; i < count; i += 1) {
+    const petal = document.createElement("span");
+    petal.className = "petal";
+    const size = (Math.random() * 6 + 6).toFixed(2);
+    const left = (Math.random() * 100).toFixed(2);
+    const delay = (Math.random() * 10).toFixed(2);
+    const duration = (Math.random() * 12 + 16).toFixed(2);
+    const drift = (Math.random() * 20 - 10).toFixed(2);
+    petal.style.setProperty("--petal-size", `${size}px`);
+    petal.style.setProperty("--petal-left", `${left}%`);
+    petal.style.setProperty("--petal-delay", `${delay}s`);
+    petal.style.setProperty("--petal-duration", `${duration}s`);
+    petal.style.setProperty("--petal-drift", `${drift}px`);
+    petal.style.setProperty("--petal-rotate", `${Math.random() * 360}deg`);
+    layer.appendChild(petal);
+  }
 }
 
 let LESSONS = [];
 let ITEMS = [];
 let ITEMS_BY_ID = new Map();
+let VOCAB_EDITS = {};
 
 let STARRED = new Set();
 let KANJI_OVERRIDES = new Set();
@@ -304,6 +347,52 @@ function toggleKanjiOverride(id, force) {
   if (on) KANJI_OVERRIDES.add(id); else KANJI_OVERRIDES.delete(id);
   saveKanjiOverrides();
   return on;
+}
+
+function loadVocabEdits() {
+  const saved = loadJSON(STORAGE.vocabEdits, {});
+  VOCAB_EDITS = saved && typeof saved === "object" ? saved : {};
+}
+
+function saveVocabEdits() {
+  saveJSON(STORAGE.vocabEdits, VOCAB_EDITS);
+}
+
+function applyVocabEditsToItem(item) {
+  const edit = VOCAB_EDITS[item.id];
+  if (!edit) return;
+  if (Object.prototype.hasOwnProperty.call(edit, "jp_kana")) item.jp_kana = edit.jp_kana;
+  if (Object.prototype.hasOwnProperty.call(edit, "jp_kanji")) item.jp_kanji = edit.jp_kanji;
+  if (Object.prototype.hasOwnProperty.call(edit, "en")) item.en = edit.en;
+}
+
+function populateVocabEditRow(row, item) {
+  const kanaInput = row.querySelector("[data-field='jp_kana']");
+  const kanjiInput = row.querySelector("[data-field='jp_kanji']");
+  const enInput = row.querySelector("[data-field='en']");
+  if (kanaInput) kanaInput.value = item.jp_kana || "";
+  if (kanjiInput) kanjiInput.value = item.jp_kanji || "";
+  if (enInput) enInput.value = item.en || "";
+}
+
+function setVocabRowEditing(row, editing) {
+  row.classList.toggle("editing", editing);
+  row.querySelectorAll(".vocabView").forEach((el) => el.classList.toggle("hidden", editing));
+  row.querySelectorAll(".vocabEdit").forEach((el) => el.classList.toggle("hidden", !editing));
+  if (editing) {
+    const firstInput = row.querySelector(".vocabEdit input");
+    if (firstInput) firstInput.focus();
+  }
+}
+
+function updateVocabRowDisplay(row, item, displayMode) {
+  const jpEl = row.querySelector(".jpDisplayText");
+  const enEl = row.querySelector(".enDisplayText");
+  if (jpEl) {
+    const mode = isKanjiOverride(item.id) ? "kanji" : displayMode;
+    jpEl.textContent = jpDisplay(item, mode);
+  }
+  if (enEl) enEl.textContent = item.en || "";
 }
 
 function lesson_code(lessonName) {
@@ -440,6 +529,8 @@ async function loadData() {
     const arr = await fetch(l.file).then(r => r.json());
     for (const it of arr) all.push(it);
   }
+  loadVocabEdits();
+  all.forEach(applyVocabEditsToItem);
   ITEMS = all;
   ITEMS_BY_ID = new Map(ITEMS.map(it => [it.id, it]));
   $("#countTotal").textContent = String(ITEMS.length);
@@ -934,10 +1025,42 @@ function buildVocabUI() {
     tr.innerHTML = `
       <td><button class="starBtn ${starOn ? "on" : ""}" data-id="${it.id}">${starOn ? "⭐" : "☆"}</button></td>
       <td><button class="kanjiBtn ${kanjiOn ? "on" : ""}" data-id="${it.id}" title="Toggle kanji-only for this word">${kanjiOn ? "漢" : "かな"}</button></td>
-      <td><div style="font-weight:800;">${jpDisplay(it, rowDisplay)}</div><div class="hint audioHint">${audioId}</div></td>
-      <td>${it.en}</td>
+      <td>
+        <div class="vocabView">
+          <div class="jpDisplayText" style="font-weight:800;">${jpDisplay(it, rowDisplay)}</div>
+          <div class="hint audioHint">${audioId}</div>
+        </div>
+        <div class="vocabEdit hidden">
+          <div class="vocabEditGrid">
+            <label class="vocabEditField">Kana
+              <input class="input compact" type="text" data-field="jp_kana" value="${it.jp_kana || ""}" />
+            </label>
+            <label class="vocabEditField">Kanji
+              <input class="input compact" type="text" data-field="jp_kanji" value="${it.jp_kanji || ""}" />
+            </label>
+          </div>
+          <div class="hint">Leave blank to remove a field.</div>
+        </div>
+      </td>
+      <td>
+        <div class="vocabView enDisplayText">${it.en}</div>
+        <div class="vocabEdit hidden">
+          <input class="input compact" type="text" data-field="en" value="${it.en || ""}" />
+        </div>
+      </td>
       <td><span class="hint">${it.lesson}</span></td>
       <td><button class="audioBtn" data-a="${it.id}">🔊</button></td>
+      <td class="vocabActions">
+        <div class="vocabView">
+          <button class="btn subtle editBtn" data-id="${it.id}">Edit</button>
+        </div>
+        <div class="vocabEdit hidden">
+          <div class="row gap">
+            <button class="btn primary saveBtn" data-id="${it.id}">Save</button>
+            <button class="btn subtle cancelBtn" data-id="${it.id}">Cancel</button>
+          </div>
+        </div>
+      </td>
     `;
     host.appendChild(tr);
     rowEls.push(tr);
@@ -969,12 +1092,60 @@ function buildVocabUI() {
       const on = toggleKanjiOverride(id);
       b.textContent = on ? "漢" : "かな";
       b.classList.toggle("on", on);
-      const cell = b.closest("tr")?.querySelector("td:nth-child(3) div");
+      const cell = b.closest("tr")?.querySelector(".jpDisplayText");
       if (cell) {
         const item = ITEMS_BY_ID.get(id);
         const mode = on ? "kanji" : display;
         cell.textContent = jpDisplay(item, mode);
       }
+    });
+  });
+
+  host.querySelectorAll(".editBtn").forEach(b => {
+    b.addEventListener("click", () => {
+      const id = b.getAttribute("data-id");
+      const row = b.closest("tr");
+      const item = ITEMS_BY_ID.get(id);
+      if (!row || !item) return;
+      populateVocabEditRow(row, item);
+      setVocabRowEditing(row, true);
+    });
+  });
+
+  host.querySelectorAll(".cancelBtn").forEach(b => {
+    b.addEventListener("click", () => {
+      const id = b.getAttribute("data-id");
+      const row = b.closest("tr");
+      const item = ITEMS_BY_ID.get(id);
+      if (!row || !item) return;
+      populateVocabEditRow(row, item);
+      setVocabRowEditing(row, false);
+    });
+  });
+
+  host.querySelectorAll(".saveBtn").forEach(b => {
+    b.addEventListener("click", () => {
+      const id = b.getAttribute("data-id");
+      const row = b.closest("tr");
+      const item = ITEMS_BY_ID.get(id);
+      if (!row || !item) return;
+      const kanaInput = row.querySelector("[data-field='jp_kana']");
+      const kanjiInput = row.querySelector("[data-field='jp_kanji']");
+      const enInput = row.querySelector("[data-field='en']");
+      const next = {
+        jp_kana: kanaInput ? kanaInput.value.trim() : "",
+        jp_kanji: kanjiInput ? kanjiInput.value.trim() : "",
+        en: enInput ? enInput.value.trim() : ""
+      };
+      item.jp_kana = next.jp_kana;
+      item.jp_kanji = next.jp_kanji;
+      item.en = next.en;
+      VOCAB_EDITS[id] = next;
+      saveVocabEdits();
+      updateVocabRowDisplay(row, item, display);
+      setVocabRowEditing(row, false);
+      updateCurrentAudioListIfOpen();
+      renderStats();
     });
   });
 
@@ -1161,6 +1332,16 @@ function wireUI() {
   });
   $("#setSmartGrade").addEventListener("change", () => {
     SETTINGS = setSettings({ smartGrade: $("#setSmartGrade").checked });
+  });
+  $("#setBackgroundEffects").addEventListener("change", () => {
+    const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+    const select = $("#setBackgroundEffects");
+    if (prefersReduced) {
+      select.value = "off";
+      SETTINGS = setSettings({ backgroundEffects: "off" });
+      return;
+    }
+    SETTINGS = setSettings({ backgroundEffects: select.value });
   });
   $("#btnAudioCheck").addEventListener("click", async () => {
     const summary = $("#audioCheckSummary");
