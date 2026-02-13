@@ -39,6 +39,18 @@
       "count": 9
     },
     {
+      "code": "l6",
+      "name": "Lesson 6",
+      "file": "lessons/l6.json",
+      "count": 2
+    },
+    {
+      "code": "l7",
+      "name": "Lesson 7",
+      "file": "lessons/l7.json",
+      "count": 4
+    },
+    {
       "code": "pre",
       "name": "Pre Course Words",
       "file": "lessons/pre_course_words.json",
@@ -48,7 +60,7 @@
       "code": "extras",
       "name": "Extras",
       "file": "lessons/extras.json",
-      "count": 73
+      "count": 67
     }
   ]
 }
