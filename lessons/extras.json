@@ -336,22 +336,6 @@
     "id": "jpln1200_pre_021"
   },
   {
-    "jp_kana": "ごはん",
-    "jp_kanji": "ご飯",
-    "en": "rice ;meal",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_024"
-  },
-  {
-    "jp_kana": "ごめんなさい",
-    "jp_kanji": "",
-    "en": "I'm sorry.",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_025"
-  },
-  {
     "jp_kana": "しゃしん",
     "jp_kanji": "写真",
     "en": "picture ;photograph",
@@ -376,22 +360,6 @@
     "id": "jpln1200_pre_031"
   },
   {
-    "jp_kana": "たくさん",
-    "jp_kanji": "",
-    "en": "many ;a lot",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_032"
-  },
-  {
-    "jp_kana": "どうして",
-    "jp_kanji": "",
-    "en": "why",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_035"
-  },
-  {
     "jp_kana": "とき",
     "jp_kanji": "時",
     "en": "when ... ;at the time of ... (～の)",
@@ -406,22 +374,6 @@
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_038"
-  },
-  {
-    "jp_kana": "パン",
-    "jp_kanji": "",
-    "en": "bread",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_043"
-  },
-  {
-    "jp_kana": "もしもし",
-    "jp_kanji": "",
-    "en": "Hello?, (used on the phone)",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_054"
   },
   {
     "jp_kana": "わたし",

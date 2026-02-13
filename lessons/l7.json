@@ -1,0 +1,34 @@
+[
+  {
+    "jp_kana": "たくさん",
+    "jp_kanji": "",
+    "en": "many ;a lot",
+    "lesson": "Lesson 7",
+    "default_starred": false,
+    "id": "jpln1200_pre_032"
+  },
+  {
+    "jp_kana": "どうして",
+    "jp_kanji": "",
+    "en": "why",
+    "lesson": "Lesson 7",
+    "default_starred": false,
+    "id": "jpln1200_pre_035"
+  },
+  {
+    "jp_kana": "ごめんなさい",
+    "jp_kanji": "",
+    "en": "I'm sorry.",
+    "lesson": "Lesson 7",
+    "default_starred": false,
+    "id": "jpln1200_pre_025"
+  },
+  {
+    "jp_kana": "もしもし",
+    "jp_kanji": "",
+    "en": "Hello? (on the phone)",
+    "lesson": "Lesson 7",
+    "default_starred": false,
+    "id": "jpln1200_pre_054"
+  }
+]
