@@ -42,7 +42,7 @@
   },
   {
     "jp_kana": "おやすみなさい",
-    "jp_kanji": "お休みなさい",
+    "jp_kanji": "",
     "en": "Good night.",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -122,7 +122,7 @@
   },
   {
     "jp_kana": "いってきます",
-    "jp_kanji": "行ってきます",
+    "jp_kanji": "",
     "en": "I'll go and come back.",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -130,7 +130,7 @@
   },
   {
     "jp_kana": "いってらっしゃい",
-    "jp_kanji": "行ってらっしゃい",
+    "jp_kanji": "",
     "en": "Please go and come back.",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -146,7 +146,7 @@
   },
   {
     "jp_kana": "おかえりなさい",
-    "jp_kanji": "お帰りなさい",
+    "jp_kanji": "",
     "en": "Welcome home.",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -378,7 +378,7 @@
   },
   {
     "jp_kana": "おねがいします",
-    "jp_kanji": "お願いします",
+    "jp_kanji": "",
     "en": "Please (requesting)",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -514,7 +514,7 @@
   },
   {
     "jp_kana": "ともだち",
-    "jp_kanji": "友達",
+    "jp_kanji": "",
     "en": "friend",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -578,7 +578,7 @@
   },
   {
     "jp_kana": "のうと",
-    "jp_kanji": "ノート",
+    "jp_kanji": "",
     "en": "notebook",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -586,7 +586,7 @@
   },
   {
     "jp_kana": "ぺん",
-    "jp_kanji": "ペン",
+    "jp_kanji": "",
     "en": "pen",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -706,7 +706,7 @@
   },
   {
     "jp_kana": "こんびに",
-    "jp_kanji": "コンビニ",
+    "jp_kanji": "",
     "en": "convenience store",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -714,7 +714,7 @@
   },
   {
     "jp_kana": "だれ",
-    "jp_kanji": "誰",
+    "jp_kanji": "",
     "en": "who",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -722,7 +722,7 @@
   },
   {
     "jp_kana": "だれの",
-    "jp_kanji": "誰の",
+    "jp_kanji": "",
     "en": "whose",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -770,7 +770,7 @@
   },
   {
     "jp_kana": "(…お)おねがいします",
-    "jp_kanji": "(…を)お願いします",
+    "jp_kanji": "",
     "en": "…, please.",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -778,7 +778,7 @@
   },
   {
     "jp_kana": "(…お)ください",
-    "jp_kanji": "(…を)ください",
+    "jp_kanji": "",
     "en": "Please give me ….",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1106,7 +1106,7 @@
   },
   {
     "jp_kana": "ごろ",
-    "jp_kanji": "頃",
+    "jp_kanji": "",
     "en": "at about",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1226,7 +1226,7 @@
   },
   {
     "jp_kana": "あまり",
-    "jp_kanji": "余り",
+    "jp_kanji": "",
     "en": "(not) much",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1234,7 +1234,7 @@
   },
   {
     "jp_kana": "ぜんぜん",
-    "jp_kanji": "全然",
+    "jp_kanji": "",
     "en": "(not) at all",
     "lesson": "Pre Course Words",
     "default_starred": false,
