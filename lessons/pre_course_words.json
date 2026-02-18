@@ -74,7 +74,7 @@
   },
   {
     "jp_kana": "しつれいします",
-    "jp_kanji": "",
+    "jp_kanji": "失礼します",
     "en": "Excuse me ;Good-bye",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -90,7 +90,7 @@
   },
   {
     "jp_kana": "(わたしわ)…です.",
-    "jp_kanji": "",
+    "jp_kanji": "(私は)…です。",
     "en": "I am ~.",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -154,7 +154,7 @@
   },
   {
     "jp_kana": "いち",
-    "jp_kanji": "",
+    "jp_kanji": "一",
     "en": "one",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -162,7 +162,7 @@
   },
   {
     "jp_kana": "に",
-    "jp_kanji": "",
+    "jp_kanji": "二",
     "en": "two",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -170,7 +170,7 @@
   },
   {
     "jp_kana": "さん",
-    "jp_kanji": "",
+    "jp_kanji": "三",
     "en": "three",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -178,7 +178,7 @@
   },
   {
     "jp_kana": "よん",
-    "jp_kanji": "",
+    "jp_kanji": "四",
     "en": "four",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -186,7 +186,7 @@
   },
   {
     "jp_kana": "ご",
-    "jp_kanji": "",
+    "jp_kanji": "五",
     "en": "five",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -194,7 +194,7 @@
   },
   {
     "jp_kana": "ろく",
-    "jp_kanji": "",
+    "jp_kanji": "六",
     "en": "six",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -202,7 +202,7 @@
   },
   {
     "jp_kana": "なな",
-    "jp_kanji": "",
+    "jp_kanji": "七",
     "en": "seven",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -210,7 +210,7 @@
   },
   {
     "jp_kana": "はち",
-    "jp_kanji": "",
+    "jp_kanji": "八",
     "en": "eight",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -218,7 +218,7 @@
   },
   {
     "jp_kana": "きゅう",
-    "jp_kanji": "",
+    "jp_kanji": "九",
     "en": "nine",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -226,7 +226,7 @@
   },
   {
     "jp_kana": "じゅう",
-    "jp_kanji": "",
+    "jp_kanji": "十",
     "en": "ten",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -234,7 +234,7 @@
   },
   {
     "jp_kana": "でんわ",
-    "jp_kanji": "",
+    "jp_kanji": "電話",
     "en": "telephone",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -242,7 +242,7 @@
   },
   {
     "jp_kana": "ばんごう",
-    "jp_kanji": "",
+    "jp_kanji": "番号",
     "en": "number",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -250,7 +250,7 @@
   },
   {
     "jp_kana": "なん/なに",
-    "jp_kanji": "",
+    "jp_kanji": "何",
     "en": "what",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -258,7 +258,7 @@
   },
   {
     "jp_kana": "...ばん",
-    "jp_kanji": "",
+    "jp_kanji": "...番",
     "en": "number…",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -282,7 +282,7 @@
   },
   {
     "jp_kana": "いま",
-    "jp_kanji": "",
+    "jp_kanji": "今",
     "en": "now",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -290,7 +290,7 @@
   },
   {
     "jp_kana": "...じ",
-    "jp_kanji": "",
+    "jp_kanji": "...時",
     "en": "o'clock",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -298,7 +298,7 @@
   },
   {
     "jp_kana": "よ-じ",
-    "jp_kanji": "",
+    "jp_kanji": "四時",
     "en": "four o'clock",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -306,7 +306,7 @@
   },
   {
     "jp_kana": "しち-じ",
-    "jp_kanji": "",
+    "jp_kanji": "七時",
     "en": "seven o'clock",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -314,7 +314,7 @@
   },
   {
     "jp_kana": "く-じ",
-    "jp_kanji": "",
+    "jp_kanji": "九時",
     "en": "nine o'clock",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -322,7 +322,7 @@
   },
   {
     "jp_kana": "はん",
-    "jp_kanji": "",
+    "jp_kanji": "半",
     "en": "half",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -330,7 +330,7 @@
   },
   {
     "jp_kana": "ごぜん",
-    "jp_kanji": "",
+    "jp_kanji": "午前",
     "en": "A.M.",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -338,7 +338,7 @@
   },
   {
     "jp_kana": "ご-ふん",
-    "jp_kanji": "",
+    "jp_kanji": "五分",
     "en": "five minutes",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -346,7 +346,7 @@
   },
   {
     "jp_kana": "じゅp-ぷん",
-    "jp_kanji": "",
+    "jp_kanji": "十分",
     "en": "ten minutes",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -354,7 +354,7 @@
   },
   {
     "jp_kana": "とうきょう",
-    "jp_kanji": "",
+    "jp_kanji": "東京",
     "en": "Tokyo",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -386,7 +386,7 @@
   },
   {
     "jp_kana": "…さい",
-    "jp_kanji": "",
+    "jp_kanji": "…歳",
     "en": "…years old",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -394,7 +394,7 @@
   },
   {
     "jp_kana": "…じん",
-    "jp_kanji": "",
+    "jp_kanji": "…人",
     "en": "…people",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -402,7 +402,7 @@
   },
   {
     "jp_kana": "…ご",
-    "jp_kanji": "",
+    "jp_kanji": "…語",
     "en": "… language",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -410,7 +410,7 @@
   },
   {
     "jp_kana": "えいご",
-    "jp_kanji": "",
+    "jp_kanji": "英語",
     "en": "English language",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -434,7 +434,7 @@
   },
   {
     "jp_kana": "かんこく",
-    "jp_kanji": "",
+    "jp_kanji": "韓国",
     "en": "South Korea",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -442,7 +442,7 @@
   },
   {
     "jp_kana": "ちゅうごく",
-    "jp_kanji": "",
+    "jp_kanji": "中国",
     "en": "China",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -450,7 +450,7 @@
   },
   {
     "jp_kana": "…ねんせい",
-    "jp_kanji": "",
+    "jp_kanji": "…年生",
     "en": "…year student",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -458,7 +458,7 @@
   },
   {
     "jp_kana": "だいがくせい",
-    "jp_kanji": "",
+    "jp_kanji": "大学生",
     "en": "college student",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -466,7 +466,7 @@
   },
   {
     "jp_kana": "せんせい",
-    "jp_kanji": "",
+    "jp_kanji": "先生",
     "en": "teacher; professor",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -474,7 +474,7 @@
   },
   {
     "jp_kana": "かいしゃいん",
-    "jp_kanji": "",
+    "jp_kanji": "会社員",
     "en": "office worker",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -482,7 +482,7 @@
   },
   {
     "jp_kana": "こうこうせい",
-    "jp_kanji": "",
+    "jp_kanji": "高校生",
     "en": "high school student",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -498,7 +498,7 @@
   },
   {
     "jp_kana": "がくせい",
-    "jp_kanji": "",
+    "jp_kanji": "学生",
     "en": "student",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -506,7 +506,7 @@
   },
   {
     "jp_kana": "せんこう",
-    "jp_kanji": "",
+    "jp_kanji": "専攻",
     "en": "major",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -522,7 +522,7 @@
   },
   {
     "jp_kana": "なまえ",
-    "jp_kanji": "",
+    "jp_kanji": "名前",
     "en": "name",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -530,7 +530,7 @@
   },
   {
     "jp_kana": "しごと",
-    "jp_kanji": "",
+    "jp_kanji": "仕事",
     "en": "job ;work ;occupation",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -538,7 +538,7 @@
   },
   {
     "jp_kana": "りゅうがくせい",
-    "jp_kanji": "",
+    "jp_kanji": "留学生",
     "en": "international student",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -602,7 +602,7 @@
   },
   {
     "jp_kana": "~えん",
-    "jp_kanji": "",
+    "jp_kanji": "~円",
     "en": "…yen",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -610,7 +610,7 @@
   },
   {
     "jp_kana": "ひゃく",
-    "jp_kanji": "",
+    "jp_kanji": "百",
     "en": "100",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -618,7 +618,7 @@
   },
   {
     "jp_kana": "さんびゃく",
-    "jp_kanji": "",
+    "jp_kanji": "三百",
     "en": "300",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -626,7 +626,7 @@
   },
   {
     "jp_kana": "ろっぴゃく",
-    "jp_kanji": "",
+    "jp_kanji": "六百",
     "en": "600",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -634,7 +634,7 @@
   },
   {
     "jp_kana": "はっぴゃく",
-    "jp_kanji": "",
+    "jp_kanji": "八百",
     "en": "800",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -642,7 +642,7 @@
   },
   {
     "jp_kana": "せん",
-    "jp_kanji": "",
+    "jp_kanji": "千",
     "en": "1000",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -650,7 +650,7 @@
   },
   {
     "jp_kana": "さんぜん",
-    "jp_kanji": "",
+    "jp_kanji": "三千",
     "en": "3000",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -658,7 +658,7 @@
   },
   {
     "jp_kana": "はっせん",
-    "jp_kanji": "",
+    "jp_kanji": "八千",
     "en": "8000",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -666,7 +666,7 @@
   },
   {
     "jp_kana": "いちまん",
-    "jp_kanji": "",
+    "jp_kanji": "一万",
     "en": "10000",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -802,7 +802,7 @@
   },
   {
     "jp_kana": "おかあさん",
-    "jp_kanji": "",
+    "jp_kanji": "お母さん",
     "en": "mother",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -810,7 +810,7 @@
   },
   {
     "jp_kana": "おとうさん",
-    "jp_kanji": "",
+    "jp_kanji": "お父さん",
     "en": "father",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -818,7 +818,7 @@
   },
   {
     "jp_kana": "けいざい",
-    "jp_kanji": "",
+    "jp_kanji": "経済",
     "en": "economics",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -842,7 +842,7 @@
   },
   {
     "jp_kana": "れきし",
-    "jp_kanji": "",
+    "jp_kanji": "歴史",
     "en": "history",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -882,7 +882,7 @@
   },
   {
     "jp_kana": "おてあらい",
-    "jp_kanji": "",
+    "jp_kanji": "お手洗い",
     "en": "restroom",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -898,7 +898,7 @@
   },
   {
     "jp_kana": "たかい",
-    "jp_kanji": "",
+    "jp_kanji": "高い",
     "en": "expensive",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -906,7 +906,7 @@
   },
   {
     "jp_kana": "さかな",
-    "jp_kanji": "",
+    "jp_kanji": "魚",
     "en": "fish",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -922,7 +922,7 @@
   },
   {
     "jp_kana": "にく",
-    "jp_kanji": "",
+    "jp_kanji": "肉",
     "en": "meat",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -946,7 +946,7 @@
   },
   {
     "jp_kana": "にほんごで",
-    "jp_kanji": "",
+    "jp_kanji": "日本語で",
     "en": "in Japanese",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -954,7 +954,7 @@
   },
   {
     "jp_kana": "おんがく",
-    "jp_kanji": "",
+    "jp_kanji": "音楽",
     "en": "music",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -962,7 +962,7 @@
   },
   {
     "jp_kana": "ざっし",
-    "jp_kanji": "",
+    "jp_kanji": "雑誌",
     "en": "magazine",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1002,7 +1002,7 @@
   },
   {
     "jp_kana": "おさけ",
-    "jp_kanji": "",
+    "jp_kanji": "お酒",
     "en": "sake; alcoholic drink",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1010,7 +1010,7 @@
   },
   {
     "jp_kana": "おちゃ",
-    "jp_kanji": "",
+    "jp_kanji": "お茶",
     "en": "green tea",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1026,7 +1026,7 @@
   },
   {
     "jp_kana": "みず",
-    "jp_kanji": "",
+    "jp_kanji": "水",
     "en": "water",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1058,7 +1058,7 @@
   },
   {
     "jp_kana": "えいが",
-    "jp_kanji": "",
+    "jp_kanji": "映画",
     "en": "movie",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1074,7 +1074,7 @@
   },
   {
     "jp_kana": "くる",
-    "jp_kanji": "",
+    "jp_kanji": "来る",
     "en": "to come",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1082,7 +1082,7 @@
   },
   {
     "jp_kana": "あさごはん",
-    "jp_kanji": "",
+    "jp_kanji": "朝ご飯",
     "en": "breakfast",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1090,7 +1090,7 @@
   },
   {
     "jp_kana": "ひるごはん",
-    "jp_kanji": "",
+    "jp_kanji": "昼ご飯",
     "en": "lunch",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1098,7 +1098,7 @@
   },
   {
     "jp_kana": "ばんごはん",
-    "jp_kanji": "",
+    "jp_kanji": "晩ご飯",
     "en": "dinner",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1114,7 +1114,7 @@
   },
   {
     "jp_kana": "おきる",
-    "jp_kanji": "",
+    "jp_kanji": "起きる",
     "en": "to get up",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1122,7 +1122,7 @@
   },
   {
     "jp_kana": "ねる",
-    "jp_kanji": "",
+    "jp_kanji": "寝る",
     "en": "to sleep; to go to bed",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1130,7 +1130,7 @@
   },
   {
     "jp_kana": "あした",
-    "jp_kanji": "",
+    "jp_kanji": "明日",
     "en": "tomorrow",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1138,7 +1138,7 @@
   },
   {
     "jp_kana": "きょう",
-    "jp_kanji": "",
+    "jp_kanji": "今日",
     "en": "today",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1146,7 +1146,7 @@
   },
   {
     "jp_kana": "あさ",
-    "jp_kanji": "",
+    "jp_kanji": "朝",
     "en": "morning",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1154,7 +1154,7 @@
   },
   {
     "jp_kana": "ばん",
-    "jp_kanji": "",
+    "jp_kanji": "晩",
     "en": "evening",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1162,7 +1162,7 @@
   },
   {
     "jp_kana": "こんばん",
-    "jp_kanji": "",
+    "jp_kanji": "今晩",
     "en": "tonight",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1170,7 +1170,7 @@
   },
   {
     "jp_kana": "しゅうまつ",
-    "jp_kanji": "",
+    "jp_kanji": "週末",
     "en": "weekend",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1194,7 +1194,7 @@
   },
   {
     "jp_kana": "えいがかん",
-    "jp_kanji": "",
+    "jp_kanji": "映画館",
     "en": "movie theater",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1202,7 +1202,7 @@
   },
   {
     "jp_kana": "まいにち",
-    "jp_kanji": "",
+    "jp_kanji": "毎日",
     "en": "every day",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1210,7 +1210,7 @@
   },
   {
     "jp_kana": "まいばん",
-    "jp_kanji": "",
+    "jp_kanji": "毎晩",
     "en": "every night",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1218,7 +1218,7 @@
   },
   {
     "jp_kana": "まいあさ",
-    "jp_kanji": "",
+    "jp_kanji": "毎朝",
     "en": "every morning",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1250,7 +1250,7 @@
   },
   {
     "jp_kana": "ときどき",
-    "jp_kanji": "",
+    "jp_kanji": "時々",
     "en": "sometimes",
     "lesson": "Pre Course Words",
     "default_starred": false,
@@ -1290,7 +1290,7 @@
   },
   {
     "jp_kana": "はやい",
-    "jp_kanji": "",
+    "jp_kanji": "早い",
     "en": "early",
     "lesson": "Pre Course Words",
     "default_starred": false,

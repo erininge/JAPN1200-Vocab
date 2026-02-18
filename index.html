@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0f1116" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon-192.png" />
-  <link rel="stylesheet" href="styles.css?f=v5.8" />
+  <link rel="stylesheet" href="styles.css?f=v6.2" />
   <title>Kat’s Vocab Garden 🌸 — JAPN1200</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
       <div class="logo">🌸</div>
       <div class="brandText">
         <div class="title">Kat’s Vocab Garden 🌸</div>
-        <div class="sub">JAPN1200 • <span id="versionLabel">V5.8</span></div>
+        <div class="sub">JAPN1200 • <span id="versionLabel">V6.2</span></div>
       </div>
     </div>
 
@@ -143,6 +143,13 @@
               <option value="both">Both</option>
             </select>
           </label>
+          <label class="chip">Sort:
+            <select id="vSort" class="select inline">
+              <option value="default" selected>Default</option>
+              <option value="kanji_asc">Kanji A→Z</option>
+              <option value="kanji_desc">Kanji Z→A</option>
+            </select>
+          </label>
           <button class="btn subtle" id="vReset">Reset</button>
         </div>
 
@@ -244,6 +251,6 @@
 
   <div id="toast" class="toast hidden"></div>
 
-  <script src="app.js?f=v5.8"></script>
+  <script src="app.js?f=v6.2"></script>
 </body>
 </html>
