@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V5.8) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.1) */
 
-const APP_VERSION = "V5.8";
+const APP_VERSION = "V6.1";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -1037,6 +1037,20 @@ function buildVocabUI() {
     );
   }
 
+  const sortMode = $("#vSort")?.value || "default";
+  if (sortMode === "kanji_asc" || sortMode === "kanji_desc") {
+    const dir = sortMode === "kanji_asc" ? 1 : -1;
+    rows.sort((a, b) => {
+      const aKanji = normJP(a.jp_kanji || a.jp_kana || "");
+      const bKanji = normJP(b.jp_kanji || b.jp_kana || "");
+      const kanjiCmp = aKanji.localeCompare(bKanji, "ja");
+      if (kanjiCmp !== 0) return kanjiCmp * dir;
+      const aEn = (a.en || "").toLowerCase();
+      const bEn = (b.en || "").toLowerCase();
+      return aEn.localeCompare(bEn) * dir;
+    });
+  }
+
   const host = $("#vTable");
   host.innerHTML = "";
   const rowEls = [];
@@ -1325,11 +1339,13 @@ function wireUI() {
   $("#vLessonFilter").addEventListener("change", buildVocabUI);
   $("#vStarOnly").addEventListener("change", buildVocabUI);
   $("#vDisplay").addEventListener("change", buildVocabUI);
+  $("#vSort").addEventListener("change", buildVocabUI);
   $("#vReset").addEventListener("click", () => {
     $("#vSearch").value = "";
     $("#vLessonFilter").value = "__all__";
     $("#vStarOnly").checked = false;
     $("#vDisplay").value = "kana";
+    $("#vSort").value = "default";
     buildVocabUI();
   });
 
