@@ -1,0 +1,66 @@
+[
+  {
+    "jp_kana": "おんなのひと",
+    "jp_kanji": "女の人",
+    "en": "woman",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_001"
+  },
+  {
+    "jp_kana": "おとこのひと",
+    "jp_kanji": "男の人",
+    "en": "man",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_002"
+  },
+  {
+    "jp_kana": "やすみ",
+    "jp_kanji": "休み",
+    "en": "holiday; day off; absent",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_003"
+  },
+  {
+    "jp_kana": "りょこう",
+    "jp_kanji": "旅行",
+    "en": "travel; trip",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_004"
+  },
+  {
+    "jp_kana": "うみ",
+    "jp_kanji": "海",
+    "en": "sea",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_005"
+  },
+  {
+    "jp_kana": "サーフィン",
+    "jp_kanji": "",
+    "en": "surfing",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_006"
+  },
+  {
+    "jp_kana": "とても",
+    "jp_kanji": "",
+    "en": "very",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_007"
+  },
+  {
+    "jp_kana": "たのしい",
+    "jp_kanji": "楽しい",
+    "en": "fun",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_008"
+  }
+]

@@ -1,14 +1,14 @@
 /* 
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
-  - V6.2: add Sakura video background + cache update
+  - V6.3: add Lesson 9 vocab + cache update
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v6.2";
+const CACHE_NAME = "japn1200-class-vocab-cache-v6.3";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v6.2",
-  "./styles.css?f=v6.2",
-  "./app.js?f=v6.2",
+  "./index.html?f=v6.3",
+  "./styles.css?f=v6.3",
+  "./app.js?f=v6.3",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
