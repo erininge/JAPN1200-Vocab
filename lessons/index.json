@@ -1,6 +1,6 @@
 {
   "course": "JPLN1200",
-  "version": "2.5",
+  "version": "2.6",
   "lessons": [
     {
       "code": "l1",
@@ -73,6 +73,12 @@
       "name": "Extras",
       "file": "lessons/extras.json",
       "count": 67
+    },
+    {
+      "code": "adj",
+      "name": "Adjectives",
+      "file": "lessons/adjectives.json",
+      "count": 21
     }
   ]
 }

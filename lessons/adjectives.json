@@ -1,0 +1,170 @@
+[
+  {
+    "jp_kana": "たかい",
+    "jp_kanji": "高い",
+    "en": "expensive",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_001"
+  },
+  {
+    "jp_kana": "やすい",
+    "jp_kanji": "安い",
+    "en": "inexpensive; cheap",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_002"
+  },
+  {
+    "jp_kana": "あたらしい",
+    "jp_kanji": "新しい",
+    "en": "new",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_003"
+  },
+  {
+    "jp_kana": "ふるい",
+    "jp_kanji": "古い",
+    "en": "old (thing)",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_004"
+  },
+  {
+    "jp_kana": "あつい",
+    "jp_kanji": "暑い",
+    "en": "hot",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_005"
+  },
+  {
+    "jp_kana": "さむい",
+    "jp_kanji": "寒い",
+    "en": "cold (weather)",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_006"
+  },
+  {
+    "jp_kana": "おおきい",
+    "jp_kanji": "大きい",
+    "en": "big",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_007"
+  },
+  {
+    "jp_kana": "ちいさい",
+    "jp_kanji": "小さい",
+    "en": "small",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_008"
+  },
+  {
+    "jp_kana": "おもしろい",
+    "jp_kanji": "面白い",
+    "en": "interesting; funny",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_009"
+  },
+  {
+    "jp_kana": "つまらない",
+    "jp_kanji": "",
+    "en": "boring",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_010"
+  },
+  {
+    "jp_kana": "むずかしい",
+    "jp_kanji": "難しい",
+    "en": "difficult",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_011"
+  },
+  {
+    "jp_kana": "やさしい",
+    "jp_kanji": "優しい",
+    "en": "easy; kind (person)",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_012"
+  },
+  {
+    "jp_kana": "いそがしい",
+    "jp_kanji": "忙しい",
+    "en": "busy",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_013"
+  },
+  {
+    "jp_kana": "いい",
+    "jp_kanji": "",
+    "en": "good",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_014"
+  },
+  {
+    "jp_kana": "かっこいい",
+    "jp_kanji": "",
+    "en": "good-looking (men, gadgets)",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_015"
+  },
+  {
+    "jp_kana": "きれい(な)",
+    "jp_kanji": "",
+    "en": "beautiful; clean",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_016"
+  },
+  {
+    "jp_kana": "しずか(な)",
+    "jp_kanji": "静か(な)",
+    "en": "quiet",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_017"
+  },
+  {
+    "jp_kana": "にぎやか(な)",
+    "jp_kanji": "",
+    "en": "lively",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_018"
+  },
+  {
+    "jp_kana": "ひま(な)",
+    "jp_kanji": "暇(な)",
+    "en": "not busy; to have a free time",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_019"
+  },
+  {
+    "jp_kana": "こわい",
+    "jp_kanji": "怖い",
+    "en": "frightening; scary",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_020"
+  },
+  {
+    "jp_kana": "げんき(な)",
+    "jp_kanji": "元気(な)",
+    "en": "healthy; energetic",
+    "lesson": "Adjectives",
+    "default_starred": false,
+    "id": "jpln1200_adj_021"
+  }
+]
