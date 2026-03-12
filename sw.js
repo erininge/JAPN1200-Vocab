@@ -1,15 +1,16 @@
 /* 
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
+  - V6.5: add Lesson 10 vocab + cache update
   - V6.4: add Adjectives lesson + cache update
   - V6.3: add Lesson 9 vocab + cache update
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v6.4";
+const CACHE_NAME = "japn1200-class-vocab-cache-v6.5";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v6.4",
-  "./styles.css?f=v6.4",
-  "./app.js?f=v6.4",
+  "./index.html?f=v6.5",
+  "./styles.css?f=v6.5",
+  "./app.js?f=v6.5",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
