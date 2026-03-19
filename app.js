@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.5) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.6) */
 
-const APP_VERSION = "V6.5";
+const APP_VERSION = "V6.6";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
