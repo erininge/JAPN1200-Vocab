@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.6) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.7) */
 
-const APP_VERSION = "V6.6";
+const APP_VERSION = "V6.7";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -95,6 +95,61 @@ let AUDIO_FALLBACK_MAP = null;
 let AUDIO_FALLBACK_LOADING = null;
 let CURRENT_AUDIO_ENTRIES = [];
 let CURRENT_AUDIO_SIGNATURE = "";
+let SW_REGISTRATION = null;
+
+function attachWaitingServiceWorker(worker) {
+  if (!worker) return;
+  worker.addEventListener("statechange", () => {
+    if (worker.state === "installed" && navigator.serviceWorker.controller) {
+      toast("Update ready. Tap Refresh / Update App.");
+    }
+  });
+}
+
+async function forceRefreshApp() {
+  const refreshBtn = $("#btnAppRefresh");
+  if (refreshBtn) refreshBtn.disabled = true;
+
+  try {
+    if (!("serviceWorker" in navigator)) {
+      location.reload();
+      return;
+    }
+
+    const reg = SW_REGISTRATION || await navigator.serviceWorker.getRegistration();
+    if (reg) {
+      SW_REGISTRATION = reg;
+      if (reg.waiting) reg.waiting.postMessage({ type: "SKIP_WAITING" });
+      await reg.update();
+      if (reg.waiting) reg.waiting.postMessage({ type: "SKIP_WAITING" });
+    }
+
+    if ("caches" in window) {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((key) => caches.delete(key)));
+    }
+
+    const hasController = !!navigator.serviceWorker.controller;
+    if (hasController) {
+      await new Promise((resolve) => {
+        let done = false;
+        const finish = () => {
+          if (done) return;
+          done = true;
+          resolve();
+        };
+        navigator.serviceWorker.addEventListener("controllerchange", finish, { once: true });
+        setTimeout(finish, 1200);
+      });
+    }
+
+    location.href = `./index.html?force=${Date.now()}`;
+  } catch {
+    location.reload();
+  } finally {
+    if (refreshBtn) refreshBtn.disabled = false;
+  }
+}
 
 async function audioUrlExists(url) {
   try {
@@ -1264,6 +1319,7 @@ function wireUI() {
   const isDesktopInput = hasFinePointer && !isNarrowView && !("ontouchstart" in window);
 
   $$(".navBtn").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
+  $("#btnAppRefresh").addEventListener("click", forceRefreshApp);
 
   $("#btnSelectAll").addEventListener("click", () => {
     $$("#lessonList input[type=checkbox]").forEach(x => x.checked = true);
@@ -1524,10 +1580,6 @@ function wireUI() {
     }
   });
 
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js").catch(() => {});
-  }
-
   showView("study");
   applySettingsToUI(SETTINGS);
 }
@@ -1539,6 +1591,20 @@ function wireUI() {
   applySettingsToUI(SETTINGS);
   setIphoneAudioSessionMixing();
   wireUI();
+  if ("serviceWorker" in navigator) {
+    try {
+      SW_REGISTRATION = await navigator.serviceWorker.register("./sw.js");
+      if (SW_REGISTRATION.waiting) {
+        toast("Update ready. Tap Refresh / Update App.");
+      }
+      SW_REGISTRATION.addEventListener("updatefound", () => {
+        attachWaitingServiceWorker(SW_REGISTRATION.installing);
+      });
+      attachWaitingServiceWorker(SW_REGISTRATION.installing);
+    } catch {
+      // Ignore registration failures
+    }
+  }
   await loadData();
   updateQuestionCountUI();
 })();
