@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.7) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.8) */
 
-const APP_VERSION = "V6.7";
+const APP_VERSION = "V6.8";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -1030,6 +1030,11 @@ function showFeedback(ok, detail) {
   fb.textContent = detail;
 }
 
+function playCorrectAnswerAudio(q, ok) {
+  if (!ok || !q?.item || !SETTINGS.audioOn) return;
+  playItemAudio(q.item);
+}
+
 function submitMC(picked, correct) {
   if (QUIZ.awaitingNext) return;
   const q = QUIZ.current;
@@ -1044,6 +1049,7 @@ function submitMC(picked, correct) {
   const exp = correctAnswerText(q, getDMode());
   const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
   showFeedback(ok, detail);
+  playCorrectAnswerAudio(q, ok);
 }
 
 function submitTyping() {
@@ -1061,6 +1067,7 @@ function submitTyping() {
   const exp = correctAnswerText(q, getDMode());
   const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
   showFeedback(ok, detail);
+  playCorrectAnswerAudio(q, ok);
 }
 
 function endQuiz() {
