@@ -32,6 +32,7 @@
 
     <nav class="nav">
       <button class="navBtn" data-view="study">Study</button>
+      <button class="navBtn" data-view="speaking">Speaking</button>
       <button class="navBtn" data-view="vocab">View Vocab</button>
       <button class="navBtn" data-view="stats">Stats</button>
       <button class="navBtn" data-view="settings">Settings</button>
@@ -128,6 +129,88 @@
 
           <div class="row gap quizFooter">
             <button class="btn subtle" id="btnNext" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-speaking" class="view hidden">
+      <div class="card" id="speakingSetup">
+        <div class="cardTitle">Speaking setup</div>
+
+        <div class="grid2">
+          <div>
+            <label class="label">Lessons</label>
+            <div id="lessonListSpeaking" class="lessonList"></div>
+            <div class="row gap">
+              <button class="btn subtle" id="btnSelectAllSpeaking">Select all</button>
+              <button class="btn subtle" id="btnClearAllSpeaking">Clear</button>
+              <button class="btn subtle" id="btnStarredOnlySpeaking">Starred only</button>
+            </div>
+            <div class="hint" id="lessonHintSpeaking">—</div>
+          </div>
+
+          <div>
+            <label class="label" for="speakQModeSelect">Question mode</label>
+            <select id="speakQModeSelect" class="select block">
+              <option value="en2jp" selected>EN → JP (speak answer)</option>
+              <option value="jpSpeak">JP speaking practice</option>
+            </select>
+
+            <label class="label" for="speakDModeSelect">Display mode</label>
+            <select id="speakDModeSelect" class="select block">
+              <option value="kana" selected>Kana</option>
+              <option value="kanji">Kanji</option>
+              <option value="both">Both</option>
+            </select>
+
+            <div class="row gap">
+              <label class="chip"><input type="checkbox" id="filterStarredOnlySpeaking"> Starred only</label>
+              <label class="chip"><input type="checkbox" id="qAutoSpeaking" checked> AUTO</label>
+              <label class="chip">Questions: <input id="qCountSpeaking" class="num" type="number" min="5" max="200" value="20"></label>
+            </div>
+
+            <div class="row gap">
+              <button class="btn primary" id="btnStartSpeaking">Start Speaking</button>
+              <button class="btn" id="btnPracticeStarredSpeaking">Practice ⭐</button>
+            </div>
+
+            <div id="speakUnsupported" class="hint hidden">
+              Speech recognition is not available in this browser. Try a recent Chrome/Edge build for speaking mode.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="speakingArea" class="quizStage hidden">
+        <div class="quizPanel">
+          <div class="quizTop">
+            <div class="quizMeta">
+              <div class="quizMetaLine">
+                <div class="quizCourse" id="speakingCourse">JAPN1200 • —</div>
+                <div class="quizProgress" id="speakingProgress">—</div>
+              </div>
+              <div class="hint" id="speakingSub">—</div>
+            </div>
+            <div class="quizActions">
+              <button class="btn subtle" id="btnReplaySpeaking">🔊</button>
+              <button class="btn subtle" id="btnToggleStarSpeaking">☆</button>
+              <button class="btn subtle danger" id="btnEndSpeaking">Quit</button>
+            </div>
+          </div>
+
+          <div id="speakingPrompt" class="prompt">—</div>
+
+          <div class="speakControls">
+            <button class="btn primary" id="btnSpeakListen">🎤 Tap to speak</button>
+            <div id="speakingStatus" class="hint">Press the microphone and speak Japanese.</div>
+          </div>
+
+          <div id="speakingHeard" class="feedback hidden"></div>
+          <div id="speakingFeedback" class="feedback hidden"></div>
+
+          <div class="row gap quizFooter">
+            <button class="btn subtle" id="btnNextSpeaking" disabled>Next</button>
           </div>
         </div>
       </div>
