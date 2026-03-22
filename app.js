@@ -960,7 +960,9 @@ let SPEAK = {
   awaitingNext: false,
   correctCount: 0,
   listening: false,
-  recognition: null
+  recognition: null,
+  listenTimeoutId: null,
+  stopping: false
 };
 
 function isSpeechRecognitionAvailable() {
@@ -1186,15 +1188,35 @@ function setSpeakingStarButton(item) {
   $("#btnToggleStarSpeaking").textContent = on ? "⭐" : "☆";
 }
 
-function stopSpeakingRecognition() {
+function setSpeakListenButtonState(listening) {
+  $("#btnSpeakListen").classList.toggle("listening", listening);
+  $("#btnSpeakListen").textContent = listening ? "🛑 Stop listening" : "🎤 Tap to speak";
+}
+
+function clearSpeakingListenTimeout() {
+  if (!SPEAK.listenTimeoutId) return;
+  clearTimeout(SPEAK.listenTimeoutId);
+  SPEAK.listenTimeoutId = null;
+}
+
+function stopSpeakingRecognition({ manual = false, updateStatus = false } = {}) {
+  SPEAK.stopping = manual;
+  clearSpeakingListenTimeout();
   if (SPEAK.recognition && SPEAK.listening) {
-    SPEAK.recognition.onend = null;
-    SPEAK.recognition.stop();
+    try {
+      SPEAK.recognition.stop();
+    } catch {
+      try {
+        SPEAK.recognition.abort?.();
+      } catch {}
+    }
   }
   SPEAK.listening = false;
   SPEAK.recognition = null;
-  $("#btnSpeakListen").classList.remove("listening");
-  $("#btnSpeakListen").textContent = "🎤 Tap to speak";
+  setSpeakListenButtonState(false);
+  if (updateStatus) {
+    $("#speakingStatus").textContent = manual ? "Listening stopped." : "Ready.";
+  }
 }
 
 function startSpeakingSession(forceStarredOnly = false) {
@@ -1232,6 +1254,8 @@ function startSpeakingSession(forceStarredOnly = false) {
     correctCount: 0,
     listening: false,
     recognition: null,
+    listenTimeoutId: null,
+    stopping: false,
     starFiltered: forceStarredOnly || $("#filterStarredOnlySpeaking").checked
   };
 
@@ -1265,7 +1289,11 @@ function submitSpeakingResult(transcript) {
 }
 
 function startListeningForSpeaking() {
-  if (!SPEAK.active || SPEAK.awaitingNext || SPEAK.listening) return;
+  if (!SPEAK.active || SPEAK.awaitingNext) return;
+  if (SPEAK.listening) {
+    stopSpeakingRecognition({ manual: true, updateStatus: true });
+    return;
+  }
   if (!isSpeechRecognitionAvailable()) {
     toast("Speech recognition is not available in this browser.");
     return;
@@ -1279,8 +1307,8 @@ function startListeningForSpeaking() {
   recognition.maxAlternatives = 3;
 
   SPEAK.listening = true;
-  $("#btnSpeakListen").classList.add("listening");
-  $("#btnSpeakListen").textContent = "🎙️ Listening…";
+  SPEAK.stopping = false;
+  setSpeakListenButtonState(true);
   $("#speakingStatus").textContent = "Listening… speak now.";
 
   recognition.onresult = (event) => {
@@ -1292,23 +1320,29 @@ function startListeningForSpeaking() {
     const code = event?.error || "unknown";
     const msg = code === "not-allowed"
       ? "Microphone permission denied."
+      : code === "aborted"
+        ? "Listening stopped."
       : "Speech recognition failed. Please try again.";
     $("#speakingStatus").textContent = msg;
   };
   recognition.onend = () => {
+    clearSpeakingListenTimeout();
     SPEAK.listening = false;
     SPEAK.recognition = null;
-    $("#btnSpeakListen").classList.remove("listening");
-    $("#btnSpeakListen").textContent = "🎤 Tap to speak";
+    setSpeakListenButtonState(false);
+    SPEAK.stopping = false;
   };
 
   try {
     recognition.start();
+    clearSpeakingListenTimeout();
+    SPEAK.listenTimeoutId = setTimeout(() => {
+      if (!SPEAK.listening) return;
+      stopSpeakingRecognition({ manual: true, updateStatus: true });
+      toast("Listening timed out. Tap the mic to try again.");
+    }, 9000);
   } catch {
-    SPEAK.listening = false;
-    SPEAK.recognition = null;
-    $("#btnSpeakListen").classList.remove("listening");
-    $("#btnSpeakListen").textContent = "🎤 Tap to speak";
+    stopSpeakingRecognition();
     $("#speakingStatus").textContent = "Speech recognition is unavailable right now.";
   }
 }
