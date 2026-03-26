@@ -897,14 +897,6 @@
     "id": "jpln1200_pre_188"
   },
   {
-    "jp_kana": "たかい",
-    "jp_kanji": "高い",
-    "en": "expensive",
-    "lesson": "Pre Course Words",
-    "default_starred": false,
-    "id": "jpln1200_pre_189"
-  },
-  {
     "jp_kana": "さかな",
     "jp_kanji": "魚",
     "en": "fish",
@@ -1175,14 +1167,6 @@
     "lesson": "Pre Course Words",
     "default_starred": false,
     "id": "jpln1200_pre_223"
-  },
-  {
-    "jp_kana": "いい",
-    "jp_kanji": "",
-    "en": "good",
-    "lesson": "Pre Course Words",
-    "default_starred": false,
-    "id": "jpln1200_pre_224"
   },
   {
     "jp_kana": "ちょっと",
