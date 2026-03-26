@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.8) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.9) */
 
-const APP_VERSION = "V6.8";
+const APP_VERSION = "V6.9";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -480,6 +480,7 @@ function lesson_code(lessonName) {
   const lower = (lessonName || "").toLowerCase();
   if (lower.includes("extra")) return "extras";
   if (lower.includes("pre")) return "pre";
+  if (lower.includes("adject")) return "adj";
   const m = lower.match(/lesson\s*([0-9]+(?:\.[0-9]+)?)/);
   if (m) return "l" + m[1].replace(".", "_");
   return "misc";
