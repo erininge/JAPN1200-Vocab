@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V6.9) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.0) */
 
-const APP_VERSION = "V6.9";
+const APP_VERSION = "V7.0";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -87,6 +87,13 @@ function normJP(s) {
     .replace(/\s+/g, "")
     .replace(/[。．\.\、,，'’"“”！？!?:：;；・]/g, "")
     .trim();
+}
+
+function jpAliases(text) {
+  const base = (text || "").trim();
+  if (!base) return [];
+  const withoutParens = base.replace(/[（(][^）)]*[）)]/g, "").replace(/\s+/g, " ").trim();
+  return uniq([base, withoutParens].filter(Boolean));
 }
 
 const AUDIO_EXTENSIONS = ["wav", "mp3", "m4a", "ogg"];
@@ -260,9 +267,9 @@ function jpDisplay(item, mode) {
 function jpAcceptableAnswers(item, dmode) {
   const kana = item.jp_kana || "";
   const kanji = item.jp_kanji || "";
-  if (dmode === "kana") return [kana];
-  if (dmode === "kanji") return [kanji || kana];
-  return uniq([kana, kanji].filter(Boolean));
+  if (dmode === "kana") return jpAliases(kana);
+  if (dmode === "kanji") return jpAliases(kanji || kana);
+  return uniq([kana, kanji].flatMap(jpAliases).filter(Boolean));
 }
 
 function getSettings() {
