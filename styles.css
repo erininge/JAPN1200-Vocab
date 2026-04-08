@@ -209,6 +209,28 @@ body::before {
 .lessonRow:hover { background: rgba(255,255,255,0.04); }
 .lessonRow .meta { color: var(--muted); font-size: 12px; }
 
+.lessonCategory {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+}
+.lessonCategory:last-child { margin-bottom: 0; }
+.lessonCategorySummary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.lessonCategorySummary::-webkit-details-marker { display: none; }
+.lessonCategoryLessons {
+  padding: 0 8px 8px;
+}
+
 .row { display:flex; align-items:center; }
 .wrap { flex-wrap: wrap; }
 .gap { gap: 10px; }
