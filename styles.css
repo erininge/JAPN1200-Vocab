@@ -198,6 +198,9 @@ body::before {
   padding: 10px;
   background: rgba(12,15,26,0.55);
 }
+.lessonListVocab {
+  min-width: 290px;
+}
 .lessonRow {
   display:flex;
   align-items:center;

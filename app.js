@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.1) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.2) */
 
-const APP_VERSION = "V7.1";
+const APP_VERSION = "V7.2";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -779,6 +779,12 @@ function buildLessonUI() {
       }
       onChange();
     });
+    host.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target instanceof HTMLInputElement && target.dataset.role === "category") {
+        e.stopPropagation();
+      }
+    });
 
     syncAllCategoryCheckboxes(hostId);
   };
@@ -794,23 +800,14 @@ function buildLessonUI() {
     updateSpeakingLessonHint();
     updateSpeakingQuestionCountUI();
   });
+  buildLessonList("#vLessonList", () => {
+    buildVocabUI();
+  });
 
   updateLessonHint();
   updateSpeakingLessonHint();
   updateQuestionCountUI();
   updateSpeakingQuestionCountUI();
-
-  const sel = $("#vLessonFilter");
-  const options = [`<option value="__all__">All categories</option>`];
-  getLessonGroups().forEach((group) => {
-    options.push(`<option value="chapter:${group.key}">${group.name} (All)</option>`);
-    options.push(`<optgroup label="${group.name}">`);
-    group.lessons.forEach((lesson) => {
-      options.push(`<option value="${lesson.code}">${lesson.name}</option>`);
-    });
-    options.push(`</optgroup>`);
-  });
-  sel.innerHTML = options.join("");
 }
 
 function updateLessonHint() {
@@ -1506,18 +1503,15 @@ function endSpeakingSession() {
 
 function buildVocabUI() {
   const starOnly = $("#vStarOnly").checked;
-  const lessonFilter = $("#vLessonFilter").value;
+  const lessonFilters = selectedLessonCodesIn("#vLessonList");
   const display = $("#vDisplay").value;
   const q = ($("#vSearch").value || "").trim();
 
   let rows = ITEMS.slice();
-  if (lessonFilter && lessonFilter !== "__all__") {
-    if (lessonFilter.startsWith("chapter:")) {
-      const categoryKey = lessonFilter.split(":")[1];
-      rows = rows.filter((it) => categoryKeyForLessonCode(lesson_code(it.lesson)) === categoryKey);
-    } else {
-      rows = rows.filter((it) => lesson_code(it.lesson) === lessonFilter);
-    }
+  if (lessonFilters.length) {
+    rows = rows.filter((it) => lessonFilters.includes(lesson_code(it.lesson)));
+  } else {
+    rows = [];
   }
   if (starOnly) rows = rows.filter(it => isStarred(it.id));
   if (q) {
@@ -1868,13 +1862,20 @@ function wireUI() {
   $("#btnEnd").addEventListener("click", () => endQuiz());
 
   $("#vSearch").addEventListener("input", buildVocabUI);
-  $("#vLessonFilter").addEventListener("change", buildVocabUI);
   $("#vStarOnly").addEventListener("change", buildVocabUI);
   $("#vDisplay").addEventListener("change", buildVocabUI);
   $("#vSort").addEventListener("change", buildVocabUI);
+  $("#btnVSelectAll").addEventListener("click", () => {
+    setLessonSelections("#vLessonList", true);
+    buildVocabUI();
+  });
+  $("#btnVClearAll").addEventListener("click", () => {
+    setLessonSelections("#vLessonList", false);
+    buildVocabUI();
+  });
   $("#vReset").addEventListener("click", () => {
     $("#vSearch").value = "";
-    $("#vLessonFilter").value = "__all__";
+    setLessonSelections("#vLessonList", true);
     $("#vStarOnly").checked = false;
     $("#vDisplay").value = "kana";
     $("#vSort").value = "default";
