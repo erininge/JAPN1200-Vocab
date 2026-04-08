@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.0) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.1) */
 
-const APP_VERSION = "V7.0";
+const APP_VERSION = "V7.1";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -8,6 +8,32 @@ const STORAGE = {
   kanjiOverrides: "jpln1200_kanji_overrides_v1",
   vocabEdits: "jpln1200_vocab_edits_v1",
   seeded: "jpln1200_seeded_v1"
+};
+
+const LESSON_CATEGORIES = [
+  { key: "ch4", name: "Chapter 4" },
+  { key: "ch5", name: "Chapter 5" },
+  { key: "ch6", name: "Chapter 6" },
+  { key: "other", name: "Other" }
+];
+const CATEGORY_BY_LESSON_CODE = {
+  l1: "ch4",
+  l2: "ch4",
+  l2_5: "ch4",
+  l3: "ch4",
+  l4: "ch4",
+  l5: "ch4",
+  l6: "ch4",
+  l7: "ch4",
+  l8: "ch4",
+  l9: "ch5",
+  l10: "ch5",
+  l11: "ch5",
+  l12: "ch5",
+  adj: "ch5",
+  l13: "ch6",
+  extras: "other",
+  pre: "other"
 };
 
 const DEFAULT_SETTINGS = {
@@ -493,8 +519,48 @@ function lesson_code(lessonName) {
   return "misc";
 }
 
+function categoryKeyForLessonCode(code) {
+  return CATEGORY_BY_LESSON_CODE[code] || "other";
+}
+
+function getLessonGroups() {
+  const grouped = new Map(LESSON_CATEGORIES.map((cat) => [cat.key, { ...cat, lessons: [] }]));
+  LESSONS.forEach((lesson) => {
+    const key = categoryKeyForLessonCode(lesson.code);
+    if (!grouped.has(key)) grouped.set(key, { key, name: key, lessons: [] });
+    grouped.get(key).lessons.push(lesson);
+  });
+  return Array.from(grouped.values()).filter((group) => group.lessons.length);
+}
+
+function syncCategoryCheckboxState(hostSelector, categoryKey) {
+  const host = $(hostSelector);
+  if (!host) return;
+  const categoryCheckbox = host.querySelector(`input[data-role="category"][data-category="${categoryKey}"]`);
+  if (!categoryCheckbox) return;
+  const lessonBoxes = Array.from(host.querySelectorAll(`input[data-role="lesson"][data-category="${categoryKey}"]`));
+  const checkedCount = lessonBoxes.filter((box) => box.checked).length;
+  categoryCheckbox.checked = checkedCount > 0 && checkedCount === lessonBoxes.length;
+  categoryCheckbox.indeterminate = checkedCount > 0 && checkedCount < lessonBoxes.length;
+}
+
+function syncAllCategoryCheckboxes(hostSelector) {
+  const host = $(hostSelector);
+  if (!host) return;
+  LESSON_CATEGORIES.forEach((cat) => syncCategoryCheckboxState(hostSelector, cat.key));
+  const extraCats = uniq(Array.from(host.querySelectorAll('input[data-role="lesson"]')).map((el) => el.dataset.category));
+  extraCats.forEach((cat) => syncCategoryCheckboxState(hostSelector, cat));
+}
+
+function setLessonSelections(hostSelector, checked) {
+  $$(`${hostSelector} input[data-role="lesson"]`).forEach((x) => {
+    x.checked = checked;
+  });
+  syncAllCategoryCheckboxes(hostSelector);
+}
+
 function selectedLessonCodesIn(hostSelector) {
-  return $$(`${hostSelector} input[type=checkbox]:checked`).map((x) => x.value);
+  return $$(`${hostSelector} input[data-role="lesson"]:checked`).map((x) => x.value);
 }
 
 function selectedLessonCodes() {
@@ -662,19 +728,59 @@ function buildLessonUI() {
   const buildLessonList = (hostId, onChange) => {
     const host = $(hostId);
     host.innerHTML = "";
-    for (const l of LESSONS) {
-      const row = document.createElement("label");
-      row.className = "lessonRow";
-      row.innerHTML = `
-        <span>
-          <input type="checkbox" value="${l.code}" checked />
-          <strong style="margin-left:6px;">${l.name}</strong>
-        </span>
-        <span class="meta">${l.count} items</span>
+    const groups = getLessonGroups();
+
+    groups.forEach((group) => {
+      const details = document.createElement("details");
+      details.className = "lessonCategory";
+      details.open = true;
+      const groupCount = group.lessons.reduce((sum, lesson) => sum + (lesson.count || 0), 0);
+      details.innerHTML = `
+        <summary class="lessonCategorySummary">
+          <span>
+            <input type="checkbox" data-role="category" data-category="${group.key}" checked />
+            <strong style="margin-left:6px;">${group.name}</strong>
+          </span>
+          <span class="meta">${groupCount} items</span>
+        </summary>
       `;
-      host.appendChild(row);
-    }
-    host.addEventListener("change", onChange);
+
+      const lessonsHost = document.createElement("div");
+      lessonsHost.className = "lessonCategoryLessons";
+      group.lessons.forEach((l) => {
+        const row = document.createElement("label");
+        row.className = "lessonRow";
+        row.innerHTML = `
+          <span>
+            <input type="checkbox" value="${l.code}" data-role="lesson" data-category="${group.key}" checked />
+            <strong style="margin-left:6px;">${l.name}</strong>
+          </span>
+          <span class="meta">${l.count} items</span>
+        `;
+        lessonsHost.appendChild(row);
+      });
+      details.appendChild(lessonsHost);
+      host.appendChild(details);
+    });
+
+    host.addEventListener("change", (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLInputElement)) return;
+      if (target.dataset.role === "category") {
+        const cat = target.dataset.category;
+        host.querySelectorAll(`input[data-role="lesson"][data-category="${cat}"]`).forEach((box) => {
+          box.checked = target.checked;
+        });
+        target.indeterminate = false;
+      }
+      if (target.dataset.role === "lesson") {
+        const cat = target.dataset.category;
+        syncCategoryCheckboxState(hostId, cat);
+      }
+      onChange();
+    });
+
+    syncAllCategoryCheckboxes(hostId);
   };
 
   buildLessonList("#lessonList", () => {
@@ -695,7 +801,16 @@ function buildLessonUI() {
   updateSpeakingQuestionCountUI();
 
   const sel = $("#vLessonFilter");
-  sel.innerHTML = `<option value="__all__">All lessons</option>` + LESSONS.map(l => `<option value="${l.code}">${l.name}</option>`).join("");
+  const options = [`<option value="__all__">All categories</option>`];
+  getLessonGroups().forEach((group) => {
+    options.push(`<option value="chapter:${group.key}">${group.name} (All)</option>`);
+    options.push(`<optgroup label="${group.name}">`);
+    group.lessons.forEach((lesson) => {
+      options.push(`<option value="${lesson.code}">${lesson.name}</option>`);
+    });
+    options.push(`</optgroup>`);
+  });
+  sel.innerHTML = options.join("");
 }
 
 function updateLessonHint() {
@@ -1397,7 +1512,12 @@ function buildVocabUI() {
 
   let rows = ITEMS.slice();
   if (lessonFilter && lessonFilter !== "__all__") {
-    rows = rows.filter(it => lesson_code(it.lesson) === lessonFilter);
+    if (lessonFilter.startsWith("chapter:")) {
+      const categoryKey = lessonFilter.split(":")[1];
+      rows = rows.filter((it) => categoryKeyForLessonCode(lesson_code(it.lesson)) === categoryKey);
+    } else {
+      rows = rows.filter((it) => lesson_code(it.lesson) === lessonFilter);
+    }
   }
   if (starOnly) rows = rows.filter(it => isStarred(it.id));
   if (q) {
@@ -1639,17 +1759,17 @@ function wireUI() {
   $("#btnAppRefresh").addEventListener("click", forceRefreshApp);
 
   $("#btnSelectAll").addEventListener("click", () => {
-    $$("#lessonList input[type=checkbox]").forEach(x => x.checked = true);
+    setLessonSelections("#lessonList", true);
     refreshHeaderCounts(); updateLessonHint(); buildVocabUI(); updateQuestionCountUI();
     updateCurrentAudioListIfOpen();
   });
   $("#btnClearAll").addEventListener("click", () => {
-    $$("#lessonList input[type=checkbox]").forEach(x => x.checked = false);
+    setLessonSelections("#lessonList", false);
     refreshHeaderCounts(); updateLessonHint(); buildVocabUI(); updateQuestionCountUI();
     updateCurrentAudioListIfOpen();
   });
   $("#btnStarredOnly").addEventListener("click", () => {
-    $$("#lessonList input[type=checkbox]").forEach(x => x.checked = true);
+    setLessonSelections("#lessonList", true);
     $("#filterStarredOnly").checked = true;
     refreshHeaderCounts(); updateLessonHint(); buildVocabUI(); updateQuestionCountUI();
     updateCurrentAudioListIfOpen();
@@ -1659,17 +1779,17 @@ function wireUI() {
   $("#btnPracticeStarred").addEventListener("click", () => startQuiz(true));
 
   $("#btnSelectAllSpeaking").addEventListener("click", () => {
-    $$("#lessonListSpeaking input[type=checkbox]").forEach((x) => x.checked = true);
+    setLessonSelections("#lessonListSpeaking", true);
     updateSpeakingLessonHint();
     updateSpeakingQuestionCountUI();
   });
   $("#btnClearAllSpeaking").addEventListener("click", () => {
-    $$("#lessonListSpeaking input[type=checkbox]").forEach((x) => x.checked = false);
+    setLessonSelections("#lessonListSpeaking", false);
     updateSpeakingLessonHint();
     updateSpeakingQuestionCountUI();
   });
   $("#btnStarredOnlySpeaking").addEventListener("click", () => {
-    $$("#lessonListSpeaking input[type=checkbox]").forEach((x) => x.checked = true);
+    setLessonSelections("#lessonListSpeaking", true);
     $("#filterStarredOnlySpeaking").checked = true;
     updateSpeakingLessonHint();
     updateSpeakingQuestionCountUI();
