@@ -32,6 +32,7 @@ const CATEGORY_BY_LESSON_CODE = {
   l12: "ch5",
   adj: "ch5",
   l13: "ch6",
+  l14: "ch6",
   extras: "other",
   pre: "other"
 };
