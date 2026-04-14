@@ -1,0 +1,170 @@
+[
+  {
+    "jp_kana": "くち",
+    "jp_kanji": "口",
+    "en": "mouth",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_001"
+  },
+  {
+    "jp_kana": "でる",
+    "jp_kanji": "出る",
+    "en": "to exit, to go out",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_002"
+  },
+  {
+    "jp_kana": "でぐち",
+    "jp_kanji": "出口",
+    "en": "exit",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_003"
+  },
+  {
+    "jp_kana": "かんじ",
+    "jp_kanji": "漢字",
+    "en": "Kanji",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_004"
+  },
+  {
+    "jp_kana": "でんき",
+    "jp_kanji": "電気",
+    "en": "electricity; light",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_005"
+  },
+  {
+    "jp_kana": "まど",
+    "jp_kanji": "窓",
+    "en": "window",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_006"
+  },
+  {
+    "jp_kana": "ゆっくり",
+    "jp_kanji": "",
+    "en": "slowly",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_007"
+  },
+  {
+    "jp_kana": "きょうかしょ",
+    "jp_kanji": "教科書",
+    "en": "textbook",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_008"
+  },
+  {
+    "jp_kana": "ページ",
+    "jp_kanji": "",
+    "en": "page",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_009"
+  },
+  {
+    "jp_kana": "あける",
+    "jp_kanji": "開ける",
+    "en": "to open",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_010"
+  },
+  {
+    "jp_kana": "しめる",
+    "jp_kanji": "閉める",
+    "en": "to close",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_011"
+  },
+  {
+    "jp_kana": "おしえる",
+    "jp_kanji": "教える",
+    "en": "to teach",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_012"
+  },
+  {
+    "jp_kana": "つける",
+    "jp_kanji": "",
+    "en": "to turn on",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_013"
+  },
+  {
+    "jp_kana": "けす",
+    "jp_kanji": "消す",
+    "en": "to turn off",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_014"
+  },
+  {
+    "jp_kana": "かえす",
+    "jp_kanji": "返す",
+    "en": "to return (s.t. to s.o.)",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_015"
+  },
+  {
+    "jp_kana": "はいる",
+    "jp_kanji": "入る",
+    "en": "to enter",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_016"
+  },
+  {
+    "jp_kana": "たつ",
+    "jp_kanji": "立つ",
+    "en": "to stand up",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_017"
+  },
+  {
+    "jp_kana": "すわる",
+    "jp_kanji": "座る",
+    "en": "to sit down",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_018"
+  },
+  {
+    "jp_kana": "でんわする",
+    "jp_kanji": "電話する",
+    "en": "to call",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_019"
+  },
+  {
+    "jp_kana": "つれてくる",
+    "jp_kanji": "連れて来る",
+    "en": "to bring (people)",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_020"
+  },
+  {
+    "jp_kana": "もってくる",
+    "jp_kanji": "持って来る",
+    "en": "to bring (things)",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l14_021"
+  }
+]
