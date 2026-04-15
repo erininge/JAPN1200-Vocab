@@ -65,14 +65,6 @@
     "id": "jpln1200_pre_083"
   },
   {
-    "jp_kana": "じゃあまた",
-    "jp_kanji": "",
-    "en": "Good-bye ;See you again",
-    "lesson": "Pre Course Words",
-    "default_starred": false,
-    "id": "jpln1200_pre_084"
-  },
-  {
     "jp_kana": "しつれいします",
     "jp_kanji": "失礼します",
     "en": "Excuse me ;Good-bye",
@@ -1279,13 +1271,5 @@
     "lesson": "Pre Course Words",
     "default_starred": false,
     "id": "jpln1200_pre_238"
-  },
-  {
-    "jp_kana": "パーティーをする",
-    "jp_kanji": "",
-    "en": "to throw a party",
-    "lesson": "Pre Course Words",
-    "default_starred": false,
-    "id": "jpln1200_pre_239"
   }
 ]

@@ -1,35 +1,107 @@
 [
   {
-    "jp_kana": "おんなのひと",
-    "jp_kanji": "女の人",
-    "en": "woman",
-    "lesson": "Lesson 9",
+    "jp_kana": "やま",
+    "jp_kanji": "",
+    "en": "mountain",
     "default_starred": false,
-    "id": "jpln1200_l9_001"
+    "id": "jpln1200_l9_009",
+    "lesson": "Lesson 9"
   },
   {
-    "jp_kana": "おとこのひと",
-    "jp_kanji": "男の人",
-    "en": "man",
-    "lesson": "Lesson 9",
+    "jp_kana": "かわ",
+    "jp_kanji": "",
+    "en": "river",
     "default_starred": false,
-    "id": "jpln1200_l9_002"
+    "id": "jpln1200_l9_010",
+    "lesson": "Lesson 9"
   },
   {
-    "jp_kana": "やすみ",
-    "jp_kanji": "休み",
-    "en": "holiday; day off; absent",
+    "jp_kana": "へや",
+    "jp_kanji": "部屋",
+    "en": "room",
     "lesson": "Lesson 9",
     "default_starred": false,
-    "id": "jpln1200_l9_003"
+    "id": "jpln1200_LE_015"
   },
   {
-    "jp_kana": "りょこう",
-    "jp_kanji": "旅行",
-    "en": "travel; trip",
+    "jp_kana": "きれい(な)",
+    "jp_kanji": "",
+    "en": "beautiful; clean",
     "lesson": "Lesson 9",
     "default_starred": false,
-    "id": "jpln1200_l9_004"
+    "id": "jpln1200_adj_016"
+  },
+  {
+    "jp_kana": "しずか(な)",
+    "jp_kanji": "静か(な)",
+    "en": "quiet",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_adj_017"
+  },
+  {
+    "jp_kana": "にぎやか(な)",
+    "jp_kanji": "",
+    "en": "lively",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_adj_018"
+  },
+  {
+    "jp_kana": "ひま(な)",
+    "jp_kanji": "暇(な)",
+    "en": "not busy; to have a free time",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_adj_019"
+  },
+  {
+    "jp_kana": "たべもの",
+    "jp_kanji": "",
+    "en": "food",
+    "default_starred": false,
+    "id": "jpln1200_l9_011",
+    "lesson": "Lesson 9"
+  },
+  {
+    "jp_kana": "しゅくだい",
+    "jp_kanji": "",
+    "en": "homework",
+    "default_starred": false,
+    "id": "jpln1200_l9_012",
+    "lesson": "Lesson 9"
+  },
+  {
+    "jp_kana": "てんき",
+    "jp_kanji": "",
+    "en": "weather",
+    "default_starred": false,
+    "id": "jpln1200_l9_013",
+    "lesson": "Lesson 9"
+  },
+  {
+    "jp_kana": "げんき(な)",
+    "jp_kanji": "元気(な)",
+    "en": "healthy; energetic",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_adj_021"
+  },
+  {
+    "jp_kana": "こわい",
+    "jp_kanji": "怖い",
+    "en": "frightening; scary",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_adj_020"
+  },
+  {
+    "jp_kana": "かっこいい",
+    "jp_kanji": "",
+    "en": "good-looking (men, gadgets)",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_adj_015"
   },
   {
     "jp_kana": "うみ",
@@ -38,6 +110,14 @@
     "lesson": "Lesson 9",
     "default_starred": false,
     "id": "jpln1200_l9_005"
+  },
+  {
+    "jp_kana": "やすみ",
+    "jp_kanji": "休み",
+    "en": "holiday; day off; absent",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_003"
   },
   {
     "jp_kana": "サーフィン",
@@ -56,11 +136,35 @@
     "id": "jpln1200_l9_007"
   },
   {
+    "jp_kana": "りょこう",
+    "jp_kanji": "旅行",
+    "en": "travel; trip",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_004"
+  },
+  {
     "jp_kana": "たのしい",
     "jp_kanji": "楽しい",
     "en": "fun",
     "lesson": "Lesson 9",
     "default_starred": false,
     "id": "jpln1200_l9_008"
+  },
+  {
+    "jp_kana": "おんなのひと",
+    "jp_kanji": "女の人",
+    "en": "woman",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_001"
+  },
+  {
+    "jp_kana": "おとこのひと",
+    "jp_kanji": "男の人",
+    "en": "man",
+    "lesson": "Lesson 9",
+    "default_starred": false,
+    "id": "jpln1200_l9_002"
   }
 ]

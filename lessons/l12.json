@@ -40,12 +40,12 @@
     "id": "jpln1200_l12_005"
   },
   {
-    "jp_kana": "〜まい",
+    "jp_kana": "～まい",
     "jp_kanji": "",
     "en": "counter for flat objects",
-    "lesson": "Lesson 12",
     "default_starred": false,
-    "id": "jpln1200_l12_006"
+    "id": "jpln1200_l12_009",
+    "lesson": "Lesson 12"
   },
   {
     "jp_kana": "ぼく",

@@ -1,12 +1,12 @@
 {
   "course": "JPLN1200",
-  "version": "2.14",
+  "version": "2.15",
   "lessons": [
     {
       "code": "l1",
       "name": "Lesson 1",
       "file": "lessons/l1.json",
-      "count": 20
+      "count": 21
     },
     {
       "code": "l2",
@@ -48,7 +48,7 @@
       "code": "l7",
       "name": "Lesson 7",
       "file": "lessons/l7.json",
-      "count": 0
+      "count": 3
     },
     {
       "code": "l8",
@@ -60,19 +60,19 @@
       "code": "l9",
       "name": "Lesson 9",
       "file": "lessons/l9.json",
-      "count": 8
+      "count": 21
     },
     {
       "code": "l10",
       "name": "Lesson 10",
       "file": "lessons/l10.json",
-      "count": 3
+      "count": 20
     },
     {
       "code": "l11",
       "name": "Lesson 11",
       "file": "lessons/l11.json",
-      "count": 8
+      "count": 14
     },
     {
       "code": "l12",
@@ -90,25 +90,25 @@
       "code": "l14",
       "name": "Lesson 14",
       "file": "lessons/l14.json",
-      "count": 21
+      "count": 44
     },
     {
       "code": "pre",
       "name": "Pre Course Words",
       "file": "lessons/pre_course_words.json",
-      "count": 161
+      "count": 159
     },
     {
       "code": "extras",
       "name": "Extras",
       "file": "lessons/extras.json",
-      "count": 67
+      "count": 59
     },
     {
       "code": "adj",
       "name": "Adjectives",
       "file": "lessons/adjectives.json",
-      "count": 21
+      "count": 7
     }
   ]
 }

@@ -8,6 +8,14 @@
     "id": "jpln1200_l5_001"
   },
   {
+    "jp_kana": "だから",
+    "jp_kanji": "",
+    "en": "so ;therefore",
+    "lesson": "Lesson 5",
+    "default_starred": false,
+    "id": "jpln1200_l5_006"
+  },
+  {
     "jp_kana": "とき",
     "jp_kanji": "時",
     "en": "when (time)",
@@ -32,22 +40,6 @@
     "id": "jpln1200_l5_004"
   },
   {
-    "jp_kana": "それから",
-    "jp_kanji": "",
-    "en": "and then ;after that",
-    "lesson": "Lesson 5",
-    "default_starred": false,
-    "id": "jpln1200_l5_005"
-  },
-  {
-    "jp_kana": "だから",
-    "jp_kanji": "",
-    "en": "so ;therefore",
-    "lesson": "Lesson 5",
-    "default_starred": false,
-    "id": "jpln1200_l5_006"
-  },
-  {
     "jp_kana": "かう",
     "jp_kanji": "買う",
     "en": "to buy",
@@ -62,6 +54,14 @@
     "lesson": "Lesson 5",
     "default_starred": false,
     "id": "jpln1200_l5_008"
+  },
+  {
+    "jp_kana": "それから",
+    "jp_kanji": "",
+    "en": "and then ;after that",
+    "lesson": "Lesson 5",
+    "default_starred": false,
+    "id": "jpln1200_l5_005"
   },
   {
     "jp_kana": "ごご",

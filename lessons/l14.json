@@ -24,147 +24,331 @@
     "id": "jpln1200_l14_003"
   },
   {
-    "jp_kana": "かんじ",
-    "jp_kanji": "漢字",
-    "en": "Kanji",
-    "lesson": "Lesson 14",
-    "default_starred": false,
-    "id": "jpln1200_l14_004"
-  },
-  {
-    "jp_kana": "でんき",
-    "jp_kanji": "電気",
-    "en": "electricity; light",
-    "lesson": "Lesson 14",
-    "default_starred": false,
-    "id": "jpln1200_l14_005"
-  },
-  {
-    "jp_kana": "まど",
-    "jp_kanji": "窓",
-    "en": "window",
-    "lesson": "Lesson 14",
-    "default_starred": false,
-    "id": "jpln1200_l14_006"
-  },
-  {
-    "jp_kana": "ゆっくり",
+    "jp_kana": "くに",
     "jp_kanji": "",
-    "en": "slowly",
-    "lesson": "Lesson 14",
+    "en": "country",
     "default_starred": false,
-    "id": "jpln1200_l14_007"
+    "id": "jpln1200_l14_022",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "きょうかしょ",
-    "jp_kanji": "教科書",
-    "en": "textbook",
-    "lesson": "Lesson 14",
-    "default_starred": false,
-    "id": "jpln1200_l14_008"
-  },
-  {
-    "jp_kana": "ページ",
+    "jp_kana": "シャワー",
     "jp_kanji": "",
-    "en": "page",
-    "lesson": "Lesson 14",
+    "en": "shower",
     "default_starred": false,
-    "id": "jpln1200_l14_009"
+    "id": "jpln1200_l14_023",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "あける",
-    "jp_kanji": "開ける",
-    "en": "to open",
-    "lesson": "Lesson 14",
-    "default_starred": false,
-    "id": "jpln1200_l14_010"
-  },
-  {
-    "jp_kana": "しめる",
-    "jp_kanji": "閉める",
-    "en": "to close",
-    "lesson": "Lesson 14",
-    "default_starred": false,
-    "id": "jpln1200_l14_011"
-  },
-  {
-    "jp_kana": "おしえる",
-    "jp_kanji": "教える",
-    "en": "to teach",
-    "lesson": "Lesson 14",
-    "default_starred": false,
-    "id": "jpln1200_l14_012"
-  },
-  {
-    "jp_kana": "つける",
+    "jp_kana": "パソコン",
     "jp_kanji": "",
-    "en": "to turn on",
-    "lesson": "Lesson 14",
+    "en": "PC",
     "default_starred": false,
-    "id": "jpln1200_l14_013"
+    "id": "jpln1200_l14_024",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "けす",
-    "jp_kanji": "消す",
-    "en": "to turn off",
-    "lesson": "Lesson 14",
+    "jp_kana": "たばこをすう",
+    "jp_kanji": "",
+    "en": "to smoke",
     "default_starred": false,
-    "id": "jpln1200_l14_014"
+    "id": "jpln1200_l14_025",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "かえす",
-    "jp_kanji": "返す",
-    "en": "to return (s.t. to s.o.)",
-    "lesson": "Lesson 14",
+    "jp_kana": "つかう",
+    "jp_kanji": "",
+    "en": "to use",
     "default_starred": false,
-    "id": "jpln1200_l14_015"
+    "id": "jpln1200_l14_026",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "はいる",
-    "jp_kanji": "入る",
-    "en": "to enter",
-    "lesson": "Lesson 14",
+    "jp_kana": "シャワーをあびる",
+    "jp_kanji": "",
+    "en": "to take a shower",
     "default_starred": false,
-    "id": "jpln1200_l14_016"
+    "id": "jpln1200_l14_027",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "たつ",
-    "jp_kanji": "立つ",
-    "en": "to stand up",
-    "lesson": "Lesson 14",
+    "jp_kana": "かりる",
+    "jp_kanji": "",
+    "en": "to borrow",
     "default_starred": false,
-    "id": "jpln1200_l14_017"
+    "id": "jpln1200_l14_028",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "すわる",
-    "jp_kanji": "座る",
-    "en": "to sit down",
-    "lesson": "Lesson 14",
+    "jp_kana": "エアコン",
+    "jp_kanji": "",
+    "en": "air conditioner",
     "default_starred": false,
-    "id": "jpln1200_l14_018"
+    "id": "jpln1200_l14_029",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "でんわする",
-    "jp_kanji": "電話する",
-    "en": "to call",
-    "lesson": "Lesson 14",
+    "jp_kana": "たばこ",
+    "jp_kanji": "",
+    "en": "tobacco",
     "default_starred": false,
-    "id": "jpln1200_l14_019"
+    "id": "jpln1200_l14_030",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "つれてくる",
-    "jp_kanji": "連れて来る",
-    "en": "to bring (people)",
-    "lesson": "Lesson 14",
+    "jp_kana": "すう",
+    "jp_kanji": "",
+    "en": "to inhale; to suck",
     "default_starred": false,
-    "id": "jpln1200_l14_020"
+    "id": "jpln1200_l14_031",
+    "lesson": "Lesson 14"
   },
   {
-    "jp_kana": "もってくる",
-    "jp_kanji": "持って来る",
-    "en": "to bring (things)",
+    "jp_kana": "がいこく",
+    "jp_kanji": "",
+    "en": "foreign country",
+    "default_starred": false,
+    "id": "jpln1200_l14_032",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "がいこくじん",
+    "jp_kanji": "",
+    "en": "foreigner",
+    "default_starred": false,
+    "id": "jpln1200_l14_033",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "でんしゃ",
+    "jp_kanji": "",
+    "en": "train",
+    "default_starred": false,
+    "id": "jpln1200_l14_034",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "まいしゅう",
+    "jp_kanji": "",
+    "en": "every week",
+    "default_starred": false,
+    "id": "jpln1200_l14_035",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "らいねん",
+    "jp_kanji": "",
+    "en": "next year",
+    "default_starred": false,
+    "id": "jpln1200_l14_036",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "おりる",
+    "jp_kanji": "",
+    "en": "to get off",
+    "default_starred": false,
+    "id": "jpln1200_l14_037",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "おかね",
+    "jp_kanji": "",
+    "en": "money",
+    "default_starred": false,
+    "id": "jpln1200_l14_038",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "にもつ",
+    "jp_kanji": "",
+    "en": "baggage",
+    "default_starred": false,
+    "id": "jpln1200_l14_039",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "じかん",
+    "jp_kanji": "",
+    "en": "time",
+    "default_starred": false,
+    "id": "jpln1200_l14_040",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "～から",
+    "jp_kanji": "",
+    "en": "because ...",
+    "default_starred": false,
+    "id": "jpln1200_l14_041",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "てつだう",
+    "jp_kanji": "",
+    "en": "to help",
+    "default_starred": false,
+    "id": "jpln1200_l14_042",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "もつ",
+    "jp_kanji": "",
+    "en": "to carry; to hold",
+    "default_starred": false,
+    "id": "jpln1200_l14_043",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "やすむ",
+    "jp_kanji": "",
+    "en": "to be absent; to rest",
+    "default_starred": false,
+    "id": "jpln1200_l14_044",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "まっすぐ",
+    "jp_kanji": "",
+    "en": "straight",
+    "default_starred": false,
+    "id": "jpln1200_l14_045",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "にしぐち",
+    "jp_kanji": "",
+    "en": "west exit",
+    "default_starred": false,
+    "id": "jpln1200_l14_046",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "えき",
+    "jp_kanji": "",
+    "en": "station",
+    "default_starred": false,
+    "id": "jpln1200_l14_047",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "みなみぐち",
+    "jp_kanji": "",
+    "en": "south exit",
+    "default_starred": false,
+    "id": "jpln1200_l14_048",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "ひがしぐち",
+    "jp_kanji": "",
+    "en": "east exit",
+    "default_starred": false,
+    "id": "jpln1200_l14_049",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "きたぐち",
+    "jp_kanji": "",
+    "en": "north exit",
+    "default_starred": false,
+    "id": "jpln1200_l14_050",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "わすれる",
+    "jp_kanji": "",
+    "en": "to forget; to leave behind",
+    "default_starred": false,
+    "id": "jpln1200_l14_051",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "りょうり",
+    "jp_kanji": "",
+    "en": "cooking; dish",
+    "default_starred": false,
+    "id": "jpln1200_l14_052",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "りょうりする",
+    "jp_kanji": "",
+    "en": "to cook",
+    "default_starred": false,
+    "id": "jpln1200_l14_053",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "いつも",
+    "jp_kanji": "",
+    "en": "always",
+    "default_starred": false,
+    "id": "jpln1200_l14_054",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "みなさん",
+    "jp_kanji": "",
+    "en": "everyone (polite)",
+    "default_starred": false,
+    "id": "jpln1200_l14_055",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "みんな",
+    "jp_kanji": "",
+    "en": "everyone (casual)",
+    "default_starred": false,
+    "id": "jpln1200_l14_056",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "つぎ",
+    "jp_kanji": "",
+    "en": "next",
+    "default_starred": false,
+    "id": "jpln1200_l14_057",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "あとで",
+    "jp_kanji": "",
+    "en": "later on",
+    "default_starred": false,
+    "id": "jpln1200_l14_058",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "すぐ",
+    "jp_kanji": "",
+    "en": "right away",
+    "default_starred": false,
+    "id": "jpln1200_l14_059",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "ほんとうですか",
+    "jp_kanji": "",
+    "en": "Really?",
+    "default_starred": false,
+    "id": "jpln1200_l14_060",
+    "lesson": "Lesson 14"
+  },
+  {
+    "jp_kana": "じゃあ、また",
+    "jp_kanji": "",
+    "en": "Good-bye ;See you again",
     "lesson": "Lesson 14",
     "default_starred": false,
-    "id": "jpln1200_l14_021"
+    "id": "jpln1200_pre_084"
+  },
+  {
+    "jp_kana": "けっこうです",
+    "jp_kanji": "",
+    "en": "That would be fine.; That would not be necessary.",
+    "default_starred": false,
+    "id": "jpln1200_l14_061",
+    "lesson": "Lesson 14"
   }
 ]
