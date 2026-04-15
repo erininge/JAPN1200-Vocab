@@ -1,11 +1,11 @@
 [
   {
-    "jp_kana": "イス",
-    "jp_kanji": "",
-    "en": "chair",
+    "jp_kana": "はな",
+    "jp_kanji": "花",
+    "en": "flower",
     "lesson": "Lesson 3",
     "default_starred": false,
-    "id": "jpln1200_l3_001"
+    "id": "jpln1200_l3_003"
   },
   {
     "jp_kana": "つくえ",
@@ -16,12 +16,12 @@
     "id": "jpln1200_l3_002"
   },
   {
-    "jp_kana": "はな",
-    "jp_kanji": "花",
-    "en": "flower",
+    "jp_kana": "いす",
+    "jp_kanji": "",
+    "en": "chair",
     "lesson": "Lesson 3",
     "default_starred": false,
-    "id": "jpln1200_l3_003"
+    "id": "jpln1200_l3_001"
   },
   {
     "jp_kana": "うえ",

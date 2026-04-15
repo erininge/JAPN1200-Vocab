@@ -1,7 +1,7 @@
 /*
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
-  - V7.2: add collapsible chapter lesson selection in View Vocab + cache update
+  - V7.3: revamp Chapter 4-6 vocabulary lists + cache update
   - V7.1: reorganize lesson categories into chapter groups + filter updates + cache update
   - V7.0: allow optional Japanese parenthetical text in typed answers + cache update
   - V6.9: fix Adjectives lesson filtering + move duplicate adjective words
@@ -9,12 +9,12 @@
   - V6.4: add Adjectives lesson + cache update
   - V6.3: add Lesson 9 vocab + cache update
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v7.2";
+const CACHE_NAME = "japn1200-class-vocab-cache-v7.3";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v7.2",
-  "./styles.css?f=v7.2",
-  "./app.js?f=v7.2",
+  "./index.html?f=v7.3",
+  "./styles.css?f=v7.3",
+  "./app.js?f=v7.3",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
