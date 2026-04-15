@@ -158,5 +158,141 @@
     "default_starred": false,
     "id": "jpln1200_l10_020",
     "lesson": "Lesson 10"
+  },
+  {
+    "jp_kana": "すき(な)",
+    "jp_kanji": "好き(な)",
+    "en": "to like",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_021"
+  },
+  {
+    "jp_kana": "だいすき(な)",
+    "jp_kanji": "大好き(な)",
+    "en": "to love",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_022"
+  },
+  {
+    "jp_kana": "きらい(な)",
+    "jp_kanji": "嫌い(な)",
+    "en": "to dislike",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_023"
+  },
+  {
+    "jp_kana": "だいきらい(な)",
+    "jp_kanji": "大嫌い(な)",
+    "en": "to hate",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_024"
+  },
+  {
+    "jp_kana": "やすい",
+    "jp_kanji": "安い",
+    "en": "inexpensive; cheap",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_025"
+  },
+  {
+    "jp_kana": "あたらしい",
+    "jp_kanji": "新しい",
+    "en": "new",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_026"
+  },
+  {
+    "jp_kana": "ふるい",
+    "jp_kanji": "古い",
+    "en": "old (thing)",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_027"
+  },
+  {
+    "jp_kana": "あつい",
+    "jp_kanji": "暑い",
+    "en": "hot",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_028"
+  },
+  {
+    "jp_kana": "さむい",
+    "jp_kanji": "寒い",
+    "en": "cold (weather)",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_029"
+  },
+  {
+    "jp_kana": "おおきい",
+    "jp_kanji": "大きい",
+    "en": "big",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_030"
+  },
+  {
+    "jp_kana": "ちいさい",
+    "jp_kanji": "小さい",
+    "en": "small",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_031"
+  },
+  {
+    "jp_kana": "おもしろい",
+    "jp_kanji": "面白い",
+    "en": "interesting; funny",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_032"
+  },
+  {
+    "jp_kana": "つまらない",
+    "jp_kanji": "",
+    "en": "boring",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_033"
+  },
+  {
+    "jp_kana": "むずかしい",
+    "jp_kanji": "難しい",
+    "en": "difficult",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_034"
+  },
+  {
+    "jp_kana": "やさしい",
+    "jp_kanji": "優しい",
+    "en": "easy; kind (person)",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_035"
+  },
+  {
+    "jp_kana": "いそがしい",
+    "jp_kanji": "忙しい",
+    "en": "busy",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_036"
+  },
+  {
+    "jp_kana": "いい",
+    "jp_kanji": "",
+    "en": "good",
+    "lesson": "Lesson 10",
+    "default_starred": false,
+    "id": "jpln1200_l10_037"
   }
 ]
