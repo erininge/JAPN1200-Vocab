@@ -288,14 +288,6 @@
     "id": "jpln1200_l3_5_054"
   },
   {
-    "jp_kana": "～ぐらい",
-    "jp_kanji": "",
-    "en": "about ;approximately",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_001"
-  },
-  {
     "jp_kana": "～じかん",
     "jp_kanji": "～時間",
     "en": "… hours",
@@ -310,14 +302,6 @@
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_010"
-  },
-  {
-    "jp_kana": "ゲーム",
-    "jp_kanji": "",
-    "en": "game",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_021"
   },
   {
     "jp_kana": "わたし",
