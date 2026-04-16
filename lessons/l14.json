@@ -10,7 +10,7 @@
   {
     "jp_kana": "でる",
     "jp_kanji": "出る",
-    "en": "to exit, to go out",
+    "en": "to exit; to go out",
     "lesson": "L6-03",
     "default_starred": false,
     "id": "jpln1200_l14_002"
@@ -165,6 +165,14 @@
     "en": "baggage",
     "default_starred": false,
     "id": "jpln1200_l14_039",
+    "lesson": "L6-09"
+  },
+  {
+    "jp_kana": "じかん",
+    "jp_kanji": "",
+    "en": "time",
+    "default_starred": false,
+    "id": "jpln1200_l14_040",
     "lesson": "L6-09"
   },
   {
@@ -330,7 +338,7 @@
   {
     "jp_kana": "じゃあ、また",
     "jp_kanji": "",
-    "en": "Good-bye ;See you again",
+    "en": "See you later!",
     "lesson": "L6-13",
     "default_starred": false,
     "id": "jpln1200_pre_084"
