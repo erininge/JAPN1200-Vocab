@@ -3,7 +3,7 @@
     "jp_kana": "くち",
     "jp_kanji": "口",
     "en": "mouth",
-    "lesson": "Lesson 14",
+    "lesson": "L6-03",
     "default_starred": false,
     "id": "jpln1200_l14_001"
   },
@@ -11,7 +11,7 @@
     "jp_kana": "でる",
     "jp_kanji": "出る",
     "en": "to exit, to go out",
-    "lesson": "Lesson 14",
+    "lesson": "L6-03",
     "default_starred": false,
     "id": "jpln1200_l14_002"
   },
@@ -19,7 +19,7 @@
     "jp_kana": "でぐち",
     "jp_kanji": "出口",
     "en": "exit",
-    "lesson": "Lesson 14",
+    "lesson": "L6-03",
     "default_starred": false,
     "id": "jpln1200_l14_003"
   },
@@ -29,7 +29,7 @@
     "en": "country",
     "default_starred": false,
     "id": "jpln1200_l14_022",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "シャワー",
@@ -37,7 +37,7 @@
     "en": "shower",
     "default_starred": false,
     "id": "jpln1200_l14_023",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "パソコン",
@@ -45,7 +45,7 @@
     "en": "PC",
     "default_starred": false,
     "id": "jpln1200_l14_024",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "たばこをすう",
@@ -53,7 +53,7 @@
     "en": "to smoke",
     "default_starred": false,
     "id": "jpln1200_l14_025",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "つかう",
@@ -61,7 +61,7 @@
     "en": "to use",
     "default_starred": false,
     "id": "jpln1200_l14_026",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "シャワーをあびる",
@@ -69,7 +69,7 @@
     "en": "to take a shower",
     "default_starred": false,
     "id": "jpln1200_l14_027",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "かりる",
@@ -77,7 +77,7 @@
     "en": "to borrow",
     "default_starred": false,
     "id": "jpln1200_l14_028",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "エアコン",
@@ -85,7 +85,7 @@
     "en": "air conditioner",
     "default_starred": false,
     "id": "jpln1200_l14_029",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "たばこ",
@@ -93,7 +93,7 @@
     "en": "tobacco",
     "default_starred": false,
     "id": "jpln1200_l14_030",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "すう",
@@ -101,7 +101,7 @@
     "en": "to inhale; to suck",
     "default_starred": false,
     "id": "jpln1200_l14_031",
-    "lesson": "Lesson 14"
+    "lesson": "L6-05"
   },
   {
     "jp_kana": "がいこく",
@@ -109,7 +109,7 @@
     "en": "foreign country",
     "default_starred": false,
     "id": "jpln1200_l14_032",
-    "lesson": "Lesson 14"
+    "lesson": "L6-07"
   },
   {
     "jp_kana": "がいこくじん",
@@ -117,7 +117,7 @@
     "en": "foreigner",
     "default_starred": false,
     "id": "jpln1200_l14_033",
-    "lesson": "Lesson 14"
+    "lesson": "L6-07"
   },
   {
     "jp_kana": "でんしゃ",
@@ -125,7 +125,7 @@
     "en": "train",
     "default_starred": false,
     "id": "jpln1200_l14_034",
-    "lesson": "Lesson 14"
+    "lesson": "L6-07"
   },
   {
     "jp_kana": "まいしゅう",
@@ -133,7 +133,7 @@
     "en": "every week",
     "default_starred": false,
     "id": "jpln1200_l14_035",
-    "lesson": "Lesson 14"
+    "lesson": "L6-07"
   },
   {
     "jp_kana": "らいねん",
@@ -141,7 +141,7 @@
     "en": "next year",
     "default_starred": false,
     "id": "jpln1200_l14_036",
-    "lesson": "Lesson 14"
+    "lesson": "L6-07"
   },
   {
     "jp_kana": "おりる",
@@ -149,7 +149,7 @@
     "en": "to get off",
     "default_starred": false,
     "id": "jpln1200_l14_037",
-    "lesson": "Lesson 14"
+    "lesson": "L6-07"
   },
   {
     "jp_kana": "おかね",
@@ -157,7 +157,7 @@
     "en": "money",
     "default_starred": false,
     "id": "jpln1200_l14_038",
-    "lesson": "Lesson 14"
+    "lesson": "L6-09"
   },
   {
     "jp_kana": "にもつ",
@@ -165,7 +165,7 @@
     "en": "baggage",
     "default_starred": false,
     "id": "jpln1200_l14_039",
-    "lesson": "Lesson 14"
+    "lesson": "L6-09"
   },
   {
     "jp_kana": "～から",
@@ -173,7 +173,7 @@
     "en": "because ...",
     "default_starred": false,
     "id": "jpln1200_l14_041",
-    "lesson": "Lesson 14"
+    "lesson": "L6-09"
   },
   {
     "jp_kana": "てつだう",
@@ -181,7 +181,7 @@
     "en": "to help",
     "default_starred": false,
     "id": "jpln1200_l14_042",
-    "lesson": "Lesson 14"
+    "lesson": "L6-09"
   },
   {
     "jp_kana": "もつ",
@@ -189,7 +189,7 @@
     "en": "to carry; to hold",
     "default_starred": false,
     "id": "jpln1200_l14_043",
-    "lesson": "Lesson 14"
+    "lesson": "L6-09"
   },
   {
     "jp_kana": "やすむ",
@@ -197,7 +197,7 @@
     "en": "to be absent; to rest",
     "default_starred": false,
     "id": "jpln1200_l14_044",
-    "lesson": "Lesson 14"
+    "lesson": "L6-09"
   },
   {
     "jp_kana": "まっすぐ",
@@ -205,7 +205,7 @@
     "en": "straight",
     "default_starred": false,
     "id": "jpln1200_l14_045",
-    "lesson": "Lesson 14"
+    "lesson": "L6-10"
   },
   {
     "jp_kana": "にしぐち",
@@ -213,7 +213,7 @@
     "en": "west exit",
     "default_starred": false,
     "id": "jpln1200_l14_046",
-    "lesson": "Lesson 14"
+    "lesson": "L6-10"
   },
   {
     "jp_kana": "えき",
@@ -221,7 +221,7 @@
     "en": "station",
     "default_starred": false,
     "id": "jpln1200_l14_047",
-    "lesson": "Lesson 14"
+    "lesson": "L6-10"
   },
   {
     "jp_kana": "みなみぐち",
@@ -229,7 +229,7 @@
     "en": "south exit",
     "default_starred": false,
     "id": "jpln1200_l14_048",
-    "lesson": "Lesson 14"
+    "lesson": "L6-10"
   },
   {
     "jp_kana": "ひがしぐち",
@@ -237,7 +237,7 @@
     "en": "east exit",
     "default_starred": false,
     "id": "jpln1200_l14_049",
-    "lesson": "Lesson 14"
+    "lesson": "L6-10"
   },
   {
     "jp_kana": "きたぐち",
@@ -245,7 +245,7 @@
     "en": "north exit",
     "default_starred": false,
     "id": "jpln1200_l14_050",
-    "lesson": "Lesson 14"
+    "lesson": "L6-10"
   },
   {
     "jp_kana": "わすれる",
@@ -253,7 +253,7 @@
     "en": "to forget; to leave behind",
     "default_starred": false,
     "id": "jpln1200_l14_051",
-    "lesson": "Lesson 14"
+    "lesson": "L6-11"
   },
   {
     "jp_kana": "りょうり",
@@ -261,7 +261,7 @@
     "en": "cooking; dish",
     "default_starred": false,
     "id": "jpln1200_l14_052",
-    "lesson": "Lesson 14"
+    "lesson": "L6-11"
   },
   {
     "jp_kana": "りょうりする",
@@ -269,7 +269,7 @@
     "en": "to cook",
     "default_starred": false,
     "id": "jpln1200_l14_053",
-    "lesson": "Lesson 14"
+    "lesson": "L6-11"
   },
   {
     "jp_kana": "いつも",
@@ -277,7 +277,7 @@
     "en": "always",
     "default_starred": false,
     "id": "jpln1200_l14_054",
-    "lesson": "Lesson 14"
+    "lesson": "L6-11"
   },
   {
     "jp_kana": "みなさん",
@@ -285,7 +285,7 @@
     "en": "everyone (polite)",
     "default_starred": false,
     "id": "jpln1200_l14_055",
-    "lesson": "Lesson 14"
+    "lesson": "L6-11"
   },
   {
     "jp_kana": "みんな",
@@ -293,7 +293,7 @@
     "en": "everyone (casual)",
     "default_starred": false,
     "id": "jpln1200_l14_056",
-    "lesson": "Lesson 14"
+    "lesson": "L6-11"
   },
   {
     "jp_kana": "つぎ",
@@ -301,7 +301,7 @@
     "en": "next",
     "default_starred": false,
     "id": "jpln1200_l14_057",
-    "lesson": "Lesson 14"
+    "lesson": "L6-13"
   },
   {
     "jp_kana": "あとで",
@@ -309,7 +309,7 @@
     "en": "later on",
     "default_starred": false,
     "id": "jpln1200_l14_058",
-    "lesson": "Lesson 14"
+    "lesson": "L6-13"
   },
   {
     "jp_kana": "すぐ",
@@ -317,7 +317,7 @@
     "en": "right away",
     "default_starred": false,
     "id": "jpln1200_l14_059",
-    "lesson": "Lesson 14"
+    "lesson": "L6-13"
   },
   {
     "jp_kana": "ほんとうですか",
@@ -325,13 +325,13 @@
     "en": "Really?",
     "default_starred": false,
     "id": "jpln1200_l14_060",
-    "lesson": "Lesson 14"
+    "lesson": "L6-13"
   },
   {
     "jp_kana": "じゃあ、また",
     "jp_kanji": "",
     "en": "Good-bye ;See you again",
-    "lesson": "Lesson 14",
+    "lesson": "L6-13",
     "default_starred": false,
     "id": "jpln1200_pre_084"
   },
@@ -341,7 +341,7 @@
     "en": "That would be fine.; That would not be necessary.",
     "default_starred": false,
     "id": "jpln1200_l14_061",
-    "lesson": "Lesson 14"
+    "lesson": "L6-13"
   },
   {
     "jp_kana": "でんき",
