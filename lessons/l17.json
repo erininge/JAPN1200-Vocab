@@ -1,0 +1,50 @@
+[
+  {
+    "jp_kana": "がいこく",
+    "jp_kanji": "",
+    "en": "foreign country",
+    "default_starred": false,
+    "id": "jpln1200_l17_001",
+    "lesson": "L6-07"
+  },
+  {
+    "jp_kana": "がいこくじん",
+    "jp_kanji": "",
+    "en": "foreigner",
+    "default_starred": false,
+    "id": "jpln1200_l17_002",
+    "lesson": "L6-07"
+  },
+  {
+    "jp_kana": "でんしゃ",
+    "jp_kanji": "",
+    "en": "train",
+    "default_starred": false,
+    "id": "jpln1200_l17_003",
+    "lesson": "L6-07"
+  },
+  {
+    "jp_kana": "まいしゅう",
+    "jp_kanji": "",
+    "en": "every week",
+    "default_starred": false,
+    "id": "jpln1200_l17_004",
+    "lesson": "L6-07"
+  },
+  {
+    "jp_kana": "らいねん",
+    "jp_kanji": "",
+    "en": "next year",
+    "default_starred": false,
+    "id": "jpln1200_l17_005",
+    "lesson": "L6-07"
+  },
+  {
+    "jp_kana": "おりる",
+    "jp_kanji": "",
+    "en": "to get off",
+    "default_starred": false,
+    "id": "jpln1200_l17_006",
+    "lesson": "L6-07"
+  }
+]

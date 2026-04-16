@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.5) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.7) */
 
-const APP_VERSION = "V7.5";
+const APP_VERSION = "V7.7";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -33,6 +33,14 @@ const CATEGORY_BY_LESSON_CODE = {
   adj: "ch5",
   l13: "ch6",
   l14: "ch6",
+  l15: "ch6",
+  l16: "ch6",
+  l17: "ch6",
+  l18: "ch6",
+  l19: "ch6",
+  l20: "ch6",
+  l21: "ch6",
+  l22: "other",
   extras: "other",
   pre: "other"
 };
