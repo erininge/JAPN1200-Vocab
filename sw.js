@@ -1,6 +1,7 @@
 /*
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
+  - V7.5: spread Chapter 6 vocabulary across L6-01/L6-02/L6-03/L6-05/L6-07/L6-09/L6-10/L6-11/L6-13 + cache update
   - V7.4: add missing Chapter 4-6 vocabulary entries + cache update
   - V7.3: revamp Chapter 4-6 vocabulary lists + cache update
   - V7.1: reorganize lesson categories into chapter groups + filter updates + cache update
@@ -10,12 +11,12 @@
   - V6.4: add Adjectives lesson + cache update
   - V6.3: add Lesson 9 vocab + cache update
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v7.4";
+const CACHE_NAME = "japn1200-class-vocab-cache-v7.5";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v7.4",
-  "./styles.css?f=v7.4",
-  "./app.js?f=v7.4",
+  "./index.html?f=v7.5",
+  "./styles.css?f=v7.5",
+  "./app.js?f=v7.5",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

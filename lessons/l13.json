@@ -3,7 +3,7 @@
     "jp_kana": "ひがし",
     "jp_kanji": "東",
     "en": "east",
-    "lesson": "Lesson 13",
+    "lesson": "L6-01",
     "default_starred": false,
     "id": "jpln1200_l13_001"
   },
@@ -11,7 +11,7 @@
     "jp_kana": "にし",
     "jp_kanji": "西",
     "en": "west",
-    "lesson": "Lesson 13",
+    "lesson": "L6-01",
     "default_starred": false,
     "id": "jpln1200_l13_002"
   },
@@ -19,7 +19,7 @@
     "jp_kana": "みなみ",
     "jp_kanji": "南",
     "en": "south",
-    "lesson": "Lesson 13",
+    "lesson": "L6-01",
     "default_starred": false,
     "id": "jpln1200_l13_003"
   },
@@ -27,7 +27,7 @@
     "jp_kana": "きた",
     "jp_kanji": "北",
     "en": "north",
-    "lesson": "Lesson 13",
+    "lesson": "L6-01",
     "default_starred": false,
     "id": "jpln1200_l13_004"
   },
@@ -35,7 +35,7 @@
     "jp_kana": "あそぶ",
     "jp_kanji": "遊ぶ",
     "en": "to play",
-    "lesson": "Lesson 13",
+    "lesson": "L6-02",
     "default_starred": false,
     "id": "jpln1200_l13_005"
   },
@@ -43,7 +43,7 @@
     "jp_kana": "いそぐ",
     "jp_kanji": "急ぐ",
     "en": "to hurry",
-    "lesson": "Lesson 13",
+    "lesson": "L6-02",
     "default_starred": false,
     "id": "jpln1200_l13_006"
   },
@@ -51,7 +51,7 @@
     "jp_kana": "しぬ",
     "jp_kanji": "死ぬ",
     "en": "to die",
-    "lesson": "Lesson 13",
+    "lesson": "L6-02",
     "default_starred": false,
     "id": "jpln1200_l13_007"
   }
