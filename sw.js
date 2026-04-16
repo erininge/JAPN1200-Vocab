@@ -1,6 +1,7 @@
 /*
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
+  - V7.7: split Chapter 6 into lesson files 13-21 and move legacy Lesson 14 vocab to Lesson 22 + cache update
   - V7.6: complete Chapter 6 lesson mapping (L6-01..L6-13) + add じかん + cache update
   - V7.5: spread Chapter 6 vocabulary across L6-01/L6-02/L6-03/L6-05/L6-07/L6-09/L6-10/L6-11/L6-13 + cache update
   - V7.4: add missing Chapter 4-6 vocabulary entries + cache update
@@ -12,12 +13,12 @@
   - V6.4: add Adjectives lesson + cache update
   - V6.3: add Lesson 9 vocab + cache update
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v7.6";
+const CACHE_NAME = "japn1200-class-vocab-cache-v7.7";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v7.6",
-  "./styles.css?f=v7.6",
-  "./app.js?f=v7.6",
+  "./index.html?f=v7.7",
+  "./styles.css?f=v7.7",
+  "./app.js?f=v7.7",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

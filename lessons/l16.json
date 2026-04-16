@@ -1,0 +1,82 @@
+[
+  {
+    "jp_kana": "くに",
+    "jp_kanji": "",
+    "en": "country",
+    "default_starred": false,
+    "id": "jpln1200_l16_001",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "シャワー",
+    "jp_kanji": "",
+    "en": "shower",
+    "default_starred": false,
+    "id": "jpln1200_l16_002",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "パソコン",
+    "jp_kanji": "",
+    "en": "PC",
+    "default_starred": false,
+    "id": "jpln1200_l16_003",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "たばこをすう",
+    "jp_kanji": "",
+    "en": "to smoke",
+    "default_starred": false,
+    "id": "jpln1200_l16_004",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "つかう",
+    "jp_kanji": "",
+    "en": "to use",
+    "default_starred": false,
+    "id": "jpln1200_l16_005",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "シャワーをあびる",
+    "jp_kanji": "",
+    "en": "to take a shower",
+    "default_starred": false,
+    "id": "jpln1200_l16_006",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "かりる",
+    "jp_kanji": "",
+    "en": "to borrow",
+    "default_starred": false,
+    "id": "jpln1200_l16_007",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "エアコン",
+    "jp_kanji": "",
+    "en": "air conditioner",
+    "default_starred": false,
+    "id": "jpln1200_l16_008",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "たばこ",
+    "jp_kanji": "",
+    "en": "tobacco",
+    "default_starred": false,
+    "id": "jpln1200_l16_009",
+    "lesson": "L6-05"
+  },
+  {
+    "jp_kana": "すう",
+    "jp_kanji": "",
+    "en": "to inhale; to suck",
+    "default_starred": false,
+    "id": "jpln1200_l16_010",
+    "lesson": "L6-05"
+  }
+]

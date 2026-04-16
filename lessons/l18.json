@@ -1,0 +1,58 @@
+[
+  {
+    "jp_kana": "おかね",
+    "jp_kanji": "",
+    "en": "money",
+    "default_starred": false,
+    "id": "jpln1200_l18_001",
+    "lesson": "L6-09"
+  },
+  {
+    "jp_kana": "にもつ",
+    "jp_kanji": "",
+    "en": "baggage",
+    "default_starred": false,
+    "id": "jpln1200_l18_002",
+    "lesson": "L6-09"
+  },
+  {
+    "jp_kana": "じかん",
+    "jp_kanji": "",
+    "en": "time",
+    "default_starred": false,
+    "id": "jpln1200_l18_003",
+    "lesson": "L6-09"
+  },
+  {
+    "jp_kana": "～から",
+    "jp_kanji": "",
+    "en": "because ...",
+    "default_starred": false,
+    "id": "jpln1200_l18_004",
+    "lesson": "L6-09"
+  },
+  {
+    "jp_kana": "てつだう",
+    "jp_kanji": "",
+    "en": "to help",
+    "default_starred": false,
+    "id": "jpln1200_l18_005",
+    "lesson": "L6-09"
+  },
+  {
+    "jp_kana": "もつ",
+    "jp_kanji": "",
+    "en": "to carry; to hold",
+    "default_starred": false,
+    "id": "jpln1200_l18_006",
+    "lesson": "L6-09"
+  },
+  {
+    "jp_kana": "やすむ",
+    "jp_kanji": "",
+    "en": "to be absent; to rest",
+    "default_starred": false,
+    "id": "jpln1200_l18_007",
+    "lesson": "L6-09"
+  }
+]

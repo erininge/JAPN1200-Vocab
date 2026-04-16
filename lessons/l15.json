@@ -1,0 +1,26 @@
+[
+  {
+    "jp_kana": "くち",
+    "jp_kanji": "口",
+    "en": "mouth",
+    "lesson": "L6-03",
+    "default_starred": false,
+    "id": "jpln1200_l15_001"
+  },
+  {
+    "jp_kana": "でる",
+    "jp_kanji": "出る",
+    "en": "to exit; to go out",
+    "lesson": "L6-03",
+    "default_starred": false,
+    "id": "jpln1200_l15_002"
+  },
+  {
+    "jp_kana": "でぐち",
+    "jp_kanji": "出口",
+    "en": "exit",
+    "lesson": "L6-03",
+    "default_starred": false,
+    "id": "jpln1200_l15_003"
+  }
+]

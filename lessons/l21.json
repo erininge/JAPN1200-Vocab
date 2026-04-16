@@ -1,0 +1,50 @@
+[
+  {
+    "jp_kana": "つぎ",
+    "jp_kanji": "",
+    "en": "next",
+    "default_starred": false,
+    "id": "jpln1200_l21_001",
+    "lesson": "L6-13"
+  },
+  {
+    "jp_kana": "あとで",
+    "jp_kanji": "",
+    "en": "later on",
+    "default_starred": false,
+    "id": "jpln1200_l21_002",
+    "lesson": "L6-13"
+  },
+  {
+    "jp_kana": "すぐ",
+    "jp_kanji": "",
+    "en": "right away",
+    "default_starred": false,
+    "id": "jpln1200_l21_003",
+    "lesson": "L6-13"
+  },
+  {
+    "jp_kana": "ほんとうですか",
+    "jp_kanji": "",
+    "en": "Really?",
+    "default_starred": false,
+    "id": "jpln1200_l21_004",
+    "lesson": "L6-13"
+  },
+  {
+    "jp_kana": "じゃあ、また",
+    "jp_kanji": "",
+    "en": "See you later!",
+    "lesson": "L6-13",
+    "default_starred": false,
+    "id": "jpln1200_l21_005"
+  },
+  {
+    "jp_kana": "けっこうです",
+    "jp_kanji": "",
+    "en": "That would be fine.; That would not be necessary.",
+    "default_starred": false,
+    "id": "jpln1200_l21_006",
+    "lesson": "L6-13"
+  }
+]

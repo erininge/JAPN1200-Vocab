@@ -1,0 +1,50 @@
+[
+  {
+    "jp_kana": "わすれる",
+    "jp_kanji": "",
+    "en": "to forget; to leave behind",
+    "default_starred": false,
+    "id": "jpln1200_l20_001",
+    "lesson": "L6-11"
+  },
+  {
+    "jp_kana": "りょうり",
+    "jp_kanji": "",
+    "en": "cooking; dish",
+    "default_starred": false,
+    "id": "jpln1200_l20_002",
+    "lesson": "L6-11"
+  },
+  {
+    "jp_kana": "りょうりする",
+    "jp_kanji": "",
+    "en": "to cook",
+    "default_starred": false,
+    "id": "jpln1200_l20_003",
+    "lesson": "L6-11"
+  },
+  {
+    "jp_kana": "いつも",
+    "jp_kanji": "",
+    "en": "always",
+    "default_starred": false,
+    "id": "jpln1200_l20_004",
+    "lesson": "L6-11"
+  },
+  {
+    "jp_kana": "みなさん",
+    "jp_kanji": "",
+    "en": "everyone (polite)",
+    "default_starred": false,
+    "id": "jpln1200_l20_005",
+    "lesson": "L6-11"
+  },
+  {
+    "jp_kana": "みんな",
+    "jp_kanji": "",
+    "en": "everyone (casual)",
+    "default_starred": false,
+    "id": "jpln1200_l20_006",
+    "lesson": "L6-11"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "jp_kana": "まっすぐ",
+    "jp_kanji": "",
+    "en": "straight",
+    "default_starred": false,
+    "id": "jpln1200_l19_001",
+    "lesson": "L6-10"
+  },
+  {
+    "jp_kana": "にしぐち",
+    "jp_kanji": "",
+    "en": "west exit",
+    "default_starred": false,
+    "id": "jpln1200_l19_002",
+    "lesson": "L6-10"
+  },
+  {
+    "jp_kana": "えき",
+    "jp_kanji": "",
+    "en": "station",
+    "default_starred": false,
+    "id": "jpln1200_l19_003",
+    "lesson": "L6-10"
+  },
+  {
+    "jp_kana": "みなみぐち",
+    "jp_kanji": "",
+    "en": "south exit",
+    "default_starred": false,
+    "id": "jpln1200_l19_004",
+    "lesson": "L6-10"
+  },
+  {
+    "jp_kana": "ひがしぐち",
+    "jp_kanji": "",
+    "en": "east exit",
+    "default_starred": false,
+    "id": "jpln1200_l19_005",
+    "lesson": "L6-10"
+  },
+  {
+    "jp_kana": "きたぐち",
+    "jp_kanji": "",
+    "en": "north exit",
+    "default_starred": false,
+    "id": "jpln1200_l19_006",
+    "lesson": "L6-10"
+  }
+]
