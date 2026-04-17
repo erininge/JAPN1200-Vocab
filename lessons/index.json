@@ -1,6 +1,6 @@
 {
   "course": "JPLN1200",
-  "version": "2.19",
+  "version": "2.20",
   "lessons": [
     {
       "code": "l1",
@@ -84,37 +84,37 @@
       "code": "l13",
       "name": "Lesson 13",
       "file": "lessons/l13.json",
-      "count": 4
+      "count": 5
     },
     {
       "code": "l14",
       "name": "Lesson 14",
       "file": "lessons/l14.json",
-      "count": 3
+      "count": 9
     },
     {
       "code": "l15",
       "name": "Lesson 15",
       "file": "lessons/l15.json",
-      "count": 3
+      "count": 21
     },
     {
       "code": "l16",
       "name": "Lesson 16",
       "file": "lessons/l16.json",
-      "count": 10
+      "count": 13
     },
     {
       "code": "l17",
       "name": "Lesson 17",
       "file": "lessons/l17.json",
-      "count": 6
+      "count": 10
     },
     {
       "code": "l18",
       "name": "Lesson 18",
       "file": "lessons/l18.json",
-      "count": 7
+      "count": 9
     },
     {
       "code": "l19",
@@ -126,7 +126,7 @@
       "code": "l20",
       "name": "Lesson 20",
       "file": "lessons/l20.json",
-      "count": 6
+      "count": 17
     },
     {
       "code": "l21",

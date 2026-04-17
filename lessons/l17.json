@@ -1,50 +1,82 @@
 [
   {
+    "jp_kana": "おりる(ru)",
+    "jp_kanji": "",
+    "en": "to get off",
+    "lesson": "L6-07",
+    "default_starred": false,
+    "id": "jpln1200_l17_001"
+  },
+  {
     "jp_kana": "がいこく",
     "jp_kanji": "",
     "en": "foreign country",
+    "lesson": "L6-07",
     "default_starred": false,
-    "id": "jpln1200_l17_001",
-    "lesson": "L6-07"
+    "id": "jpln1200_l17_001"
   },
   {
     "jp_kana": "がいこくじん",
     "jp_kanji": "",
     "en": "foreigner",
+    "lesson": "L6-07",
     "default_starred": false,
-    "id": "jpln1200_l17_002",
-    "lesson": "L6-07"
+    "id": "jpln1200_l17_002"
+  },
+  {
+    "jp_kana": "くに",
+    "jp_kanji": "",
+    "en": "country",
+    "lesson": "L6-07",
+    "default_starred": false,
+    "id": "jpln1200_l16_001"
+  },
+  {
+    "jp_kana": "こんしゅう",
+    "jp_kanji": "今週",
+    "en": "this week",
+    "lesson": "L6-07",
+    "default_starred": false,
+    "id": "jpln1200_l4_006"
+  },
+  {
+    "jp_kana": "せんしゅう",
+    "jp_kanji": "先週",
+    "en": "last week",
+    "lesson": "L6-07",
+    "default_starred": false,
+    "id": "jpln1200_l4_005"
   },
   {
     "jp_kana": "でんしゃ",
     "jp_kanji": "",
     "en": "train",
+    "lesson": "L6-07",
     "default_starred": false,
-    "id": "jpln1200_l17_003",
-    "lesson": "L6-07"
+    "id": "jpln1200_l17_003"
   },
   {
     "jp_kana": "まいしゅう",
     "jp_kanji": "",
     "en": "every week",
+    "lesson": "L6-07",
     "default_starred": false,
-    "id": "jpln1200_l17_004",
-    "lesson": "L6-07"
+    "id": "jpln1200_l17_004"
+  },
+  {
+    "jp_kana": "らいしゅう",
+    "jp_kanji": "来週",
+    "en": "next week",
+    "lesson": "L6-07",
+    "default_starred": false,
+    "id": "jpln1200_l4_007"
   },
   {
     "jp_kana": "らいねん",
     "jp_kanji": "",
     "en": "next year",
+    "lesson": "L6-07",
     "default_starred": false,
-    "id": "jpln1200_l17_005",
-    "lesson": "L6-07"
-  },
-  {
-    "jp_kana": "おりる",
-    "jp_kanji": "",
-    "en": "to get off",
-    "default_starred": false,
-    "id": "jpln1200_l17_006",
-    "lesson": "L6-07"
+    "id": "jpln1200_l17_005"
   }
 ]
