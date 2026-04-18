@@ -1,0 +1,74 @@
+[
+  {
+    "jp_kana": "あそぶ",
+    "jp_kanji": "遊ぶ",
+    "en": "to play",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l14_001"
+  },
+  {
+    "jp_kana": "いそぐ",
+    "jp_kanji": "急ぐ",
+    "en": "to hurry",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l14_002"
+  },
+  {
+    "jp_kana": "かえす",
+    "jp_kanji": "返す",
+    "en": "to return (something to someone)",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l22_011"
+  },
+  {
+    "jp_kana": "きょうかしょ",
+    "jp_kanji": "教科書",
+    "en": "textbook",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l22_004"
+  },
+  {
+    "jp_kana": "しぬ",
+    "jp_kanji": "死ぬ",
+    "en": "to die",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l14_003"
+  },
+  {
+    "jp_kana": "すわる",
+    "jp_kanji": "座る",
+    "en": "to sit down",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l22_014"
+  },
+  {
+    "jp_kana": "たつ",
+    "jp_kanji": "立つ",
+    "en": "to stand up",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l22_013"
+  },
+  {
+    "jp_kana": "はいる",
+    "jp_kanji": "入る",
+    "en": "to enter",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l22_012"
+  },
+  {
+    "jp_kana": "北口を 出る",
+    "jp_kanji": "",
+    "en": "to get out through the north exit",
+    "lesson": "L6-02",
+    "default_starred": false,
+    "id": "jpln1200_l14_009"
+  }
+]

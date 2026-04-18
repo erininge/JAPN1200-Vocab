@@ -62,5 +62,53 @@
     "lesson": "Lesson 11",
     "default_starred": false,
     "id": "jpln1200_l11_008"
+  },
+  {
+    "jp_kana": "おしろ",
+    "jp_kanji": "",
+    "en": "castle",
+    "default_starred": false,
+    "id": "jpln1200_l11_009",
+    "lesson": "Lesson 11"
+  },
+  {
+    "jp_kana": "～が",
+    "jp_kanji": "",
+    "en": "..., but",
+    "default_starred": false,
+    "id": "jpln1200_l11_010",
+    "lesson": "Lesson 11"
+  },
+  {
+    "jp_kana": "～さま",
+    "jp_kanji": "",
+    "en": "Mr./Ms. (used in letters)",
+    "default_starred": false,
+    "id": "jpln1200_l11_011",
+    "lesson": "Lesson 11"
+  },
+  {
+    "jp_kana": "たいへん(な)",
+    "jp_kanji": "",
+    "en": "tough",
+    "default_starred": false,
+    "id": "jpln1200_l11_012",
+    "lesson": "Lesson 11"
+  },
+  {
+    "jp_kana": "では、お元気で。",
+    "jp_kanji": "",
+    "en": "Take care.",
+    "default_starred": false,
+    "id": "jpln1200_l11_013",
+    "lesson": "Lesson 11"
+  },
+  {
+    "jp_kana": "よる",
+    "jp_kanji": "",
+    "en": "night",
+    "default_starred": false,
+    "id": "jpln1200_l11_014",
+    "lesson": "Lesson 11"
   }
 ]

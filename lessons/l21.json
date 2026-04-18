@@ -1,0 +1,50 @@
+[
+  {
+    "jp_kana": "あとで",
+    "jp_kanji": "",
+    "en": "later on",
+    "lesson": "L6-13/L6-15",
+    "default_starred": false,
+    "id": "jpln1200_l21_002"
+  },
+  {
+    "jp_kana": "じゃあ、また",
+    "jp_kanji": "",
+    "en": "See you later!",
+    "lesson": "L6-13/L6-15",
+    "default_starred": false,
+    "id": "jpln1200_l21_005"
+  },
+  {
+    "jp_kana": "すぐ",
+    "jp_kanji": "",
+    "en": "right away",
+    "lesson": "L6-13/L6-15",
+    "default_starred": false,
+    "id": "jpln1200_l21_003"
+  },
+  {
+    "jp_kana": "つぎ",
+    "jp_kanji": "",
+    "en": "next",
+    "lesson": "L6-13/L6-15",
+    "default_starred": false,
+    "id": "jpln1200_l21_001"
+  },
+  {
+    "jp_kana": "(～に) のる (u)",
+    "jp_kanji": "",
+    "en": "to get on",
+    "lesson": "L6-13/L6-15",
+    "default_starred": false,
+    "id": "jpln1200_l21_005"
+  },
+  {
+    "jp_kana": "(～を) おりる (ru)",
+    "jp_kanji": "",
+    "en": "to get off",
+    "lesson": "L6-13/L6-15",
+    "default_starred": false,
+    "id": "jpln1200_l21_006"
+  }
+]

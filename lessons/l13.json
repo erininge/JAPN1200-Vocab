@@ -1,0 +1,42 @@
+[
+  {
+    "jp_kana": "きた",
+    "jp_kanji": "北",
+    "en": "north",
+    "lesson": "L6-01",
+    "default_starred": false,
+    "id": "jpln1200_l13_004"
+  },
+  {
+    "jp_kana": "にし",
+    "jp_kanji": "西",
+    "en": "west",
+    "lesson": "L6-01",
+    "default_starred": false,
+    "id": "jpln1200_l13_002"
+  },
+  {
+    "jp_kana": "ひがし",
+    "jp_kanji": "東",
+    "en": "east",
+    "lesson": "L6-01",
+    "default_starred": false,
+    "id": "jpln1200_l13_001"
+  },
+  {
+    "jp_kana": "みなみ",
+    "jp_kanji": "南",
+    "en": "south",
+    "lesson": "L6-01",
+    "default_starred": false,
+    "id": "jpln1200_l13_003"
+  },
+  {
+    "jp_kana": "ゲーム",
+    "jp_kanji": "",
+    "en": "game",
+    "lesson": "L6-01",
+    "default_starred": false,
+    "id": "jpln1200_pre_021"
+  }
+]

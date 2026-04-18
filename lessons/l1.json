@@ -32,14 +32,6 @@
     "id": "jpln1200_l1_004"
   },
   {
-    "jp_kana": "あなた",
-    "jp_kanji": "",
-    "en": "you",
-    "lesson": "Lesson 1",
-    "default_starred": false,
-    "id": "jpln1200_l1_005"
-  },
-  {
     "jp_kana": "まち",
     "jp_kanji": "町",
     "en": "town ;city",
@@ -62,6 +54,14 @@
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_008"
+  },
+  {
+    "jp_kana": "あなた",
+    "jp_kanji": "",
+    "en": "you",
+    "lesson": "Lesson 1",
+    "default_starred": false,
+    "id": "jpln1200_l1_005"
   },
   {
     "jp_kana": "ある",
@@ -158,5 +158,13 @@
     "lesson": "Lesson 1",
     "default_starred": false,
     "id": "jpln1200_l1_020"
+  },
+  {
+    "jp_kana": "なんようび",
+    "jp_kanji": "",
+    "en": "what day of the week?",
+    "default_starred": false,
+    "id": "jpln1200_l1_021",
+    "lesson": "Lesson 1"
   }
 ]

@@ -1,0 +1,106 @@
+[
+  {
+    "jp_kana": "わたしたち",
+    "jp_kanji": "",
+    "en": "we, us",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_001"
+  },
+  {
+    "jp_kana": "おてあらい",
+    "jp_kanji": "お手洗い",
+    "en": "bathroom/restroom",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_pre_187"
+  },
+  {
+    "jp_kana": "かりる(ru)",
+    "jp_kanji": "",
+    "en": "to borrow",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_003"
+  },
+  {
+    "jp_kana": "くに",
+    "jp_kanji": "",
+    "en": "country",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_001"
+  },
+  {
+    "jp_kana": "すう(u)",
+    "jp_kanji": "",
+    "en": "to inhale; to suck",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_005"
+  },
+  {
+    "jp_kana": "たばこ",
+    "jp_kanji": "",
+    "en": "tobacco",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_009"
+  },
+  {
+    "jp_kana": "たばこをすう(u)",
+    "jp_kanji": "",
+    "en": "to smoke",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_007"
+  },
+  {
+    "jp_kana": "つかう(u)",
+    "jp_kanji": "",
+    "en": "to use",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_008"
+  },
+  {
+    "jp_kana": "よる",
+    "jp_kanji": "",
+    "en": "night",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l11_014"
+  },
+  {
+    "jp_kana": "エアコン",
+    "jp_kanji": "",
+    "en": "air conditioner",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_008"
+  },
+  {
+    "jp_kana": "シャワー",
+    "jp_kanji": "",
+    "en": "shower",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_002"
+  },
+  {
+    "jp_kana": "パソコン",
+    "jp_kanji": "",
+    "en": "PC",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l16_003"
+  },
+  {
+    "jp_kana": "のる",
+    "jp_kanji": "",
+    "en": "to get on / ride / board",
+    "lesson": "L6-05",
+    "default_starred": false,
+    "id": "jpln1200_l11_007"
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "jp_kana": "でんき",
+    "jp_kanji": "電気",
+    "en": "electricity; light",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_001"
+  },
+  {
+    "jp_kana": "まど",
+    "jp_kanji": "窓",
+    "en": "window",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_002"
+  },
+  {
+    "jp_kana": "ゆっくり",
+    "jp_kanji": "",
+    "en": "slowly",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_003"
+  },
+  {
+    "jp_kana": "きょうかしょ",
+    "jp_kanji": "教科書",
+    "en": "textbook",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_004"
+  },
+  {
+    "jp_kana": "ページ",
+    "jp_kanji": "",
+    "en": "page",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_005"
+  },
+  {
+    "jp_kana": "あける",
+    "jp_kanji": "開ける",
+    "en": "to open",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_006"
+  },
+  {
+    "jp_kana": "しめる",
+    "jp_kanji": "閉める",
+    "en": "to close",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_007"
+  },
+  {
+    "jp_kana": "おしえる",
+    "jp_kanji": "教える",
+    "en": "to teach",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_008"
+  },
+  {
+    "jp_kana": "つける",
+    "jp_kanji": "",
+    "en": "to turn on",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_009"
+  },
+  {
+    "jp_kana": "けす",
+    "jp_kanji": "消す",
+    "en": "to turn off",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_010"
+  },
+  {
+    "jp_kana": "かえす",
+    "jp_kanji": "返す",
+    "en": "to return (a thing)",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_011"
+  },
+  {
+    "jp_kana": "はいる",
+    "jp_kanji": "入る",
+    "en": "to enter",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_012"
+  },
+  {
+    "jp_kana": "たつ",
+    "jp_kanji": "立つ",
+    "en": "to stand up",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_013"
+  },
+  {
+    "jp_kana": "すわる",
+    "jp_kanji": "座る",
+    "en": "to sit down",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_014"
+  },
+  {
+    "jp_kana": "でんわする",
+    "jp_kanji": "電話する",
+    "en": "to call",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_015"
+  },
+  {
+    "jp_kana": "つれてくる",
+    "jp_kanji": "連れてくる",
+    "en": "to bring (people)",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_016"
+  },
+  {
+    "jp_kana": "もってくる",
+    "jp_kanji": "持ってくる",
+    "en": "to bring (things)",
+    "lesson": "Lesson 14",
+    "default_starred": false,
+    "id": "jpln1200_l22_017"
+  }
+]

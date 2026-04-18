@@ -1,12 +1,12 @@
 {
   "course": "JPLN1200",
-  "version": "2.8",
+  "version": "2.20",
   "lessons": [
     {
       "code": "l1",
       "name": "Lesson 1",
       "file": "lessons/l1.json",
-      "count": 20
+      "count": 21
     },
     {
       "code": "l2",
@@ -42,13 +42,13 @@
       "code": "l6",
       "name": "Lesson 6",
       "file": "lessons/l6.json",
-      "count": 2
+      "count": 6
     },
     {
       "code": "l7",
       "name": "Lesson 7",
       "file": "lessons/l7.json",
-      "count": 0
+      "count": 3
     },
     {
       "code": "l8",
@@ -60,37 +60,103 @@
       "code": "l9",
       "name": "Lesson 9",
       "file": "lessons/l9.json",
-      "count": 8
+      "count": 21
     },
     {
       "code": "l10",
       "name": "Lesson 10",
       "file": "lessons/l10.json",
-      "count": 3
+      "count": 37
     },
     {
       "code": "l11",
       "name": "Lesson 11",
       "file": "lessons/l11.json",
+      "count": 14
+    },
+    {
+      "code": "l12",
+      "name": "Lesson 12",
+      "file": "lessons/l12.json",
       "count": 8
+    },
+    {
+      "code": "l13",
+      "name": "Lesson 13",
+      "file": "lessons/l13.json",
+      "count": 5
+    },
+    {
+      "code": "l14",
+      "name": "Lesson 14",
+      "file": "lessons/l14.json",
+      "count": 9
+    },
+    {
+      "code": "l15",
+      "name": "Lesson 15",
+      "file": "lessons/l15.json",
+      "count": 21
+    },
+    {
+      "code": "l16",
+      "name": "Lesson 16",
+      "file": "lessons/l16.json",
+      "count": 13
+    },
+    {
+      "code": "l17",
+      "name": "Lesson 17",
+      "file": "lessons/l17.json",
+      "count": 10
+    },
+    {
+      "code": "l18",
+      "name": "Lesson 18",
+      "file": "lessons/l18.json",
+      "count": 9
+    },
+    {
+      "code": "l19",
+      "name": "Lesson 19",
+      "file": "lessons/l19.json",
+      "count": 6
+    },
+    {
+      "code": "l20",
+      "name": "Lesson 20",
+      "file": "lessons/l20.json",
+      "count": 17
+    },
+    {
+      "code": "l21",
+      "name": "Lesson 21",
+      "file": "lessons/l21.json",
+      "count": 6
+    },
+    {
+      "code": "l22",
+      "name": "Lesson 22",
+      "file": "lessons/l22.json",
+      "count": 17
     },
     {
       "code": "pre",
       "name": "Pre Course Words",
       "file": "lessons/pre_course_words.json",
-      "count": 163
+      "count": 159
     },
     {
       "code": "extras",
       "name": "Extras",
       "file": "lessons/extras.json",
-      "count": 67
+      "count": 57
     },
     {
       "code": "adj",
       "name": "Adjectives",
       "file": "lessons/adjectives.json",
-      "count": 21
+      "count": 7
     }
   ]
 }

@@ -14,5 +14,37 @@
     "lesson": "Lesson 6",
     "default_starred": false,
     "id": "jpln1200_pre_024"
+  },
+  {
+    "jp_kana": "じかん",
+    "jp_kanji": "",
+    "en": "hour; time",
+    "default_starred": false,
+    "id": "jpln1200_l14_040",
+    "lesson": "L6-09"
+  },
+  {
+    "jp_kana": "ぐらい",
+    "jp_kanji": "",
+    "en": "about",
+    "lesson": "Lesson 6",
+    "default_starred": false,
+    "id": "jpln1200_pre_001"
+  },
+  {
+    "jp_kana": "ゲーム",
+    "jp_kanji": "",
+    "en": "game",
+    "lesson": "Lesson 6",
+    "default_starred": false,
+    "id": "jpln1200_pre_021"
+  },
+  {
+    "jp_kana": "インターネット",
+    "jp_kanji": "",
+    "en": "internet",
+    "lesson": "Lesson 6",
+    "default_starred": false,
+    "id": "jpln1200_l6_001"
   }
 ]

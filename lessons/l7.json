@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "jp_kana": "パーティーをする",
+    "jp_kanji": "",
+    "en": "to throw a party",
+    "lesson": "Lesson 7",
+    "default_starred": false,
+    "id": "jpln1200_pre_239"
+  },
+  {
+    "jp_kana": "みせ",
+    "jp_kanji": "",
+    "en": "shop; store",
+    "default_starred": false,
+    "id": "jpln1200_l7_001",
+    "lesson": "Lesson 7"
+  },
+  {
+    "jp_kana": "おそく",
+    "jp_kanji": "",
+    "en": "(do something) late",
+    "default_starred": false,
+    "id": "jpln1200_l7_002",
+    "lesson": "Lesson 7"
+  }
+]

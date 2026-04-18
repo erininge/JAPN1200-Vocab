@@ -1,0 +1,74 @@
+[
+  {
+    "jp_kana": "おかね",
+    "jp_kanji": "",
+    "en": "money",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l18_001"
+  },
+  {
+    "jp_kana": "じかん",
+    "jp_kanji": "",
+    "en": "time",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l14_040"
+  },
+  {
+    "jp_kana": "たいへん(な)",
+    "jp_kanji": "",
+    "en": "tough (situation)",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l11_012"
+  },
+  {
+    "jp_kana": "てつだう(u)",
+    "jp_kanji": "",
+    "en": "to help",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l18_004"
+  },
+  {
+    "jp_kana": "にもつ",
+    "jp_kanji": "",
+    "en": "baggage",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l18_002"
+  },
+  {
+    "jp_kana": "もってくる",
+    "jp_kanji": "持ってくる",
+    "en": "to bring (things)",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l22_017"
+  },
+  {
+    "jp_kana": "もつ(u)",
+    "jp_kanji": "",
+    "en": "to carry; to hold",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l18_007"
+  },
+  {
+    "jp_kana": "やすむ(u)",
+    "jp_kanji": "",
+    "en": "to be absent; to rest",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l18_008"
+  },
+  {
+    "jp_kana": "～から",
+    "jp_kanji": "",
+    "en": "because …",
+    "lesson": "L6-09",
+    "default_starred": false,
+    "id": "jpln1200_l18_004"
+  }
+]

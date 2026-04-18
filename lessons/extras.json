@@ -112,14 +112,6 @@
     "id": "jpln1200_LE_014"
   },
   {
-    "jp_kana": "へや",
-    "jp_kanji": "部屋",
-    "en": "room",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_LE_015"
-  },
-  {
     "jp_kana": "ほん",
     "jp_kanji": "本",
     "en": "book",
@@ -296,14 +288,6 @@
     "id": "jpln1200_l3_5_054"
   },
   {
-    "jp_kana": "～ぐらい",
-    "jp_kanji": "",
-    "en": "about ;approximately",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_001"
-  },
-  {
     "jp_kana": "～じかん",
     "jp_kanji": "～時間",
     "en": "… hours",
@@ -318,62 +302,6 @@
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_010"
-  },
-  {
-    "jp_kana": "かう",
-    "jp_kanji": "買う",
-    "en": "to buy, (～を)",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_017"
-  },
-  {
-    "jp_kana": "ゲーム",
-    "jp_kanji": "",
-    "en": "game",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_021"
-  },
-  {
-    "jp_kana": "しゃしん",
-    "jp_kanji": "写真",
-    "en": "picture ;photograph",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_027"
-  },
-  {
-    "jp_kana": "それから",
-    "jp_kanji": "",
-    "en": "and then ;after that",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_030"
-  },
-  {
-    "jp_kana": "だから",
-    "jp_kanji": "",
-    "en": "so ;therefore",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_031"
-  },
-  {
-    "jp_kana": "とき",
-    "jp_kanji": "時",
-    "en": "when ... ;at the time of ... (～の)",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_036"
-  },
-  {
-    "jp_kana": "とる",
-    "jp_kanji": "撮る",
-    "en": "to take (a picture) (～を)",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_038"
   },
   {
     "jp_kana": "わたし",
@@ -462,14 +390,6 @@
     "lesson": "Extras",
     "default_starred": false,
     "id": "jpln1200_pre_066"
-  },
-  {
-    "jp_kana": "きく",
-    "jp_kanji": "聞く",
-    "en": "to listen; to hear",
-    "lesson": "Extras",
-    "default_starred": false,
-    "id": "jpln1200_pre_067"
   },
   {
     "jp_kana": "のむ",

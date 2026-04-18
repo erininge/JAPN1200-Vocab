@@ -161,6 +161,10 @@ body::before {
   width: min(1070px, 100%);
   margin: 0 auto;
 }
+#speakingSetup {
+  width: min(1070px, 100%);
+  margin: 0 auto;
+}
 
 .cardTitle {
   font-size: 16px;
@@ -194,6 +198,9 @@ body::before {
   padding: 10px;
   background: rgba(12,15,26,0.55);
 }
+.lessonListVocab {
+  min-width: 290px;
+}
 .lessonRow {
   display:flex;
   align-items:center;
@@ -204,6 +211,28 @@ body::before {
 }
 .lessonRow:hover { background: rgba(255,255,255,0.04); }
 .lessonRow .meta { color: var(--muted); font-size: 12px; }
+
+.lessonCategory {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+}
+.lessonCategory:last-child { margin-bottom: 0; }
+.lessonCategorySummary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.lessonCategorySummary::-webkit-details-marker { display: none; }
+.lessonCategoryLessons {
+  padding: 0 8px 8px;
+}
 
 .row { display:flex; align-items:center; }
 .wrap { flex-wrap: wrap; }
@@ -247,6 +276,15 @@ body::before {
   background: linear-gradient(rgba(16,19,27,0.82), rgba(16,19,27,0.82)) padding-box,
               var(--rainbow) border-box;
   box-shadow: 0 0 20px rgba(255, 143, 199, 0.2);
+}
+.speakControls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+#btnSpeakListen.listening {
+  box-shadow: 0 0 0 3px rgba(182, 255, 182, 0.28), 0 0 18px rgba(182, 255, 182, 0.35);
 }
 
 #btnPracticeStarred {

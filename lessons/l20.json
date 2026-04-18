@@ -1,0 +1,138 @@
+[
+  {
+    "jp_kana": "いつも",
+    "jp_kanji": "",
+    "en": "always",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_004"
+  },
+  {
+    "jp_kana": "みなさん",
+    "jp_kanji": "",
+    "en": "everyone (polite)",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_005"
+  },
+  {
+    "jp_kana": "みんな",
+    "jp_kanji": "",
+    "en": "everyone (casual)",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_006"
+  },
+  {
+    "jp_kana": "りょうり",
+    "jp_kanji": "",
+    "en": "cooking; dish",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_002"
+  },
+  {
+    "jp_kana": "りょうりする",
+    "jp_kanji": "",
+    "en": "to cook",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_003"
+  },
+  {
+    "jp_kana": "わすれる",
+    "jp_kanji": "",
+    "en": "to forget; to leave behind",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_001"
+  },
+  {
+    "jp_kana": "スペイン",
+    "jp_kanji": "",
+    "en": "Spain",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_007"
+  },
+  {
+    "jp_kana": "ドイツ",
+    "jp_kanji": "",
+    "en": "Germany",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_008"
+  },
+  {
+    "jp_kana": "フランス",
+    "jp_kanji": "",
+    "en": "France",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_009"
+  },
+  {
+    "jp_kana": "ベトナム",
+    "jp_kanji": "",
+    "en": "Vietnam",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_010"
+  },
+  {
+    "jp_kana": "メキシコ",
+    "jp_kanji": "",
+    "en": "Mexico",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_011"
+  },
+  {
+    "jp_kana": "(～に)まがる",
+    "jp_kanji": "",
+    "en": "to turn",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_012"
+  },
+  {
+    "jp_kana": "(～を)でる",
+    "jp_kanji": "",
+    "en": "to exit",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_013"
+  },
+  {
+    "jp_kana": "ひだりがわ",
+    "jp_kanji": "",
+    "en": "left side",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_014"
+  },
+  {
+    "jp_kana": "みぎがわ",
+    "jp_kanji": "",
+    "en": "right side",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_015"
+  },
+  {
+    "jp_kana": "みち",
+    "jp_kanji": "",
+    "en": "street",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_016"
+  },
+  {
+    "jp_kana": "～がわ",
+    "jp_kanji": "",
+    "en": "～ side",
+    "lesson": "L6-11/L6-12",
+    "default_starred": false,
+    "id": "jpln1200_l20_017"
+  }
+]
