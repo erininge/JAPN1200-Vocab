@@ -588,6 +588,27 @@ kbd {
 .choiceText {
   flex: 1 1 auto;
 }
+.choiceAudioBtn {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.24);
+  background: rgba(11,14,24,0.72);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.choiceAudioBtn:hover {
+  border-color: rgba(168, 195, 255, 0.8);
+}
+.choiceAudioBtn:focus-visible {
+  outline: 2px solid rgba(168, 195, 255, 0.9);
+  outline-offset: 2px;
+}
 @media (pointer: fine) and (min-width: 561px) {
   .choiceIndex { display: inline-flex; }
 }

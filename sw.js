@@ -1,6 +1,7 @@
 /*
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
+  - V7.9: add per-option audio buttons for Japanese multiple-choice answers + cache update
   - V7.8: remap Chapter 6 vocabulary to lesson mappings from latest syllabus + cache update
   - V7.8: split Chapter 6 into lesson files 13-21 and move legacy Lesson 14 vocab to Lesson 22 + cache update
   - V7.6: complete Chapter 6 lesson mapping (L6-01..L6-13) + add じかん + cache update
@@ -14,12 +15,12 @@
   - V6.4: add Adjectives lesson + cache update
   - V6.3: add Lesson 9 vocab + cache update
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v7.8";
+const CACHE_NAME = "japn1200-class-vocab-cache-v7.9";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v7.8",
-  "./styles.css?f=v7.8",
-  "./app.js?f=v7.8",
+  "./index.html?f=v7.9",
+  "./styles.css?f=v7.9",
+  "./app.js?f=v7.9",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
