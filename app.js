@@ -523,6 +523,19 @@ function lesson_code(lessonName) {
   if (lower.includes("extra")) return "extras";
   if (lower.includes("pre")) return "pre";
   if (lower.includes("adject")) return "adj";
+  const legacyLessonMap = {
+    "l6-01": "l13",
+    "l6-02": "l14",
+    "l6-03": "l15",
+    "l6-05": "l16",
+    "l6-07": "l17",
+    "l6-09": "l18",
+    "l6-10": "l19",
+    "l6-11/l6-12": "l20",
+    "l6-13/l6-15": "l21",
+    "lesson 14": "l22"
+  };
+  if (legacyLessonMap[lower]) return legacyLessonMap[lower];
   const m = lower.match(/lesson\s*([0-9]+(?:\.[0-9]+)?)/);
   if (m) return "l" + m[1].replace(".", "_");
   return "misc";
