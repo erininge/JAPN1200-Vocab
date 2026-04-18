@@ -232,9 +232,11 @@ async function loadAudioFallbackMap() {
       const data = await res.json();
       const map = new Map();
       (data.renamed || []).forEach((entry) => {
-        if (entry.itemId && entry.from) {
-          map.set(entry.itemId, entry.from);
-        }
+        if (!entry.itemId) return;
+        const candidates = [];
+        if (entry.to) candidates.push(entry.to);
+        if (entry.from) candidates.push(entry.from);
+        if (candidates.length) map.set(entry.itemId, candidates);
       });
       AUDIO_FALLBACK_MAP = map;
       return map;
@@ -261,10 +263,17 @@ async function resolveAudioUrl(id) {
   const fallbackMap = await loadAudioFallbackMap();
   const fallbackPath = fallbackMap.get(id);
   if (fallbackPath) {
-    const url = fallbackPath.startsWith("audio/") ? `./${fallbackPath}` : fallbackPath;
-    if (await audioUrlExists(url)) {
-      AUDIO_SRC_CACHE.set(id, url);
-      return url;
+    const fallbackPaths = Array.isArray(fallbackPath) ? fallbackPath : [fallbackPath];
+    for (const candidate of fallbackPaths) {
+      const url = candidate.startsWith("audio/")
+        ? `./${candidate}`
+        : candidate.startsWith("./") || candidate.startsWith("/")
+          ? candidate
+          : `./${candidate}`;
+      if (await audioUrlExists(url)) {
+        AUDIO_SRC_CACHE.set(id, url);
+        return url;
+      }
     }
   }
   AUDIO_SRC_CACHE.set(id, null);
