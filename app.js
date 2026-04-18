@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.8) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.9) */
 
-const APP_VERSION = "V7.8";
+const APP_VERSION = "V7.9";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -1026,15 +1026,26 @@ function correctAnswerText(q, dmode) {
 function buildMCOptions(q, pool, dmode) {
   const it = q.item;
   const isJPAnswer = (q.qmode === "en2jp" || q.qmode === "listen2jp");
-  const correct = isJPAnswer ? jpDisplay(it, displayModeForItem(it, dmode)) : it.en;
+  const answerTextForItem = (item) => (isJPAnswer ? jpDisplay(item, displayModeForItem(item, dmode)) : item.en);
+  const correct = answerTextForItem(it);
 
   const others = pool.filter(x => x.id !== it.id);
   const picks = sample(others, 12);
-  const mapped = picks.map(x => isJPAnswer ? jpDisplay(x, displayModeForItem(x, dmode)) : x.en);
-  const uniqs = uniq(mapped.filter(Boolean).filter(x => x !== correct));
-  const distractors = sample(uniqs, 3);
-  const options = shuffle([correct, ...distractors]);
-  return { correct, options };
+  const mapped = picks
+    .map((item) => ({ value: answerTextForItem(item), item }))
+    .filter((entry) => entry.value && entry.value !== correct);
+
+  const seen = new Set();
+  const uniqueDistractors = [];
+  mapped.forEach((entry) => {
+    if (seen.has(entry.value)) return;
+    seen.add(entry.value);
+    uniqueDistractors.push(entry);
+  });
+
+  const distractors = sample(uniqueDistractors, 3);
+  const options = shuffle([{ value: correct, item: it }, ...distractors]);
+  return { correct, options, isJPAnswer };
 }
 
 function gradeJapaneseResponse(item, user, smartGrade) {
@@ -1223,22 +1234,38 @@ function nextQuestion() {
 
 function renderMC(q) {
   const dmode = getDMode();
-  const { correct, options } = buildMCOptions(q, QUIZ.pool, dmode);
+  const { correct, options, isJPAnswer } = buildMCOptions(q, QUIZ.pool, dmode);
   const host = $("#answerMC");
   host.innerHTML = "";
   options.forEach((opt, i) => {
     const b = document.createElement("button");
     b.className = "choice";
     b.dataset.index = String(i);
-    b.dataset.value = opt;
+    b.dataset.value = opt.value;
     const index = document.createElement("span");
     index.className = "choiceIndex";
     index.textContent = String(i + 1);
     const label = document.createElement("span");
     label.className = "choiceText";
-    label.textContent = opt;
+    label.textContent = opt.value;
     b.append(index, label);
-    b.addEventListener("click", () => submitMC(opt, correct));
+
+    if (isJPAnswer) {
+      const audioBtn = document.createElement("button");
+      audioBtn.type = "button";
+      audioBtn.className = "choiceAudioBtn";
+      audioBtn.textContent = "🔊";
+      audioBtn.title = "Play this word";
+      audioBtn.setAttribute("aria-label", `Play audio: ${opt.value}`);
+      audioBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        playItemAudio(opt.item);
+      });
+      b.appendChild(audioBtn);
+    }
+
+    b.addEventListener("click", () => submitMC(opt.value, correct));
     host.appendChild(b);
   });
 }
