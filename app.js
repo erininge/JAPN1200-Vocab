@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V7.9) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V8.0) */
 
-const APP_VERSION = "V7.9";
+const APP_VERSION = "V8.0";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -138,6 +138,8 @@ let AUDIO_FALLBACK_LOADING = null;
 let CURRENT_AUDIO_ENTRIES = [];
 let CURRENT_AUDIO_SIGNATURE = "";
 let SW_REGISTRATION = null;
+const RETRY_GAP_MIN = 3;
+const RETRY_GAP_MAX = 5;
 
 function attachWaitingServiceWorker(worker) {
   if (!worker) return;
@@ -1145,6 +1147,8 @@ function resetQuizUI() {
   $("#answerType").classList.add("hidden");
   $("#feedback").classList.add("hidden");
   $("#feedback").textContent = "";
+  $("#retryNotice").classList.add("hidden");
+  $("#retryNotice").textContent = "";
   $("#prompt").textContent = "—";
   $("#quizCourse").textContent = "JAPN1200 • —";
   $("#quizProgress").textContent = "—";
@@ -1154,6 +1158,38 @@ function resetQuizUI() {
 function setQuizVisibility(active) {
   $("#quizArea").classList.toggle("hidden", !active);
   $("#studySetup").classList.toggle("hidden", active);
+}
+
+function randomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function scheduleRetryQuestion(session, q) {
+  if (!q || !q.item) return;
+  const nextRetryCount = (session.retryMissesById[q.item.id] || 0) + 1;
+  session.retryMissesById[q.item.id] = nextRetryCount;
+  const retryQ = {
+    ...q,
+    isRetry: true,
+    retryCount: nextRetryCount
+  };
+  const gap = randomIntInclusive(RETRY_GAP_MIN, RETRY_GAP_MAX);
+  const targetIdx = Math.min(session.idx + gap, session.questions.length);
+  session.questions.splice(targetIdx, 0, retryQ);
+}
+
+function updateRetryNotice(hostId, q) {
+  const notice = $(hostId);
+  if (!notice) return;
+  if (!q?.isRetry) {
+    notice.classList.add("hidden");
+    notice.textContent = "";
+    return;
+  }
+  const misses = q.retryCount || 1;
+  const missText = misses === 1 ? "1 miss" : `${misses} misses`;
+  notice.textContent = `⚠️ You missed this before (${missText}). Let’s try again!`;
+  notice.classList.remove("hidden");
 }
 
 function startQuiz(forceStarredOnly=false) {
@@ -1186,6 +1222,7 @@ function startQuiz(forceStarredOnly=false) {
     current: null,
     awaitingNext: false,
     correctCount: 0,
+    retryMissesById: {},
     starFiltered: forceStarredOnly || $("#filterStarredOnly").checked
   };
 
@@ -1224,6 +1261,7 @@ function nextQuestion() {
   $("#quizProgress").textContent = `Question ${QUIZ.idx+1}/${QUIZ.questions.length}`;
   $("#quizSub").textContent = `Correct: ${QUIZ.correctCount} • Pool: ${QUIZ.pool.length}`;
   $("#prompt").textContent = promptTextForQuestion(q, dmode);
+  updateRetryNotice("#retryNotice", q);
 
   setStarButton(q.item);
 
@@ -1306,7 +1344,11 @@ function submitMC(picked, correct) {
   $("#btnNext").disabled = false;
 
   recordAttempt(q.item.id, ok);
-  if (ok) QUIZ.correctCount += 1;
+  if (ok) {
+    QUIZ.correctCount += 1;
+  } else {
+    scheduleRetryQuestion(QUIZ, q);
+  }
 
   const exp = correctAnswerText(q, getDMode());
   const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
@@ -1323,7 +1365,11 @@ function submitTyping() {
   $("#btnNext").disabled = false;
 
   recordAttempt(q.item.id, ok);
-  if (ok) QUIZ.correctCount += 1;
+  if (ok) {
+    QUIZ.correctCount += 1;
+  } else {
+    scheduleRetryQuestion(QUIZ, q);
+  }
 
   const exp = correctAnswerText(q, getDMode());
   const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
@@ -1348,6 +1394,8 @@ function resetSpeakingUI() {
   $("#speakingHeard").textContent = "";
   $("#speakingFeedback").classList.add("hidden");
   $("#speakingFeedback").textContent = "";
+  $("#speakingRetryNotice").classList.add("hidden");
+  $("#speakingRetryNotice").textContent = "";
   $("#speakingCourse").textContent = "JAPN1200 • —";
   $("#speakingProgress").textContent = "—";
   $("#speakingSub").textContent = "—";
@@ -1430,6 +1478,7 @@ function startSpeakingSession(forceStarredOnly = false) {
     current: null,
     awaitingNext: false,
     correctCount: 0,
+    retryMissesById: {},
     listening: false,
     recognition: null,
     listenTimeoutId: null,
@@ -1460,7 +1509,11 @@ function submitSpeakingResult(transcript) {
   SPEAK.awaitingNext = true;
   $("#btnNextSpeaking").disabled = false;
   recordAttempt(q.item.id, ok);
-  if (ok) SPEAK.correctCount += 1;
+  if (ok) {
+    SPEAK.correctCount += 1;
+  } else {
+    scheduleRetryQuestion(SPEAK, q);
+  }
   const exp = jpDisplay(q.item, displayModeForItem(q.item, $("#speakDModeSelect").value || "kana"));
   const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
   showSpeakingFeedback(ok, detail, transcript);
@@ -1546,6 +1599,7 @@ function nextSpeakingQuestion() {
   $("#speakingProgress").textContent = `Question ${SPEAK.idx + 1}/${SPEAK.questions.length}`;
   $("#speakingSub").textContent = `Correct: ${SPEAK.correctCount} • Pool: ${SPEAK.pool.length}`;
   $("#speakingPrompt").textContent = promptTextForSpeakingQuestion(q, dmode);
+  updateRetryNotice("#speakingRetryNotice", q);
   setSpeakingStarButton(q.item);
 }
 

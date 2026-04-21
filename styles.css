@@ -624,6 +624,15 @@ kbd {
 }
 .feedback.good { border-color: rgba(182,255,182,0.55); }
 .feedback.bad { border-color: rgba(255,155,176,0.55); }
+.retryNotice {
+  border: 1px solid rgba(255, 209, 140, 0.6);
+  border-radius: 14px;
+  padding: 8px 12px;
+  margin: 8px 0 2px;
+  background: rgba(255, 209, 140, 0.12);
+  color: #ffdca9;
+  font-weight: 700;
+}
 .quizFooter {
   justify-content: flex-end;
 }
