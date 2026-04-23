@@ -1,7 +1,7 @@
 /*
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
-  - V8.0: add smart retry scheduling (3-5 questions later) with retry notice UI + cache update
+  - V8.1: add multi-term vocab search + synonym fallback beyond selected lesson pool + cache update
   - V7.9: add per-option audio buttons for Japanese multiple-choice answers + cache update
   - V7.8: remap Chapter 6 vocabulary to lesson mappings from latest syllabus + cache update
   - V7.8: split Chapter 6 into lesson files 13-21 and move legacy Lesson 14 vocab to Lesson 22 + cache update
@@ -16,12 +16,12 @@
   - V6.4: add Adjectives lesson + cache update
   - V6.3: add Lesson 9 vocab + cache update
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v8.0";
+const CACHE_NAME = "japn1200-class-vocab-cache-v8.1";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v8.0",
-  "./styles.css?f=v8.0",
-  "./app.js?f=v8.0",
+  "./index.html?f=v8.1",
+  "./styles.css?f=v8.1",
+  "./app.js?f=v8.1",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

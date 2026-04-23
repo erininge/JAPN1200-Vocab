@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V8.0) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V8.1) */
 
-const APP_VERSION = "V8.0";
+const APP_VERSION = "V8.1";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -129,6 +129,87 @@ function jpAliases(text) {
   if (!base) return [];
   const withoutParens = base.replace(/[（(][^）)]*[）)]/g, "").replace(/\s+/g, " ").trim();
   return uniq([base, withoutParens].filter(Boolean));
+}
+
+
+const ENGLISH_SYNONYM_GROUPS = [
+  ["pretty", "beautiful", "lovely", "attractive", "clean", "neat"]
+];
+
+const ENGLISH_SYNONYM_LOOKUP = (() => {
+  const map = new Map();
+  ENGLISH_SYNONYM_GROUPS.forEach((group) => {
+    const normalized = uniq(group.flatMap(englishVariants));
+    normalized.forEach((term) => {
+      const related = normalized.filter((entry) => entry !== term);
+      map.set(term, uniq([...(map.get(term) || []), ...related]));
+    });
+  });
+  return map;
+})();
+
+function tokenizeSearchTerms(text) {
+  const raw = (text || "").trim();
+  if (!raw) return [];
+  const exact = raw
+    .split(/[\n,;\/|]+/)
+    .flatMap((part) => part.split(/\s+/))
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const withNormalized = uniq([
+    ...exact,
+    ...exact.map((part) => normEnglish(part)).filter(Boolean)
+  ]);
+  return withNormalized;
+}
+
+function expandedEnglishSearchTerms(terms) {
+  const expanded = new Set();
+  terms.forEach((term) => {
+    englishVariants(term).forEach((variant) => expanded.add(variant));
+    const normalized = normEnglish(term);
+    if (normalized) {
+      englishVariants(normalized).forEach((variant) => expanded.add(variant));
+      (ENGLISH_SYNONYM_LOOKUP.get(normalized) || []).forEach((syn) => {
+        englishVariants(syn).forEach((variant) => expanded.add(variant));
+      });
+    }
+  });
+  return [...expanded];
+}
+
+function itemMatchesSearch(item, terms, expandedEnglishTerms, { allowSynonyms = true } = {}) {
+  if (!terms.length) return true;
+  const englishAliasesForItem = englishAliases(item.en).flatMap(englishVariants).filter(Boolean);
+  const jpAliasesForItem = jpAcceptableAnswers(item, "both").map(normJP).filter(Boolean);
+
+  return terms.some((term) => {
+    const raw = term.trim();
+    if (!raw) return false;
+    const normalizedRaw = normEnglish(raw);
+    const normalizedJP = normJP(raw);
+    const englishDirect = englishAliasesForItem.some((alias) => {
+      const normAlias = normEnglish(alias);
+      return alias.includes(raw.toLowerCase()) ||
+        (normalizedRaw && normAlias && normAlias.includes(normalizedRaw));
+    });
+    if (englishDirect) return true;
+
+    const jpDirect = normalizedJP
+      ? jpAliasesForItem.some((alias) => alias.includes(normalizedJP))
+      : false;
+    if (jpDirect) return true;
+
+    if (!allowSynonyms) return false;
+    return expandedEnglishTerms.some((termVariant) => {
+      const normalizedTerm = normEnglish(termVariant);
+      if (!normalizedTerm) return false;
+      return englishAliasesForItem.some((alias) => {
+        const normalizedAlias = normEnglish(alias);
+        return normalizedAlias && (normalizedAlias.includes(normalizedTerm) || normalizedTerm.includes(normalizedAlias));
+      });
+    });
+  });
 }
 
 const AUDIO_EXTENSIONS = ["wav", "mp3", "m4a", "ogg"];
@@ -1618,21 +1699,33 @@ function buildVocabUI() {
   const lessonFilters = selectedLessonCodesIn("#vLessonList");
   const display = $("#vDisplay").value;
   const q = ($("#vSearch").value || "").trim();
+  const searchTerms = tokenizeSearchTerms(q);
+  const expandedTerms = expandedEnglishSearchTerms(searchTerms);
 
-  let rows = ITEMS.slice();
-  if (lessonFilters.length) {
-    rows = rows.filter((it) => lessonFilters.includes(lesson_code(it.lesson)));
-  } else {
-    rows = [];
-  }
-  if (starOnly) rows = rows.filter(it => isStarred(it.id));
-  if (q) {
-    const qn = q.toLowerCase();
-    rows = rows.filter(it =>
-      (it.en || "").toLowerCase().includes(qn) ||
-      (it.jp_kana || "").includes(q) ||
-      (it.jp_kanji || "").includes(q)
-    );
+  const inPoolRows = lessonFilters.length
+    ? ITEMS.filter((it) => lessonFilters.includes(lesson_code(it.lesson)))
+    : [];
+
+  let rows = inPoolRows.slice();
+  if (starOnly) rows = rows.filter((it) => isStarred(it.id));
+  if (searchTerms.length) {
+    rows = rows.filter((it) => itemMatchesSearch(it, searchTerms, expandedTerms));
+
+    const inPoolIds = new Set(inPoolRows.map((it) => it.id));
+    const synonymRows = ITEMS.filter((it) => {
+      if (inPoolIds.has(it.id)) return false;
+      if (starOnly && !isStarred(it.id)) return false;
+      return itemMatchesSearch(it, searchTerms, expandedTerms, { allowSynonyms: true });
+    });
+
+    if (synonymRows.length) {
+      const seen = new Set(rows.map((it) => it.id));
+      synonymRows.forEach((it) => {
+        if (seen.has(it.id)) return;
+        seen.add(it.id);
+        rows.push(it);
+      });
+    }
   }
 
   const sortMode = $("#vSort")?.value || "default";
@@ -1787,7 +1880,11 @@ function buildVocabUI() {
   });
 
   updateVocabAudioHints(rowEls);
-  $("#vCountHint").textContent = `Showing ${rows.length} of ${ITEMS.length} total.`;
+  const inPoolIdSet = new Set(inPoolRows.map((it) => it.id));
+  const inPoolCount = rows.filter((it) => inPoolIdSet.has(it.id)).length;
+  const outsidePoolCount = rows.length - inPoolCount;
+  const synonymNote = outsidePoolCount > 0 ? ` (${outsidePoolCount} via synonym search outside selected lessons)` : "";
+  $("#vCountHint").textContent = `Showing ${rows.length} of ${ITEMS.length} total${synonymNote}.`;
 }
 
 async function updateVocabAudioHints(rows) {
