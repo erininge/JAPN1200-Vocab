@@ -152,8 +152,7 @@ function tokenizeSearchTerms(text) {
   const raw = (text || "").trim();
   if (!raw) return [];
   const exact = raw
-    .split(/[\n,;\/|]+/)
-    .flatMap((part) => part.split(/\s+/))
+    .split(/[\n,;、，／|]+/)
     .map((part) => part.trim())
     .filter(Boolean);
   const withNormalized = uniq([
@@ -847,7 +846,7 @@ function buildLessonUI() {
     groups.forEach((group) => {
       const details = document.createElement("details");
       details.className = "lessonCategory";
-      details.open = true;
+      details.open = !(hostId === "#lessonList" || hostId === "#vLessonList");
       const groupCount = group.lessons.reduce((sum, lesson) => sum + (lesson.count || 0), 0);
       details.innerHTML = `
         <summary class="lessonCategorySummary">

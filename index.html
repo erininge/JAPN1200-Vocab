@@ -221,12 +221,16 @@
     <section id="view-vocab" class="view hidden">
       <div class="card">
         <div class="cardTitle">View vocab</div>
-        <div class="row wrap gap">
-          <input id="vSearch" class="input" type="text" placeholder="Search (EN / JP)..." />
+        <div class="vocabControls">
+          <div class="vocabSearchWrap">
+            <input id="vSearch" class="input" type="text" placeholder="Search (EN / JP)..." />
+            <div class="hint">Tip: search multiple terms with commas (example: eat, drink).</div>
+          </div>
           <div id="vLessonList" class="lessonList lessonListVocab"></div>
-          <div class="row gap">
+          <div class="row wrap gap vocabActionRow">
             <button class="btn subtle" id="btnVSelectAll">Select all</button>
             <button class="btn subtle" id="btnVClearAll">Clear</button>
+            <button class="btn subtle" id="vReset">Reset</button>
           </div>
           <label class="chip"><input type="checkbox" id="vStarOnly"> Starred only</label>
           <label class="chip">Display:
@@ -243,7 +247,6 @@
               <option value="kanji_desc">Kanji Z→A</option>
             </select>
           </label>
-          <button class="btn subtle" id="vReset">Reset</button>
         </div>
 
         <div class="hint" id="vCountHint">—</div>
