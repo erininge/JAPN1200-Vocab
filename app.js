@@ -1693,10 +1693,9 @@ function endSpeakingSession() {
   resetSpeakingUI();
 }
 
-function buildVocabUI() {
+function getVocabRowsForCurrentFilters() {
   const starOnly = $("#vStarOnly").checked;
   const lessonFilters = selectedLessonCodesIn("#vLessonList");
-  const display = $("#vDisplay").value;
   const q = ($("#vSearch").value || "").trim();
   const searchTerms = tokenizeSearchTerms(q);
   const expandedTerms = expandedEnglishSearchTerms(searchTerms);
@@ -1740,6 +1739,12 @@ function buildVocabUI() {
       return aEn.localeCompare(bEn) * dir;
     });
   }
+  return { rows, inPoolRows };
+}
+
+function buildVocabUI() {
+  const display = $("#vDisplay").value;
+  const { rows, inPoolRows } = getVocabRowsForCurrentFilters();
 
   const host = $("#vTable");
   host.innerHTML = "";
@@ -1884,6 +1889,46 @@ function buildVocabUI() {
   const outsidePoolCount = rows.length - inPoolCount;
   const synonymNote = outsidePoolCount > 0 ? ` (${outsidePoolCount} via synonym search outside selected lessons)` : "";
   $("#vCountHint").textContent = `Showing ${rows.length} of ${ITEMS.length} total${synonymNote}.`;
+}
+
+async function copyVocabRows() {
+  const display = $("#vDisplay").value;
+  const { rows } = getVocabRowsForCurrentFilters();
+  const visibleRows = rows.filter((it) => (it.jp_kana || it.jp_kanji) && (it.en || "").trim());
+  if (!visibleRows.length) {
+    toast("No visible words to copy.");
+    return;
+  }
+
+  const lines = await Promise.all(visibleRows.map(async (it) => {
+    const jp = jpDisplay(it, display);
+    const en = (it.en || "").trim();
+    const audioId = audioIdForItem(it);
+    const audioUrl = await resolveAudioUrl(audioId);
+    const audioFilename = audioUrl ? displayAudioFilename(audioUrl) : expectedAudioFilename(audioId);
+    return `${jp}, ${en}, ${audioFilename}`;
+  }));
+  const payload = lines.join("\n");
+
+  try {
+    await navigator.clipboard.writeText(payload);
+    toast(`Copied ${lines.length} words.`);
+  } catch {
+    const temp = document.createElement("textarea");
+    temp.value = payload;
+    temp.setAttribute("readonly", "true");
+    temp.style.position = "fixed";
+    temp.style.top = "-1000px";
+    document.body.appendChild(temp);
+    temp.select();
+    const copied = document.execCommand("copy");
+    document.body.removeChild(temp);
+    if (copied) {
+      toast(`Copied ${lines.length} words.`);
+      return;
+    }
+    toast("Copy failed. Please copy manually.");
+  }
 }
 
 async function updateVocabAudioHints(rows) {
@@ -2089,6 +2134,7 @@ function wireUI() {
     $("#vSort").value = "default";
     buildVocabUI();
   });
+  $("#btnVCopyAll").addEventListener("click", copyVocabRows);
 
   $("#filterStarredOnly").addEventListener("change", () => {
     refreshHeaderCounts();
