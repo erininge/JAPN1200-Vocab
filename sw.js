@@ -1,6 +1,8 @@
 /*
   Kat’s Vocab Garden 🌸 — JAPN1200
   Changelog:
+  - V8.3: show ask-again control for multiple choice, typing, and mixed practice + cache update
+  - V8.2: add typing answer override + ask-again controls + always show correct answer + cache update
   - V8.1: add multi-term vocab search + synonym fallback beyond selected lesson pool + cache update
   - V7.9: add per-option audio buttons for Japanese multiple-choice answers + cache update
   - V7.8: remap Chapter 6 vocabulary to lesson mappings from latest syllabus + cache update
@@ -16,12 +18,12 @@
   - V6.4: add Adjectives lesson + cache update
   - V6.3: add Lesson 9 vocab + cache update
 */
-const CACHE_NAME = "japn1200-class-vocab-cache-v8.1";
+const CACHE_NAME = "japn1200-class-vocab-cache-v8.3";
 const CORE_ASSETS = [
   "./",
-  "./index.html?f=v8.1",
-  "./styles.css?f=v8.1",
-  "./app.js?f=v8.1",
+  "./index.html?f=v8.3",
+  "./styles.css?f=v8.3",
+  "./app.js?f=v8.3",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
