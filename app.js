@@ -1441,6 +1441,16 @@ function showFeedback(ok, detail) {
   fb.textContent = detail;
 }
 
+
+function preserveTypingKeyboardOnTap(button) {
+  if (!button) return;
+  const keepFocus = (event) => {
+    if (QUIZ.current?.atype !== "type") return;
+    event.preventDefault();
+  };
+  button.addEventListener("pointerdown", keepFocus);
+}
+
 function resetAnswerReviewControls() {
   const host = $("#answerReviewControls");
   if (!host) return;
@@ -1464,7 +1474,11 @@ function renderAnswerReviewControls() {
     correctionBtn.type = "button";
     correctionBtn.className = result.ok ? "btn subtle danger" : "btn subtle";
     correctionBtn.textContent = result.ok ? "I got this wrong" : "I got this right";
-    correctionBtn.addEventListener("click", () => overrideTypingResult(!result.ok));
+    preserveTypingKeyboardOnTap(correctionBtn);
+    correctionBtn.addEventListener("click", () => {
+      overrideTypingResult(!result.ok);
+      setTimeout(() => $("#answerInput")?.focus(), 0);
+    });
     host.appendChild(correctionBtn);
   }
 
@@ -1473,7 +1487,11 @@ function renderAnswerReviewControls() {
   readdBtn.className = "btn subtle";
   readdBtn.textContent = result.readded ? "Added back to pool" : "Ask this word again";
   readdBtn.disabled = !!result.readded;
-  readdBtn.addEventListener("click", readdCurrentQuestion);
+  preserveTypingKeyboardOnTap(readdBtn);
+  readdBtn.addEventListener("click", () => {
+    readdCurrentQuestion();
+    setTimeout(() => $("#answerInput")?.focus(), 0);
+  });
 
   host.appendChild(readdBtn);
 }
@@ -2197,6 +2215,7 @@ function wireUI() {
     }
   };
 
+  preserveTypingKeyboardOnTap($("#btnSubmit"));
   $("#btnSubmit").addEventListener("click", submitTyping);
   $("#answerInput").addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
