@@ -1,6 +1,6 @@
-/* Kat’s Vocab Garden 🌸 — JAPN1200 (V8.1) */
+/* Kat’s Vocab Garden 🌸 — JAPN1200 (V8.3) */
 
-const APP_VERSION = "V8.1";
+const APP_VERSION = "V8.3";
 const STORAGE = {
   stars: "jpln1200_stars_v1",
   settings: "jpln1200_settings_v1",
@@ -502,6 +502,15 @@ function recordAttempt(id, ok) {
   s.perItem[id] = s.perItem[id] || { a: 0, c: 0 };
   s.perItem[id].a += 1;
   if (ok) s.perItem[id].c += 1;
+  saveJSON(STORAGE.stats, s);
+}
+
+function updateRecordedAttempt(id, wasOk, nowOk) {
+  if (wasOk === nowOk) return;
+  const s = getStats();
+  s.correct = Math.max(0, s.correct + (nowOk ? 1 : -1));
+  s.perItem[id] = s.perItem[id] || { a: 0, c: 0 };
+  s.perItem[id].c = Math.max(0, (s.perItem[id].c || 0) + (nowOk ? 1 : -1));
   saveJSON(STORAGE.stats, s);
 }
 
@@ -1192,7 +1201,8 @@ let QUIZ = {
   idx: 0,
   current: null,
   awaitingNext: false,
-  correctCount: 0
+  correctCount: 0,
+  currentAnswerResult: null
 };
 
 let SPEAK = {
@@ -1227,6 +1237,7 @@ function resetQuizUI() {
   $("#answerType").classList.add("hidden");
   $("#feedback").classList.add("hidden");
   $("#feedback").textContent = "";
+  resetAnswerReviewControls();
   $("#retryNotice").classList.add("hidden");
   $("#retryNotice").textContent = "";
   $("#prompt").textContent = "—";
@@ -1253,9 +1264,21 @@ function scheduleRetryQuestion(session, q) {
     isRetry: true,
     retryCount: nextRetryCount
   };
+  insertQuestionLater(session, retryQ);
+}
+
+function insertQuestionLater(session, q) {
+  if (!session?.questions || !q) return;
   const gap = randomIntInclusive(RETRY_GAP_MIN, RETRY_GAP_MAX);
   const targetIdx = Math.min(session.idx + gap, session.questions.length);
-  session.questions.splice(targetIdx, 0, retryQ);
+  session.questions.splice(targetIdx, 0, q);
+}
+
+function removeFutureRetryQuestions(session, itemId) {
+  if (!session?.questions || !itemId) return;
+  session.questions = session.questions.filter((question, index) => {
+    return index <= session.idx || !question.isRetry || question.item?.id !== itemId;
+  });
 }
 
 function updateRetryNotice(hostId, q) {
@@ -1302,6 +1325,7 @@ function startQuiz(forceStarredOnly=false) {
     current: null,
     awaitingNext: false,
     correctCount: 0,
+    currentAnswerResult: null,
     retryMissesById: {},
     starFiltered: forceStarredOnly || $("#filterStarredOnly").checked
   };
@@ -1323,8 +1347,10 @@ function maybeAutoplay(q) {
 
 function nextQuestion() {
   QUIZ.awaitingNext = false;
+  QUIZ.currentAnswerResult = null;
   $("#feedback").classList.add("hidden");
   $("#feedback").textContent = "";
+  resetAnswerReviewControls();
   $("#answerInput").value = "";
   $("#btnNext").disabled = true;
 
@@ -1415,6 +1441,79 @@ function showFeedback(ok, detail) {
   fb.textContent = detail;
 }
 
+function resetAnswerReviewControls() {
+  const host = $("#answerReviewControls");
+  if (!host) return;
+  host.classList.add("hidden");
+  host.innerHTML = "";
+}
+
+function renderAnswerReviewControls() {
+  const host = $("#answerReviewControls");
+  const result = QUIZ.currentAnswerResult;
+  if (!host || !result) {
+    resetAnswerReviewControls();
+    return;
+  }
+
+  host.innerHTML = "";
+  host.classList.remove("hidden");
+
+  if (result.canOverride) {
+    const correctionBtn = document.createElement("button");
+    correctionBtn.type = "button";
+    correctionBtn.className = result.ok ? "btn subtle danger" : "btn subtle";
+    correctionBtn.textContent = result.ok ? "I got this wrong" : "I got this right";
+    correctionBtn.addEventListener("click", () => overrideTypingResult(!result.ok));
+    host.appendChild(correctionBtn);
+  }
+
+  const readdBtn = document.createElement("button");
+  readdBtn.type = "button";
+  readdBtn.className = "btn subtle";
+  readdBtn.textContent = result.readded ? "Added back to pool" : "Ask this word again";
+  readdBtn.disabled = !!result.readded;
+  readdBtn.addEventListener("click", readdCurrentQuestion);
+
+  host.appendChild(readdBtn);
+}
+
+function overrideTypingResult(nowOk) {
+  const result = QUIZ.currentAnswerResult;
+  if (!result?.canOverride || result.ok === nowOk) return;
+  const q = QUIZ.current;
+  updateRecordedAttempt(q.item.id, result.ok, nowOk);
+  QUIZ.correctCount += nowOk ? 1 : -1;
+  QUIZ.correctCount = Math.max(0, QUIZ.correctCount);
+  result.ok = nowOk;
+
+  if (nowOk) {
+    removeFutureRetryQuestions(QUIZ, q.item.id);
+  } else {
+    scheduleRetryQuestion(QUIZ, q);
+  }
+
+  const detail = nowOk
+    ? `✅ Marked correct • Correct: ${result.expected}`
+    : `❌ Marked incorrect • Correct: ${result.expected}`;
+  showFeedback(nowOk, detail);
+  $("#quizProgress").textContent = `Question ${QUIZ.idx+1}/${QUIZ.questions.length}`;
+  $("#quizSub").textContent = `Correct: ${QUIZ.correctCount} • Pool: ${QUIZ.pool.length}`;
+  renderStats();
+  renderAnswerReviewControls();
+}
+
+function readdCurrentQuestion() {
+  const result = QUIZ.currentAnswerResult;
+  if (!result || result.readded || !QUIZ.current) return;
+  const q = { ...QUIZ.current, isRetry: false, retryCount: undefined, readded: true };
+  insertQuestionLater(QUIZ, q);
+  result.readded = true;
+  $("#quizProgress").textContent = `Question ${QUIZ.idx+1}/${QUIZ.questions.length}`;
+  renderAnswerReviewControls();
+  toast("Added this word back into the pool.");
+}
+
 function submitMC(picked, correct) {
   if (QUIZ.awaitingNext) return;
   const q = QUIZ.current;
@@ -1431,8 +1530,12 @@ function submitMC(picked, correct) {
   }
 
   const exp = correctAnswerText(q, getDMode());
+  QUIZ.currentAnswerResult = { ok, expected: exp, readded: false, canOverride: false };
   const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
   showFeedback(ok, detail);
+  $("#quizProgress").textContent = `Question ${QUIZ.idx+1}/${QUIZ.questions.length}`;
+  $("#quizSub").textContent = `Correct: ${QUIZ.correctCount} • Pool: ${QUIZ.pool.length}`;
+  renderAnswerReviewControls();
 }
 
 function submitTyping() {
@@ -1452,8 +1555,12 @@ function submitTyping() {
   }
 
   const exp = correctAnswerText(q, getDMode());
-  const detail = ok ? "✅ Correct" : `❌ Incorrect • Correct: ${exp}`;
+  QUIZ.currentAnswerResult = { ok, expected: exp, readded: false, canOverride: true };
+  const detail = ok ? `✅ Correct • Correct: ${exp}` : `❌ Incorrect • Correct: ${exp}`;
   showFeedback(ok, detail);
+  $("#quizProgress").textContent = `Question ${QUIZ.idx+1}/${QUIZ.questions.length}`;
+  $("#quizSub").textContent = `Correct: ${QUIZ.correctCount} • Pool: ${QUIZ.pool.length}`;
+  renderAnswerReviewControls();
 }
 
 function endQuiz() {

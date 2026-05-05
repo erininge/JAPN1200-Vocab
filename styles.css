@@ -645,6 +645,11 @@ kbd {
 }
 .feedback.good { border-color: rgba(182,255,182,0.55); }
 .feedback.bad { border-color: rgba(255,155,176,0.55); }
+.answerReviewControls {
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 8px 0 10px;
+}
 .retryNotice {
   border: 1px solid rgba(255, 209, 140, 0.6);
   border-radius: 14px;
